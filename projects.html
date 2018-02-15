@@ -8,10 +8,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-      body {
+      header {
         padding: 1em;
         clear: left;
         text-align: center;
+      }
+      footer {
+        position: absolute;
+        bottom: 5px;
+        text-align: center;
+        width: 100%;
       }
       .img-circle {
         border-radius: 50%;
@@ -25,16 +31,40 @@
         border-style: inset;
         border-width: 1px;
       }
+      #first_Project {
+        margin-left: 10px;
+        width: 300px;
+        border: 1px solid black;
+        background-color: LightBlue;
+        padding-left: 10px;
+      }
     </style>
   </head>
 
   <body>
     <header>
-      <a><img class="img-circle" src="img/aserdyuchenko.jpg" height="100" width="100"></a>
-      <p><a href="index.html">Redirect to home page.</a></p>
+      <p>
+        <a href="index.html"><img class="img-circle" src="img/aserdyuchenko.jpg" height="100" width="100"></a>
+      </p>
     </header>
     <hr>
-    <p><a href="project_1_memory_game/index.html">Project 1. Memory game</a></p>
+    <div id="first_Project">
+      <a href="https://github.com/anton415/Intro_to_programming"><h3>Intro to programming</h3></a>
+      <p>Projects of the course "Introduction to programming" on Udacity.</p>
+      <p>Aug. 2017 - Nov. 2017</p>
+      <p>
+        Project DescriptionThe following projects are being implemented:
+        <ul>
+          <li>HTML Basics</li>
+          <li>Creating a web page</li>
+          <li>Creating your own test</li>
+          <li>Creating a site with movie trailers</li>
+        </ul>
+    </div>
+    <p>
+
+      </p>
+    </p>
     <hr>
     <footer>
       <a href="https://github.com/anton415">  <img src="img/github-logo.png"></a>
