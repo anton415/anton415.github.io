@@ -31,12 +31,33 @@
         border-style: inset;
         border-width: 1px;
       }
-      #first_Project {
+      .projects {
+        display: inline-block;
         margin-left: 10px;
-        width: 300px;
-        border: 1px solid black;
-        background-color: LightBlue;
-        padding-left: 10px;
+        margin-top: 10px;
+        width: auto;
+        height: auto;
+        border: 1px solid gray;
+        padding-left: 5px;
+        padding-top: 5px;
+      }
+      .project_description {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        float: right;
+        height: 120px;
+        width: 250px;
+      }
+      .project_img {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        float: left;
+        height: 100px;
+        width: 100px;
       }
     </style>
   </head>
@@ -48,26 +69,52 @@
       </p>
     </header>
     <hr>
-    <div id="first_Project">
-      <a href="https://github.com/anton415/Intro_to_programming"><h3>Intro to programming</h3></a>
-      <p>Projects of the course "Introduction to programming" on Udacity.</p>
-      <p>Aug. 2017 - Nov. 2017</p>
-      <p>
-        Project DescriptionThe following projects are being implemented:
-        <ul>
-          <li>HTML Basics</li>
-          <li>Creating a web page</li>
-          <li>Creating your own test</li>
-          <li>Creating a site with movie trailers</li>
-        </ul>
-    </div>
-    <p>
+    <content>
+      <div class="projects">
+        <img class="project_img" src="img/udacity.svg">
+        <div class="project_description">
+          <a href="https://github.com/anton415/Intro_to_programming"><h4>Intro to programming</h4></a>
+          <p>Projects of the course "Introduction to programming" on Udacity.</p>
+          <p>
+            <svg height="10" width="10">
+              <circle cx="5" cy="5" r="4" fill="blue"/>
+            </svg>
+            Python
+          </p>
+        </div>
+      </div>
 
-      </p>
-    </p>
+      <div class="projects">
+        <img class="project_img" src="img/job4j.png">
+        <div class="project_description">
+          <a href="https://github.com/anton415/Job4j"><h4>Job4j</h4></a>
+          <p>Course: Java from a to z. Java SE + EE.</p>
+          <p>
+            <svg height="10" width="10">
+              <circle cx="5" cy="5" r="4" fill="brown"/>
+            </svg>
+            Java
+          </p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <img class="project_img" src="img/Octocat.png">
+        <div class="project_description">
+          <a href="https://github.com/anton415/anton415.github.io"><h4>anton415.github.io</h4></a>
+          <p>GitHub Pages.</p>
+          <p>
+            <svg height="10" width="10">
+              <circle cx="5" cy="5" r="4" fill="orange"/>
+            </svg>
+            HTML
+          </p>
+        </div>
+      </div>
+    </content>
     <hr>
     <footer>
-      <a href="https://github.com/anton415">  <img src="img/github-logo.png"></a>
+      <a href="https://github.com/anton415"><img src="img/github-logo.png"></a>
       <a href="https://www.linkedin.com/in/antonserdyuchenko"><img src="img/linkedin.png"></a>
       <p>With all respect, Anton Serdyuchenko (<a href="mailto:a.serdyuchenko@yahoo.com">a.serdyuchenko@yahoo.com</a>).</p>
     </footer>
