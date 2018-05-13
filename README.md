@@ -1,3 +1,3 @@
 # anton415.github.io
-GitHub Pages.
-Hello World, it's my first gihub page.
+This github page for portfolio site.
+Part of Udacity's nanodegree.

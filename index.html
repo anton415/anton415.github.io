@@ -1,133 +1,44 @@
 <!DOCTYPE html>
 <html>
-<title>A. Serdyuchenko</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
-<body class="w3-light-grey">
-
-  <!-- Links (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-row w3-large w3-light-grey">
-      <div class="w3-col s3">
-        <a href="index.html" class="w3-button w3-block">Home</a>
-      </div>
-      <div class="w3-col s3">
-        <a href="projects.html" class="w3-button w3-block">Projects</a>
-      </div>
-      <div class="w3-col s3">
-        <a href="certification.html" class="w3-button w3-block">Certifications</a>
-      </div>
-      <div class="w3-col s3">
-        <a href="publications.html" class="w3-button w3-block">Publications</a>
-      </div>
-    </div>
-  </div>
-
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-
-
-  <!-- The Grid -->
-  <div class="w3-row-padding" style=" margin-top:50px">
-
-
-    <!-- Left Column -->
-    <div class="w3-third">
-
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="img/aserdyuchenko.jpg" style="width:100%" alt="Avatar">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+      <div class="header">
+        <div class="inline-block-header" id="photo">
+          <img id="my-photo" src="img/aserdyuchenko.jpg" alt="my photo">
         </div>
-        <div class="w3-container">
-          <p><i class="fa fa-name fa-fw w3-margin-right w3-large w3-text-teal"><b></i>Anton Serdyuchenko</b></p>
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Java Developer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Moscow, RU</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>a.serdyuchenko@yahoo.com</p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Java</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>Russian</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
-          <br>
-        </div>
-      </div><br>
-
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Central Bank of the Russian Federation</b></h5>
-          <h5 class="w3-opacity">Expert 1 Category (Java Developer)</h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2017 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>
-            <ul>
-              <li>
-                I'm working on a set of tasks "to take into account the application of measures of influence to shareholders (participants) of the KO and other persons" being
-                developed within the framework of a unified information system for supporting the Bank of Russia's regulation and development of the banking sector (banking supervision unit).
-              </li>
-              <li>
-                I conduct research work on the prospective payment system.
-              </li>
-            </ul>
-          </p>
-          <hr>
+        <div class="inline-block-header" id="name-and-job-title">
+          <div id="name">Anton Serdyuchenko</div>
+          <div id="job-title">Full-stack developer</div>
         </div>
       </div>
-
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Bachelor's Degree in Computer Science</b></h5>
-          <h5 class="w3-opacity">Moscow Aviation Institute (National Research University), Moscow, Russia</h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2011 - July 2017</h6>
-          <p>
-            <ul>
-              <li>Participation in the 15th international conference "Aviation and Cosmonautics" - Publication: "Application of neural network technologies for the evaluation of the performance of an aviation industry enterprise"</li>
-              <li>Victory in the nomination "The Best Diploma Project INZHEKIN MAI-2017".</li>
-              <li>The theme of the final qualifying work: "Automation of information processing for assessing the effectiveness of business processes in an aviation enterprise."</li>
-            </ul>
-          </p>
-          <hr>
+      <div class="main">
+        <div class="main-img">
+          <img id="codeImg" src="img/code.png" alt="code img">
         </div>
       </div>
+      <div class="projects">
+        <h3 id="projects-title">My works</h3>
+        <div class="project" id="portfolio-site">
+          <img class="project-img" id="udacity-img" src="img/portfolio-site.jpg" alt="portfolio site img">
+          <h3 class="project-title" id="portfolio-site-title">Portfolio site</h3>
+          <h6 class="project-link" id="portfolio-site-link">https://github.com/anton415/anton415.github.io</h6>
+        </div>
+        <div class="project" id="into-to-programming">
+          <img class="project-img" id="udacity-img" src="img/intro-to-programming.jpg" alt="intro to programming img">
+          <h3 class="project-title" id="into-to-programming-title">Into to programming</h3>
+          <h6 class="project-link" id="into-to-programming-link">https://github.com/anton415/Intro_to_programming</h6>
+        </div>
+        <div class="project" id="job4j">
+          <img class="project-img" id="job4j-img" src="img/job4j.png" alt="job4j img">
+          <h3 class="project-title" id="job4j-title">Job4j</h3>
+          <h6 class="project-link" id="job4j-link">https://github.com/anton415/Job4j</h6>
+        </div>
 
-    <!-- End Right Column -->
-    </div>
 
-  <!-- End Grid -->
-  </div>
-
-  <!-- End Page Container -->
-</div>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <a href="https://www.linkedin.com/in/antonserdyuchenko"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-</footer>
-
-</body>
+      </div>
+  </body>
 </html>
