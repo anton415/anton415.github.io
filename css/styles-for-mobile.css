@@ -1,0 +1,64 @@
+@media only screen and (max-width:385px) {
+  /*** For iPhone 6: ***/
+  * {
+    padding: 3px;
+  }
+  /* For header */
+  .header {
+    width: 100%;
+    display: flex;
+  }
+  #photo {
+    flex: 30%;
+  }
+  #my-photo {
+    width: 100%;
+  }
+  #name-and-job-title {
+    float: right;
+    flex: 70%;
+  }
+  #name {
+    font-family: "Courier New";
+    text-transform: uppercase;
+    text-align: right;
+    margin-right: 30px;
+    font-size: 150%;
+    width: 100%;
+    height: 80%
+  }
+  #job-title {
+    font-family: "Courier New";
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 80%;
+    width: 100%;
+    height: 20%
+  }
+    /* For main */
+    #codeImg {
+      width: 100%;
+    }
+    #projects-title {
+      font-family: "Courier New";
+      color: gray;
+    }
+    .project {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    .project-img {
+      width: 100%;
+    }
+    .project-title {
+      font-family: "Courier New";
+      text-transform: uppercase;
+      text-align: center;
+      color: #2d3c49;
+    }
+    .project-link {
+      font-family: "Courier New";
+      text-align: center;
+      color: #7d97ad;
+    }
+}
