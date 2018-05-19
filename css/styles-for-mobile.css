@@ -4,19 +4,15 @@
     padding: 3px;
   }
   /* For header */
-  .header {
+  header {
     width: 100%;
     display: flex;
   }
-  #photo {
-    flex: 30%;
+  #name-and-job-title {
+    height: 100%
   }
   #my-photo {
     width: 100%;
-  }
-  #name-and-job-title {
-    float: right;
-    flex: 70%;
   }
   #name {
     font-family: "Courier New";
