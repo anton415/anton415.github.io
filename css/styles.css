@@ -3,6 +3,17 @@
     padding: 3px;
     box-sizing: border-box;
   }
+  /* Menu */
+  .menu {
+    text-decoration: none;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+  }
+  :link {
+    text-decoration: none;
+  }
   /* For header */
   header {
     display: flex;
