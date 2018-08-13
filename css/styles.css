@@ -17,7 +17,7 @@
   /* For header */
   header {
     display: flex;
-    flex-direction: line;
+    justify-content: space-around;
   }
   #photo {
     flex: 40%;
