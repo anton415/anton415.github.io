@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-around;
   }
-  #photo {
+  .photo {
     flex: 40%;
   }
   #name-and-job-title {
