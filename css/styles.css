@@ -10,6 +10,8 @@
     background-color: gray;
     color: white;
     text-align: center;
+    height: 48px;
+    line-height: 40px;
   }
   :link {
     text-decoration: none;
