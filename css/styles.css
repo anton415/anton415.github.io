@@ -52,11 +52,11 @@
     text-align: center;
     color: #7d97ad;
   }
-  .projects::after {
+  /* .projects::after {
     content: "";
     clear: both;
     display: table;
-  }
+  } */
   .project {
     float: left;
     padding: 5px;
@@ -71,7 +71,7 @@
     }
 
     .menu {
-      font-size: 150%;
+      font-size: 3vw;
       background-color: gray;
       color: white;
       text-align: center;
@@ -86,7 +86,7 @@
     }
 
     .menu {
-      font-size: 150%;
+      font-size: 3vw;
       background-color: gray;
       color: white;
       text-align: center;
@@ -101,7 +101,7 @@
     }
 
     .menu {
-      font-size: 150%;
+      font-size: 3vw;
       background-color: gray;
       color: white;
       text-align: center;
