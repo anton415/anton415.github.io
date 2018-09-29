@@ -1,0 +1,22 @@
+{
+  "name": "anton415.github.io",
+  "version": "1.0.0",
+  "description": "Personal website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anton415/anton415.github.io.git"
+  },
+  "author": "Anton Serdyuchenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anton415/anton415.github.io/issues"
+  },
+  "homepage": "https://github.com/anton415/anton415.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
