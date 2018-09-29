@@ -1,6 +1,9 @@
 # anton415.github.io
 This github page for portfolio site.
-Part of Udacity's nanodegree.
+
+<a href="https://anton415.github.io">
+  My page.
+</a>
 
 LICENSE:
 The content of this project itself is licensed under the
