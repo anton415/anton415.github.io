@@ -18,6 +18,8 @@
   "homepage": "https://github.com/anton415/anton415.github.io#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-gh-pages": "^0.5.4"
+    "gulp-concat": "^2.6.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-myth": "^1.1.0"
   }
 }
