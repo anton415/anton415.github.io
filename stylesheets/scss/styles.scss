@@ -1,0 +1,126 @@
+/*** For all devices: ***/
+* {
+  padding: 3px;
+  box-sizing: border-box;
+  font-family: "Courier New", serif;
+}
+
+/* Menu */
+:link {
+  text-decoration: none;
+}
+
+/* For header */
+header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.photo {
+  flex: 40%;
+}
+
+#name-and-job-title {
+  flex: 60%;
+  flex-direction: row;
+}
+
+#my-photo {
+  width: 100%;
+}
+
+#name {
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 6vw;
+}
+
+#job-title {
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 3vw;
+}
+
+/* For main */
+#codeImg {
+  width: 100%;
+}
+
+#projects-title {
+  color: gray;
+}
+
+.project-img {
+  width: 100%;
+}
+
+.project-title {
+  text-transform: uppercase;
+  text-align: center;
+  color: #2d3c49;
+}
+
+.project-link {
+  text-align: center;
+  color: #7d97ad;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer {
+  text-align: center;
+}
+
+@media only screen and (max-width:415px) {
+
+  /*** For iPhone 6: ***/
+  .project {
+    width: 100%;
+  }
+
+  .menu {
+    font-size: 3vw;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+@media only screen and (min-width:415px) and (max-width:1024px) {
+
+  /*** For iPad: ***/
+  .project {
+    width: 50%;
+  }
+
+  .menu {
+    font-size: 3vw;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    height: 75px;
+    line-height: 75px;
+  }
+}
+
+@media only screen and (min-width:1025px) {
+
+  /*** For Laptop: ***/
+  .project {
+    width: 33.3%;
+  }
+
+  .menu {
+    font-size: 3vw;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+  }
+}
