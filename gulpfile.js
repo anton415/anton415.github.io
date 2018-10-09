@@ -20,3 +20,5 @@ gulp.task('watch', function() {
   gulp.watch('stylesheets/scss/*.scss', 'styles');
   gulp.watch('img/*', 'images');
 });
+
+gulp.task('default', gulp.parallel('styles', 'images', 'watch'));
