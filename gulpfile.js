@@ -15,3 +15,8 @@ gulp.task('images', function() {
     .pipe(imagemin())
     .pipe(gulp.dest('dist/img'));
 });
+
+gulp.task('watch', function() {
+  gulp.watch('stylesheets/scss/*.scss', 'styles');
+  gulp.watch('img/*', 'images');
+});
