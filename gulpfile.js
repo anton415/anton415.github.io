@@ -3,11 +3,12 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var myth = require('gulp-myth');
 var imagemin = require('gulp-imagemin');
+var sass = require('gulp-sass');
 
 gulp.task('styles', function() {
   return gulp.src('stylesheets/scss/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('stylesheets/css'));
 });
 
 gulp.task('images', function() {
@@ -21,4 +22,5 @@ gulp.task('watch', function() {
   gulp.watch('img/*', 'images');
 });
 
-gulp.task('default', gulp.parallel('styles', 'images', 'watch'));
+// TODO: Error. 'TypeError: gulp.parallel is not a function'.
+// gulp.task('default', gulp.parallel('styles', 'images', 'watch'));
