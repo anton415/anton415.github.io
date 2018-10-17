@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/anton415/anton415.github.io#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1"
   }
 }
