@@ -5,6 +5,16 @@
   font-family: "Courier New", serif;
 }
 
+.button {
+  border-radius: 5px;
+  background-image: linear-gradient(to top, rgb(207, 207, 207) 16%, rgb(252, 252, 252) 79%);
+  border: 1px solid #000;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+}
+
 /* Blog */
 .article-header {
   font-weight: bold;
@@ -116,14 +126,6 @@ footer {
 @media only screen and (min-width:1025px) {
 
   /*** For Laptop: ***/
-  .photo {
-    flex: 10%;
-  }
-
-  #name-and-job-title {
-    flex: 60%;
-    flex-direction: row;
-  }
 
   #my-photo {
     width: 30%;
@@ -146,11 +148,13 @@ footer {
   }
 
   .menu {
-    font-size: 3vw;
+    font-size: 2vw;
     background-color: gray;
     color: white;
     text-align: center;
     height: 100px;
     line-height: 100px;
   }
+
+
 }
