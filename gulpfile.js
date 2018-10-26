@@ -17,7 +17,7 @@ gulp.task('watch', function() {
   gulp.watch('./app/blog/blog.html').on('change', reload);
   gulp.watch('./app/projects/projects.html').on('change', reload);
   gulp.watch('./app/stylesheets/css/styles.css').on('change', reload);
-  gulp.watch('./app/*').on('change', reload);
+  gulp.watch('./app/info/info.html').on('change', reload);
 });
 
 gulp.task('default', ['browser-sync', 'watch']);
