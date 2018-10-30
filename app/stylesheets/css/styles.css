@@ -13,6 +13,29 @@
   text-align: center;
   width: 200px; }
 
+/* Animated Buttons - "Pressed Effect" */
+.button {
+  width: 100%;
+  background-image: linear-gradient(to top, lightblue 16%, lightblue 79%);
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: blue;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: blue}
+
+.button:active {
+  background-color: blue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 /* Blog */
 .article-header {
   font-weight: bold; }
