@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A. Serdyuchenko</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/app/stylesheets/css/styles.css">
+    <link rel="stylesheet" href="/app/stylesheets/css/menu.css">
+
+    <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/app/script/include_footer.js"></script>
-    <meta charset="UTF-8">
-    <title>A. Serdyuchenko</title>
-    <link rel="stylesheet" href="/app/stylesheets/css/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/app/script/menu.js"></script>
+
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="/app/img/favicon.png">
+
+    <!-- INFO -->
     <meta name="author" content="Anton Serdyuchenko.">
     <meta name="description" content="Personal website.">
   </head>
   <body>
     <header>
+
       <div class="photo">
         <img id="my-photo" src="/app/img/aserdyuchenko.jpg" alt="my photo">
       </div>
       <div id="title">
-        <p id="name">Anton Serdyuchenko</p>
-        <p id="job-title">Software Engineer</p>
-      </div>
-    </header>
-    <menu>
 
-      <a href="./app/pdf/Serdyuchenko.pdf" download="Serdyuchenko_CV">
-        <button class="button">Download CV</button>
+        <div id="name">Anton Serdyuchenko</div>
+        <!-- <p id="job-title">Software Engineer</p> -->
+      </div>
+
+      <!-- Menu icon -->
+      <a class="icon" onclick="openNav()">
+        <div class='menu-icon'></div>
+        <div class='menu-icon'></div>
+        <div class='menu-icon'></div>
       </a>
-      <a id="info-button" href="/app/info/info.html">
-        <div class="menu">
-          Info
+    </header>
+
+    <a href="./app/pdf/Serdyuchenko.pdf" download="Serdyuchenko_CV">
+      <button class="button">Download CV</button>
+    </a>
+
+    <menu>
+      <!-- The overlay menu -->
+      <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation menu -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay menu content -->
+        <div class="overlay-content">
+          <a href="/app/info/info.html">Info</a>
+          <a href="/app/projects/projects.html">Projects</a>
+          <a href="/app/courses/courses.html">Courses</a>
+          <a href="/app/blog/blog.html">Blog</a>
         </div>
-      </a>
-      <a id="project-button" href="/app/projects/projects.html">
-        <div class="menu">
-          Projects
-        </div>
-      </a>
-      <a id="project-button" href="/app/courses/courses.html">
-        <div class="menu">
-          Courses
-        </div>
-      </a>
-      <a id="blog-button" href="/app/blog/blog.html">
-        <div class="menu">
-          Blog
-        </div>
-      </a>
+      </div>
+
     </menu>
     <div w3-include-html="/app/footer.html"></div>
   </body>
