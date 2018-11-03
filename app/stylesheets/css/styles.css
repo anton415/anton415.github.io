@@ -1,8 +1,14 @@
 /*** For all devices: ***/
 * {
-  padding: 3px;
   box-sizing: border-box;
-  font-family: "Courier New", serif; }
+  font-family: "Courier New", serif;
+}
+
+#main-info {
+  text-align: center;
+  font-size: 6vw;
+  padding: 10%;
+}
 
 .button {
   border-radius: 5px;
@@ -14,6 +20,10 @@
   width: 200px; }
 
 /* Animated Buttons - "Pressed Effect" */
+.icon {
+  margin-top: 10%;
+}
+
 .button {
   width: 100%;
   background-image: linear-gradient(to top, lightblue 16%, lightblue 79%);
@@ -57,17 +67,15 @@ header {
   flex-direction: row; }
 
 #my-photo {
-  width: 100%; }
+  width: 50%;
+  margin-left: 30%;
+}
 
 #name {
   text-transform: uppercase;
   text-align: right;
-  font-size: 6vw; }
-
-#job-title {
-  text-transform: uppercase;
-  text-align: right;
-  font-size: 3vw; }
+  font-size: 6vw;
+}
 
 /* For main */
 #codeImg {
@@ -96,9 +104,12 @@ footer {
   text-align: center; }
 
 @media only screen and (max-width: 415px) {
-  /*** For iPhone 6: ***/
+  /*** For iPhone 6. Because I use iPhone 6  :) ***/
+
+
   .project {
-    width: 100%; }
+    width: 100%;
+  }
 
   .menu {
     font-size: 5vw;
@@ -106,11 +117,15 @@ footer {
     color: white;
     text-align: center;
     height: 50px;
-    line-height: 50px; } }
+    line-height: 50px;
+  }
+}
+
 @media only screen and (min-width: 415px) and (max-width: 1024px) {
   /*** For iPad: ***/
   .project {
-    width: 50%; }
+    width: 50%;
+  }
 
   .menu {
     font-size: 3vw;
@@ -118,7 +133,10 @@ footer {
     color: white;
     text-align: center;
     height: 75px;
-    line-height: 75px; } }
+    line-height: 75px;
+  }
+}
+
 @media only screen and (min-width: 1025px) {
   /*** For Laptop: ***/
   #my-photo {
