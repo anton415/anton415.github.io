@@ -1,8 +1,10 @@
 /*** For all devices: ***/
 * {
   box-sizing: border-box;
-  font-family: "Courier New", serif;
+  font-family : 'Ubuntu', sans-serif;
+
 }
+
 
 #main-info {
   text-align: center;

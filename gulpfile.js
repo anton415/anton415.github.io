@@ -22,7 +22,7 @@ gulp.task('watch', function() {
 
   // CSS
   gulp.watch('./app/stylesheets/css/styles.css').on('change', reload);
-  gulp.watch('./app/stylesheets/css/styles.css').on('change', reload);
+  gulp.watch('./app/stylesheets/css/menu.css').on('change', reload);
 
   // JS
   gulp.watch('./app/script/include_footer.js').on('change', reload);
