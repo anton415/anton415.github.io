@@ -19,6 +19,7 @@ gulp.task('watch', function() {
   gulp.watch('./app/projects/projects.html').on('change', reload);
   gulp.watch('./app/courses/courses.html').on('change', reload);
   gulp.watch('./app/info/info.html').on('change', reload);
+  gulp.watch('./app/footer.html').on('change', reload);
 
   // CSS
   gulp.watch('./app/stylesheets/css/styles.css').on('change', reload);
