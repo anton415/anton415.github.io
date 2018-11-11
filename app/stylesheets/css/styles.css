@@ -99,15 +99,19 @@ header {
 
 .projects {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
+/************** Footer **************/
 footer {
-  text-align: center; }
+  text-align: center;
+  position:absolute;
+  bottom:0;
+  width: 100%;
+}
 
 @media only screen and (max-width: 415px) {
   /*** For iPhone 6. Because I use iPhone 6  :) ***/
-
-
   .project {
     width: 100%;
   }
@@ -162,4 +166,6 @@ footer {
     color: white;
     text-align: center;
     height: 100px;
-    line-height: 100px; } }
+    line-height: 100px;
+  }
+}
