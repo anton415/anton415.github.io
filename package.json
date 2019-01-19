@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/anton415/anton415.github.io.git",
   "author": "Anton Serdyuchenko <anton415@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.7.0"
+  }
 }
