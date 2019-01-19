@@ -1,0 +1,9 @@
+{
+  "name": "anton415",
+  "version": "2.0.0",
+  "description": "Personal websit. Version 2: React.",
+  "main": "index.js",
+  "repository": "https://github.com/anton415/anton415.github.io.git",
+  "author": "Anton Serdyuchenko <anton415@gmail.com>",
+  "license": "MIT"
+}
