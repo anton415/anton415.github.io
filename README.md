@@ -5,6 +5,8 @@ This github page for portfolio site.
   My page.
 </a>
 
+To run this project, use "yarn install".
+
 LICENSE:
 The content of this project itself is licensed under the
 Creative Commons Attribution 3.0 Unported license, and the underlying
