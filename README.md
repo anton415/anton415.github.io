@@ -5,11 +5,6 @@ This github page for portfolio site.
   My page.
 </a>
 
-If you want to run this site local, use this comand in terminal:
-```bash
-gulp
-```
-
 LICENSE:
 The content of this project itself is licensed under the
 Creative Commons Attribution 3.0 Unported license, and the underlying
