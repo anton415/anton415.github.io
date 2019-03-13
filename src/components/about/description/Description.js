@@ -5,16 +5,15 @@ import Avatar from 'utils/images/avatar.jpg'
 class Description extends Component {
   render() {
     return (
-      <div className="description">
-        <div className="card">
+      <div className="description card">
           <div className='intro-avatar'>
-            <img src={Avatar} alt='Avatar' />
+            <img className='avatar' src={Avatar} alt='Avatar' />
           </div>
 
           <div className='intro-description'>
-            <p className='my-name'>
+            <h3 className='my-name'>
               Hello, my name Anton Serdyuchenko.
-            </p>
+            </h3>
             <p>
               I looking for interesting project, where I can implement my front-end skills.
               I looking a project with stack: React, Redux, Git, Webpack, PWA.
@@ -22,11 +21,10 @@ class Description extends Component {
             <p>
               Right now, I work on position full stack developer in Central Bank.
               Maybe my full stack skills will be helpful for your project.
-              Right now I use: JSP, JS, Java, Spring, Hibernate, SQL.
+              Right now I using: JSP, JS, Java, Spring, Hibernate, SQL.
             </p>
           </div>
 
-        </div>
       </div>
     );
   }
