@@ -22,7 +22,7 @@ class Experience extends Component {
               Moscow, Russia
             </p>
             <p>
-              Since ctober 2017, I work in set of tasks "Accounting for the
+              Since October 2017, I work in set of tasks "Accounting for the
               application of measures of influence to shareholders (participants)
               of KO and other persons". As part of this complex, I perform the
               role of junior full stack developer. In the part of the front end

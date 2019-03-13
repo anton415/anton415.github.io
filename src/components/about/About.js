@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './About.css'
-import Experience from './experience/Experience'
-import Description from './description/Description'
+import Experience from './Experience'
+import Description from './Description'
 
 class About extends Component {
   render() {

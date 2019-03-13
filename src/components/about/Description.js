@@ -11,7 +11,7 @@ class Description extends Component {
           </div>
 
           <div className='intro-description'>
-            <h3 className='my-name'>
+            <h3 className='hello-words'>
               Hello, my name Anton Serdyuchenko.
             </h3>
             <p>
