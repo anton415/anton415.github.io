@@ -1,0 +1,41 @@
+/* For about */
+.avatar {
+  border-radius: 50%;
+  width: 100px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* For description */
+.description {
+  display: flex;
+}
+
+.intro-avatar {
+  margin: auto;
+}
+
+.intro-description {
+  padding: 10px;
+}
+
+.my-name {
+  text-align: center;
+}
+
+/* For experience */
+.job {
+  display: flex;
+}
+
+.company-logo {
+  padding: 10px;
+}

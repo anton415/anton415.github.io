@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './About.css'
+import Experience from './experience/Experience'
+import Description from './description/Description'
 
 class About extends Component {
   render() {
     return (
       <div className="about">
-        About page.
-        <div className="card">
-          Card.
-        </div>
+        <Description />
+        <Experience />
       </div>
     );
   }
