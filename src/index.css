@@ -20,11 +20,12 @@
 }
 
 .intro-avatar {
-  margin: auto;
+  margin: 1%;
 }
 
 .intro-description {
-  padding: 10px;
+  margin: auto;
+  text-align: -webkit-center;
 }
 
 .hello-words {
@@ -37,5 +38,5 @@
 }
 
 .company-logo {
-  padding: 10px;
+  margin: 1%;
 }
