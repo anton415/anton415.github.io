@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Menu from './menu/Menu';
+import MenuComponent from './menu/MenuComponent';
 import Home from './home/Home';
 import About from './about/About'
 
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
-          <Menu />
+          <MenuComponent />
           <Route exact path="/" component={Home} />
           <Route path="/about/" component={About} />
         </Fragment>
