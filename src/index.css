@@ -21,6 +21,10 @@
 }
 
 /* For about */
+.section {
+  padding: 2%;
+}
+
 .avatar {
   border-radius: 50%;
   width: 100px;
@@ -28,6 +32,7 @@
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
   padding: 10px;
   transition: 0.3s;
 }
@@ -39,6 +44,7 @@
 /* For description */
 .description {
   display: flex;
+  padding: inherit;
 }
 
 .intro-avatar {
@@ -55,10 +61,18 @@
 }
 
 /* For experience */
-.job {
-  display: flex;
+.logo {
+  width: 100px;
 }
 
-.company-logo {
-  margin: 1%;
+.companyDescription {
+  padding: inherit;
+}
+
+.skill {
+  background: grey;
+  color: white;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
 }
