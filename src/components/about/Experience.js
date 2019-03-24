@@ -6,13 +6,13 @@ class Experience extends Component {
   render() {
     // TODO: Add period of work experience.
     return (
-      <div className="experience">
+      <div className="experience section">
         <h3>Experience</h3>
         <div className="job card">
-          <div className='company-logo'>
-            <img src={cbrLogo} alt='Bank of Russia' />
+          <div className='logo'>
+            <img className='logo' src={cbrLogo} alt='Bank of Russia' />
           </div>
-          <div className='company-description'>
+          <div className='companyDescription'>
             <h4>Full stack developer</h4>
             <p>
               Bank of Russia
