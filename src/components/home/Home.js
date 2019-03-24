@@ -12,7 +12,7 @@ class Home extends Component {
           You can download my CV or <Link to="/about/">see more information</Link>.
         </p>
       </div>
-    );
+    )
   }
 }
 
