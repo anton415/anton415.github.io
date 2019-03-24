@@ -5,7 +5,7 @@ import Avatar from 'utils/images/avatar.jpg'
 class Description extends Component {
   render() {
     return (
-      <div className="description card">
+      <div className="description card section">
           <div className='intro-avatar'>
             <img className='avatar' src={Avatar} alt='Avatar' />
           </div>
