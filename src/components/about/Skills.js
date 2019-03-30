@@ -3,16 +3,16 @@ import React, { Component } from 'react'
 class Skills extends Component {
   render() {
     return (
-      <div className="skills section">
+      <div className="section">
         <h3>Skills</h3>
-        <div className="card">
-          <span class="skill">React</span>
-          <span class="skill">Redux</span>
-          <span class="skill">React Native</span>
-          <span class="skill">Git</span>
-          <span class="skill">PWA</span>
-          <span class="skill">Java</span>
-          <span class="skill">SQL</span>
+        <div className="skills card">
+          <span className="skill">React</span>
+          <span className="skill">Redux</span>
+          <span className="skill">React Native</span>
+          <span className="skill">Git</span>
+          <span className="skill">PWA</span>
+          <span className="skill">Java</span>
+          <span className="skill">SQL</span>
         </div>
       </div>
     )

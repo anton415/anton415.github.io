@@ -69,6 +69,11 @@
   padding: inherit;
 }
 
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .skill {
   background: grey;
   color: white;
