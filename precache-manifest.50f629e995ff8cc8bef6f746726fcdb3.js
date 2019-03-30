@@ -16,23 +16,27 @@ self.__precacheManifest = [
     "url": "/static/media/avatar.cef944fb.jpg"
   },
   {
+    "revision": "85e932796ce4fcdabdf0c286f2b13faa",
+    "url": "/static/media/Serdyuchenko.85e93279.pdf"
+  },
+  {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "e14598de0b3cbb3b61c2",
-    "url": "/static/js/main.e14598de.chunk.js"
+    "revision": "da654b631ff0d6bf7cae",
+    "url": "/static/js/main.da654b63.chunk.js"
   },
   {
-    "revision": "9b336f410c9f6467dafd",
-    "url": "/static/js/2.9b336f41.chunk.js"
+    "revision": "768a7fe8290fc33a77cf",
+    "url": "/static/js/2.768a7fe8.chunk.js"
   },
   {
-    "revision": "e14598de0b3cbb3b61c2",
-    "url": "/static/css/main.1a82dfa6.chunk.css"
+    "revision": "da654b631ff0d6bf7cae",
+    "url": "/static/css/main.90de481a.chunk.css"
   },
   {
-    "revision": "4420f6bab228b10639177bf940b63a37",
+    "revision": "59ce2148269095140302744ee25c24ab",
     "url": "/index.html"
   }
 ];
