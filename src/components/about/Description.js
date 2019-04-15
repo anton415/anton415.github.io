@@ -15,13 +15,11 @@ class Description extends Component {
               Hello, my name Anton Serdyuchenko.
             </h3>
             <p>
-              I looking for interesting project, where I can implement my front-end skills.
-              I looking a project with stack: React, Redux, Git, Webpack, PWA.
+              I work as a Full stack developer at the Central Bank. 
+              I use the following technologies: JSP, JS, Java, Spring, Hibernate, SQL, Git.
             </p>
             <p>
-              Right now, I work on position full stack developer in Central Bank.
-              Maybe my full stack skills will be helpful for your project.
-              Right now I using: JSP, JS, Java, Spring, Hibernate, SQL.
+              I independently study the following technologies: React, Redux, Webpack, PWA.
             </p>
           </div>
 
