@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Description from '../about/Description'
+import Footer from '../footer/Footer'
 import CV from 'utils/pdf/Serdyuchenko.pdf'
 import { NavLink } from 'react-router-dom'
 
@@ -16,6 +17,7 @@ class Home extends Component {
           or
           <Link to="/about/"> see more information</Link>.
         </div>
+        <Footer />
       </div>
     )
   }
