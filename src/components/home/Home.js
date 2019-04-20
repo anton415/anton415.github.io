@@ -14,11 +14,11 @@ class Home extends Component {
           <Description />
           <br />
           You can download
-          <NavLink to={CVShort} target='_blank' className='nav-link'> short </NavLink>
+          <NavLink to={CVShort} target='_blank' download='SerdyuchenkoAN' title='SerdyuchenkoAN CV short' className='nav-link'> short </NavLink>
           or
-          <NavLink to={CVLong} target='_blank' className='nav-link'> long </NavLink>
+          <NavLink to={CVLong} target='_blank' download='SerdyuchenkoAN' title='SerdyuchenkoAN CV long' className='nav-link'> long </NavLink>
           version of my CV. And you can see more information in
-          <Link to="/about/"> about page</Link>
+          <Link to='/about/'  title='About page'> about page</Link>
           .
         </main>
         <Footer />
