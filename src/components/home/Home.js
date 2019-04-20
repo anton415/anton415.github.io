@@ -10,9 +10,9 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Description />
-        <br />
-        <div className='hello-words'>
+        <main className='hello-words' role='main'>
+          <Description />
+          <br />
           You can download
           <NavLink to={CVShort} target='_blank' className='nav-link'> short </NavLink>
           or
@@ -20,7 +20,7 @@ class Home extends Component {
           version of my CV. And you can see more information in
           <Link to="/about/"> about page</Link>
           .
-        </div>
+        </main>
         <Footer />
       </div>
     )
