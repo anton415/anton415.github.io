@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Description from '../about/Description'
 import Footer from '../footer/Footer'
-import CV from 'utils/pdf/Serdyuchenko.pdf'
+import CVShort from 'utils/pdf/SerdyuchenkoAN_CV_short_version.pdf'
+import CVLong from 'utils/pdf/SerdyuchenkoAN_CV_long_version.pdf'
 import { NavLink } from 'react-router-dom'
 
 class Home extends Component {
@@ -12,10 +13,13 @@ class Home extends Component {
         <Description />
         <br />
         <div className='hello-words'>
-          You can
-          <NavLink to={CV} target='_blank' className='nav-link'> download my CV </NavLink>
+          You can download
+          <NavLink to={CVShort} target='_blank' className='nav-link'> short </NavLink>
           or
-          <Link to="/about/"> see more information</Link>.
+          <NavLink to={CVLong} target='_blank' className='nav-link'> long </NavLink>
+          version of my CV. And you can see more information in
+          <Link to="/about/"> about page</Link>
+          .
         </div>
         <Footer />
       </div>
