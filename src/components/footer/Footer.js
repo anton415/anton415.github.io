@@ -4,7 +4,7 @@ import { Icon } from 'semantic-ui-react'
 class Footer extends Component {
   render() {
     return (
-      <div className='footer'>
+      <footer className='footer'>
         <a href='https://www.linkedin.com/in/antonserdyuchenko/'>
           <Icon.Group size='big'>
             <Icon name='linkedin' />
@@ -16,7 +16,7 @@ class Footer extends Component {
             <Icon name='github' />
           </Icon.Group>
         </a>
-      </div>
+      </footer>
     )
   }
 }
