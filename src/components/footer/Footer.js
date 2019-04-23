@@ -4,7 +4,7 @@ import { Icon } from 'semantic-ui-react'
 class Footer extends Component {
   render() {
     return (
-      <footer className='footer'>
+      <footer className='footer' style={styles}>
         <a href='https://www.linkedin.com/in/antonserdyuchenko/'>
           <Icon.Group size='big'>
             <Icon name='linkedin' />
@@ -19,6 +19,14 @@ class Footer extends Component {
       </footer>
     )
   }
+}
+
+const styles = {
+  position: 'fixed',
+  left: 0,
+  bottom: '10px',
+  width: '100%',
+  textAlign: 'center'
 }
 
 export default Footer
