@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/SerdyuchenkoAN_CV_short_version.85e93279.pdf"
   },
   {
-    "revision": "1003fb4a5070db4ff6fb",
+    "revision": "91b539cc57b9c93982d2",
     "url": "/static/css/main.fee68e04.chunk.css"
   },
   {
@@ -12,16 +12,16 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "f06453099527d68f5d3c",
-    "url": "/static/js/2.f0645309.chunk.js"
+    "revision": "230c5702ed20144c8900",
+    "url": "/static/js/2.230c5702.chunk.js"
   },
   {
     "revision": "cef944fbc98ddcf14c3b8184784a7cab",
     "url": "/static/media/avatar.cef944fb.jpg"
   },
   {
-    "revision": "1003fb4a5070db4ff6fb",
-    "url": "/static/js/main.1003fb4a.chunk.js"
+    "revision": "91b539cc57b9c93982d2",
+    "url": "/static/js/main.91b539cc.chunk.js"
   },
   {
     "revision": "b4df4b5fd23225c2d8c27e0d03c2bd49",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/static/media/udacity-logo.5df1bb3f.svg"
   },
   {
-    "revision": "d31a9ca9fd7f77e4656f1a5ffa14e82a",
+    "revision": "c1766537fa52bbb404afe33c522b0373",
     "url": "/index.html"
   }
 ];
