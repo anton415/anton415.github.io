@@ -5,13 +5,14 @@ import Home from './home/Home'
 import About from './about/About'
 import ReactGA from 'react-ga'
 
-function initializeReactGA() {
-  ReactGA.initialize(process.env.secure.GOOGLE_ANALYTICS_ID)
-  ReactGA.pageview('/')
-}
-
 class App extends Component {
   render() {
+    function initializeReactGA() {
+      console.log('Initialize React GA.');
+      ReactGA.initialize(process.env.secure.GOOGLE_ANALYTICS_ID)
+      ReactGA.pageview('/')
+    }
+
     return (
       <Router>
         <Fragment>
