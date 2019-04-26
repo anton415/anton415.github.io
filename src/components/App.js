@@ -6,13 +6,15 @@ import About from './about/About'
 import ReactGA from 'react-ga'
 
 class App extends Component {
-  render() {
-    function initializeReactGA() {
-      console.log('Initialize React GA.');
-      ReactGA.initialize(process.env.secure.GOOGLE_ANALYTICS_ID)
-      ReactGA.pageview('/')
-    }
 
+  componentWillMount = () => {
+    console.log('Initialize React GA.');
+    console.log('GOOGLE_ANALYTICS_ID: ', process.env.REACT_APP_SECRET);
+    ReactGA.initialize(process.env.REACT_APP_SECRET)
+    ReactGA.pageview('/')
+  }
+
+  render() {
     return (
       <Router>
         <Fragment>
