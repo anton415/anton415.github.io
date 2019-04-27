@@ -8,8 +8,6 @@ import ReactGA from 'react-ga'
 class App extends Component {
 
   componentWillMount = () => {
-    console.log('Initialize React GA.');
-    console.log('GOOGLE_ANALYTICS_ID: ', process.env.REACT_APP_SECRET);
     ReactGA.initialize(process.env.REACT_APP_SECRET)
     ReactGA.pageview('/')
   }
