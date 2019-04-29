@@ -1,5 +1,5 @@
 /* For about */
-.section {
+/* .section {
   padding: 2%;
 }
 
@@ -17,27 +17,23 @@
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
+} */
 /* For description */
-.description {
+/* .description {
   display: flex;
   padding: inherit;
-}
-
-.intro-avatar {
+} */
+/* .intro-avatar {
   margin: 1%;
-}
-
-.intro-description {
+} */
+/* .intro-description {
   margin: auto;
   text-align: -webkit-center;
 }
 
 .hello-words {
   text-align: center;
-}
-
+} */
 /* For experience */
 .logo {
   width: 100px;
