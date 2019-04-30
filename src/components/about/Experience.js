@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import cbrLogo from 'utils/images/cbr-logo.svg'
 
 class Experience extends Component {
 
   render() {
-    // TODO: Add period of work experience.
     return (
-      <div className="experience section">
+      <div className='section' style={styles.section}>
         <h3>Experience</h3>
-        <div className="job card">
-          <div className='logo'>
-            <img className='logo' src={cbrLogo} alt='Bank of Russia' />
+        <div className='card' style={styles.card}>
+          <div className='logo' style={styles.logo}>
+            <img src={cbrLogo} alt='Bank of Russia' />
           </div>
-          <div className='companyDescription'>
+          <div className='companyDescription' style={styles.companyDescription}>
             <h4>Full stack developer</h4>
             <p>
               Bank of Russia
@@ -40,4 +39,22 @@ class Experience extends Component {
   }
 }
 
-export default Experience;
+const styles = {
+  logo: {
+    width: '100px'
+  },
+  companyDescription: {
+    padding: 'inherit'
+  },
+  card: {
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
+    display: 'flex',
+    padding: '10px',
+    transition: '0.3s'
+  },
+  section: {
+    padding: '2%'
+  }
+}
+
+export default Experience

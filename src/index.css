@@ -35,14 +35,13 @@
   text-align: center;
 } */
 /* For experience */
-.logo {
+/* .logo {
   width: 100px;
 }
 
 .companyDescription {
   padding: inherit;
-}
-
+} */
 .skills {
   display: flex;
   flex-wrap: wrap;
