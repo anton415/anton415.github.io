@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Avatar from 'utils/images/avatar.jpg'
-
+import { Container } from 'semantic-ui-react'
 
 class Description extends Component {
   render() {
@@ -10,7 +10,7 @@ class Description extends Component {
             <img className='avatar' src={Avatar} alt='Avatar' style={styles.avatar}/>
           </div>
 
-          <div className='introDescription' style={styles.introDescription}>
+          <Container>
             <h3 className='helloWords' style={styles.helloWords}>
               Hello, my name Anton Serdyuchenko.
             </h3>
@@ -21,7 +21,8 @@ class Description extends Component {
             <p>
               I independently study the following technologies: React, Redux, Webpack, PWA.
             </p>
-          </div>
+          </Container>
+
 
       </div>
     )
