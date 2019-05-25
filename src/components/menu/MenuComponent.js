@@ -13,6 +13,9 @@ class MenuComponent extends Component {
         <Link className="link" to="/about/" style={styles.link}>
             About
         </Link>
+        <Link className="link" to="/projects/" style={styles.link}>
+            Projects
+        </Link>
       </nav>
     )
   }
