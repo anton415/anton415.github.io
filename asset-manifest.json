@@ -1,13 +1,13 @@
 {
   "main.css": "/static/css/main.cba06274.chunk.css",
-  "main.js": "/static/js/main.efa5cef7.chunk.js",
-  "main.js.map": "/static/js/main.efa5cef7.chunk.js.map",
+  "main.js": "/static/js/main.8ea39dda.chunk.js",
+  "main.js.map": "/static/js/main.8ea39dda.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
   "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
-  "static/js/2.8b6a1722.chunk.js": "/static/js/2.8b6a1722.chunk.js",
-  "static/js/2.8b6a1722.chunk.js.map": "/static/js/2.8b6a1722.chunk.js.map",
+  "static/js/2.15dfe2c4.chunk.js": "/static/js/2.15dfe2c4.chunk.js",
+  "static/js/2.15dfe2c4.chunk.js.map": "/static/js/2.15dfe2c4.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.10d58ec17b61833e2554922e0980c928.js": "/precache-manifest.10d58ec17b61833e2554922e0980c928.js",
+  "precache-manifest.23685f4e15c12805a97372ef713f7124.js": "/precache-manifest.23685f4e15c12805a97372ef713f7124.js",
   "service-worker.js": "/service-worker.js",
   "static/css/main.cba06274.chunk.css.map": "/static/css/main.cba06274.chunk.css.map",
   "static/media/SerdyuchenkoAN_CV_long_version.pdf": "/static/media/SerdyuchenkoAN_CV_long_version.b4df4b5f.pdf",
@@ -15,5 +15,6 @@
   "static/media/avatar.jpg": "/static/media/avatar.cef944fb.jpg",
   "static/media/cbr-logo.svg": "/static/media/cbr-logo.b70dd767.svg",
   "static/media/mai-logo.svg": "/static/media/mai-logo.21d7490c.svg",
+  "static/media/random-quote-generator.png": "/static/media/random-quote-generator.4e74582d.png",
   "static/media/udacity-logo.svg": "/static/media/udacity-logo.5df1bb3f.svg"
 }
