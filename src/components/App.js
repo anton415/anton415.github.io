@@ -9,7 +9,7 @@ import ReactGA from 'react-ga'
 class App extends Component {
 
   componentWillMount = () => {
-    console.log('url: ', process.env.PUBLIC_URL);
+    console.log('url: ', process.env.REACT_APP_PUBLIC_URL);
     ReactGA.initialize(process.env.REACT_APP_SECRET)
     ReactGA.pageview('/')
   }
