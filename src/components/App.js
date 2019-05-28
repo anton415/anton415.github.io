@@ -9,7 +9,7 @@ import ReactGA from 'react-ga'
 class App extends Component {
 
   componentWillMount = () => {
-    console.log('url: ', process.env.REACT_APP_PUBLIC_URL);
+    console.log('url: ', process.env.PUBLIC_URL);
     ReactGA.initialize(process.env.REACT_APP_SECRET)
     ReactGA.pageview('/')
   }
@@ -19,9 +19,9 @@ class App extends Component {
       <Router>
         <Fragment>
           <MenuComponent />
-          <Route exact path={process.env.REACT_APP_PUBLIC_URL + '/'} component={Home} />
-          <Route path={process.env.REACT_APP_PUBLIC_URL + '/about'} component={About} />
-          <Route path={process.env.REACT_APP_PUBLIC_URL + '/projects'} component={Projects} />
+          <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
+          <Route path={process.env.PUBLIC_URL + '/about'} component={About} />
+          <Route path={process.env.PUBLIC_URL + '/projects'} component={Projects} />
         </Fragment>
       </Router>
     )
