@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Description from '../about/Description'
-import Footer from '../footer/Footer'
 import CVShort from 'utils/pdf/SerdyuchenkoAN_CV_short_version.pdf'
 import CVLong from 'utils/pdf/SerdyuchenkoAN_CV_long_version.pdf'
 import { NavLink } from 'react-router-dom'
@@ -37,9 +36,7 @@ class Home extends Component {
               .
             </p>
           </Container>
-
         </main>
-        <Footer />
       </div>
     )
   }

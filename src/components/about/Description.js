@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import Avatar from 'utils/images/avatar.jpg'
-import { Card, Item } from 'semantic-ui-react'
+import { Card, Item, Label, Icon } from 'semantic-ui-react'
 
 class Description extends Component {
   render() {
     return (
       <Card centered fluid>
-        <Card.Content header='Experience' />
         <Card.Content>
           <Item.Group>
             <Item>
@@ -25,6 +24,30 @@ class Description extends Component {
               </Item.Content>
             </Item>
           </Item.Group>
+        </Card.Content>
+        <Card.Content extra>
+        <Item.Group>
+          <Item>
+            <Item.Content>
+              <Item.Description>
+                <Label size='medium'>
+                  <a href='https://www.linkedin.com/in/antonserdyuchenko/'>
+                    <Icon.Group size='big'>
+                      <Icon name='linkedin' />
+                    </Icon.Group>
+                  </a>
+                </Label>
+                <Label size='medium'>
+                  <a href='https://github.com/anton415'>
+                    <Icon.Group size='big'>
+                      <Icon name='github' />
+                    </Icon.Group>
+                  </a>
+                </Label>
+              </Item.Description>
+            </Item.Content>
+          </Item>
+        </Item.Group>
         </Card.Content>
       </Card>
     )
