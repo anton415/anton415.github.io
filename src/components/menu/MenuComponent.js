@@ -1,41 +1,46 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { Menu } from 'semantic-ui-react'
 
 class MenuComponent extends Component {
+  state = {
+    activeItem: 'home'
+  }
+
+  handleItemClick = (e, { name }) => {
+    this.setState({
+      activeItem: name
+    })
+  }
 
   render() {
-
+    const { activeItem } = this.state
     return (
-      <nav className="menuComponent" style={styles.menuComponent}>
-        <Link className="link" to="/" style={styles.link}>
-            Home
-        </Link>
-        <Link className="link" to="/about/" style={styles.link}>
-            About
-        </Link>
-        <Link className="link" to="/projects/" style={styles.link}>
-            Projects
-        </Link>
-      </nav>
-    )
-  }
-}
+      <Menu inverted>
+        <Menu.Item
+          as={ Link }
+          name='home'
+          to='/'
+          active={activeItem === 'home'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={ Link }
+          name='about'
+          to='/about/'
+          active={activeItem === 'about'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={ Link }
+          name='projects'
+          to='/projects/'
+          active={activeItem === 'projects'}
+          onClick={this.handleItemClick}
+        />
+      </Menu>
 
-const styles = {
-  menuComponent: {
-    backgroundColor: '#333',
-    display: 'flex',
-    listStyleType: 'none',
-    margin: 0,
-    overflow: 'hidden',
-    padding: 0
-  },
-  link: {
-    color: 'white',
-    display: 'block',
-    padding: '14px 16px',
-    textAlign: 'center',
-    textDecoration: 'none'
+    )
   }
 }
 
