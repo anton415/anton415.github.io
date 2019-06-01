@@ -19,9 +19,9 @@ class App extends Component {
       <Router basename='/'>
         <Fragment>
           <MenuComponent />
-          <Route exact path='/' component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/projects' component={Projects} />
+          <Route exact path={process.env.REACT_APP_PUBLIC_URL + '/'} component={Home} />
+          <Route path={process.env.REACT_APP_PUBLIC_URL + '/about'} component={About} />
+          <Route path={process.env.REACT_APP_PUBLIC_URL + '/projects'} component={Projects} />
         </Fragment>
       </Router>
     )
