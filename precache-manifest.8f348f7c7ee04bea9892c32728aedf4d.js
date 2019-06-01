@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/SerdyuchenkoAN_CV_long_version.b4df4b5f.pdf"
   },
   {
-    "revision": "5cdcf1bea1a1dba5908e",
+    "revision": "1eedbcbdb11a1bdb7e76",
     "url": "/static/css/main.cba06274.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "e3b0427195e728c108ca",
-    "url": "/static/js/2.e3b04271.chunk.js"
+    "revision": "c30731c9c5e35e430ae9",
+    "url": "/static/js/2.c30731c9.chunk.js"
   },
   {
     "revision": "cef944fbc98ddcf14c3b8184784a7cab",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/static/media/SerdyuchenkoAN_CV_short_version.85e93279.pdf"
   },
   {
-    "revision": "5cdcf1bea1a1dba5908e",
-    "url": "/static/js/main.5cdcf1be.chunk.js"
+    "revision": "1eedbcbdb11a1bdb7e76",
+    "url": "/static/js/main.1eedbcbd.chunk.js"
   },
   {
     "revision": "b70dd767e8354a856eafa4b806161422",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/static/media/random-quote-generator.4e74582d.png"
   },
   {
-    "revision": "8ad256b790be183c3a0d6dc57836a211",
+    "revision": "394d605c0321e7a2569551202bb5c74f",
     "url": "/index.html"
   }
 ];
