@@ -9,14 +9,13 @@ import ReactGA from 'react-ga'
 class App extends Component {
 
   componentWillMount = () => {
-    console.log('url: ', process.env.REACT_APP_PUBLIC_URL);
     ReactGA.initialize(process.env.REACT_APP_SECRET)
     ReactGA.pageview('/')
   }
 
   render() {
     return (
-      <Router basename={process.env.REACT_APP_PUBLIC_URL}>
+      <Router>
         <Fragment>
           <MenuComponent />
           <Route exact path='/' component={Home} />
