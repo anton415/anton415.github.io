@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename='/'>
+      <Router basename={process.env.REACT_APP_PUBLIC_URL}>
         <Fragment>
           <MenuComponent />
           <Route exact path={process.env.REACT_APP_PUBLIC_URL + '/'} component={Home} />
