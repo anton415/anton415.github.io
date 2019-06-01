@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/SerdyuchenkoAN_CV_long_version.b4df4b5f.pdf"
   },
   {
-    "revision": "d5ce3174c40597cc2dc4",
+    "revision": "d9d21c34d7c3f79f1a1a",
     "url": "/static/css/main.cba06274.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/static/media/SerdyuchenkoAN_CV_short_version.85e93279.pdf"
   },
   {
-    "revision": "d5ce3174c40597cc2dc4",
-    "url": "/static/js/main.d5ce3174.chunk.js"
+    "revision": "d9d21c34d7c3f79f1a1a",
+    "url": "/static/js/main.d9d21c34.chunk.js"
   },
   {
     "revision": "b70dd767e8354a856eafa4b806161422",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/static/media/random-quote-generator.4e74582d.png"
   },
   {
-    "revision": "97f4a25b9ceabb3dbb3ccb0f1514c9c8",
+    "revision": "2debc7f2f20219a3a237bd9d7ca5f6ce",
     "url": "/index.html"
   }
 ];
