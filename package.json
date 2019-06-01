@@ -2,7 +2,7 @@
   "name": "anton415",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://serdyuchenko.com/",
+  "homepage": "https://serdyuchenko.com",
   "dependencies": {
     "dotenv": "^7.0.0",
     "gh-pages": "^2.0.1",
