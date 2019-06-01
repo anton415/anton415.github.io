@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Router, Route, browserHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import MenuComponent from './menu/MenuComponent'
 import Home from './home/Home'
 import About from './about/About'
@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router history={browserHistory}>
+      <Router>
         <Fragment>
           <MenuComponent />
           <Route exact path='/' component={Home} />
