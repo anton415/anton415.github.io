@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { Router, Route, browserHistory } from 'react-router-dom'
 import MenuComponent from './menu/MenuComponent'
 import Home from './home/Home'
 import About from './about/About'
@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename='/'>
+      <Router history={browserHistory}>
         <Fragment>
           <MenuComponent />
           <Route exact path='/' component={Home} />
