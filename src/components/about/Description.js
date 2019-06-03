@@ -18,7 +18,7 @@ class Description extends Component {
                     I use the following technologies: JSP, JS, Java, Spring, Hibernate, SQL, Git.
                   </p>
                   <p>
-                    I independently study the following technologies: React, Redux, Webpack, PWA.
+                    I study the following technologies: React, Redux, Webpack, PWA.
                   </p>
                 </Item.Description>
               </Item.Content>
