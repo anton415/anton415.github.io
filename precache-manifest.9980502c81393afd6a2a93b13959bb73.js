@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/static/media/random-quote-generator.4e74582d.png"
   },
   {
-    "revision": "642ae3da6ed5d9741b218d326d5fb0d9",
+    "revision": "c91ffa64292c5d9b4d41513b3ea43e46",
     "url": "/index.html"
   }
 ];
