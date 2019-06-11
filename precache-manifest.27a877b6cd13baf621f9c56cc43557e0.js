@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "b4df4b5fd23225c2d8c27e0d03c2bd49",
-    "url": "/static/media/SerdyuchenkoAN_CV_long_version.b4df4b5f.pdf"
+    "revision": "b70dd767e8354a856eafa4b806161422",
+    "url": "/static/media/cbr-logo.b70dd767.svg"
   },
   {
-    "revision": "cfe6eb1cf1eda50ebfe5",
+    "revision": "a7994a6b7238e246ada9",
     "url": "/static/css/main.cba06274.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "155e491c63abe872e997",
-    "url": "/static/js/2.155e491c.chunk.js"
+    "revision": "9ee0669151536b406edf",
+    "url": "/static/js/2.9ee06691.chunk.js"
   },
   {
     "revision": "aefa383b782b72927d5dffd04086803a",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/static/media/SerdyuchenkoAN_CV_short_version.85e93279.pdf"
   },
   {
-    "revision": "cfe6eb1cf1eda50ebfe5",
-    "url": "/static/js/main.cfe6eb1c.chunk.js"
+    "revision": "b4df4b5fd23225c2d8c27e0d03c2bd49",
+    "url": "/static/media/SerdyuchenkoAN_CV_long_version.b4df4b5f.pdf"
   },
   {
-    "revision": "b70dd767e8354a856eafa4b806161422",
-    "url": "/static/media/cbr-logo.b70dd767.svg"
+    "revision": "a7994a6b7238e246ada9",
+    "url": "/static/js/main.a7994a6b.chunk.js"
   },
   {
     "revision": "21d7490cff3c2955d0952225bc870e80",
@@ -48,7 +48,11 @@ self.__precacheManifest = [
     "url": "/static/media/list-pagination-and-filtering.0b2aa086.png"
   },
   {
-    "revision": "1238585bbc925cea9ac5287c0e960937",
+    "revision": "ec41edc36cfde72e1ab71b3211865151",
+    "url": "/static/media/interactive-form.ec41edc3.png"
+  },
+  {
+    "revision": "86207d79dcda16a7c9f326b37471e9cc",
     "url": "/index.html"
   }
 ];
