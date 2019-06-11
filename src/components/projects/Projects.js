@@ -3,6 +3,7 @@ import { Container, Divider } from 'semantic-ui-react';
 import { Card, Image } from 'semantic-ui-react'
 import rqgLogo from 'utils/images/project-images/random-quote-generator.png'
 import lpafLogo from 'utils/images/project-images/list-pagination-and-filtering.png'
+import ifLogo from 'utils/images/project-images/interactive-form.png'
 
 class Projects extends Component {
   render() {
@@ -21,21 +22,21 @@ class Projects extends Component {
         <Card.Group>
           <Card>
             <Image
-              src={rqgLogo}
+              src={ifLogo}
               ui={false}
-              href='http://serdyuchenko.com/random-quote-generator/'
+              href='http://serdyuchenko.com/interactive-form/'
             />
             <Card.Content>
-              <Card.Header>Random quote generetor</Card.Header>
+              <Card.Header>Interactive form</Card.Header>
               <Card.Meta>
-                <span className='date'>Since 24 May 2019</span>
+                <span className='date'>Since 8 June 2019</span>
               </Card.Meta>
               <Card.Description>
-                A random quote generetor. First project from TreeHouse.
+                Interactive form. Third project from TreeHouse.
               </Card.Description>
             </Card.Content>
             <Card.Content extra textAlign='center'>
-              <a href='https://github.com/anton415/random-quote-generator'>
+              <a href='https://github.com/anton415/interactive-form'>
                 Source code
               </a>
             </Card.Content>
@@ -57,6 +58,27 @@ class Projects extends Component {
             </Card.Content>
             <Card.Content extra textAlign='center'>
               <a href='https://github.com/anton415/list-pagination-and-filtering'>
+                Source code
+              </a>
+            </Card.Content>
+          </Card>
+          <Card>
+            <Image
+              src={rqgLogo}
+              ui={false}
+              href='http://serdyuchenko.com/random-quote-generator/'
+            />
+            <Card.Content>
+              <Card.Header>Random quote generetor</Card.Header>
+              <Card.Meta>
+                <span className='date'>Since 24 May 2019</span>
+              </Card.Meta>
+              <Card.Description>
+                A random quote generetor. First project from TreeHouse.
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra textAlign='center'>
+              <a href='https://github.com/anton415/random-quote-generator'>
                 Source code
               </a>
             </Card.Content>
