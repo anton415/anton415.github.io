@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Avatar from 'utils/images/avatar.jpg'
+import Avatar from 'utils/images/avatar.webp'
 import { Card, Item, Label, Icon } from 'semantic-ui-react'
 
 class Description extends Component {

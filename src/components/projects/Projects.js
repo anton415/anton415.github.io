@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Divider } from 'semantic-ui-react';
 import { Card, Image } from 'semantic-ui-react'
-import rqgLogo from 'utils/images/project-images/random-quote-generator.png'
-import lpafLogo from 'utils/images/project-images/list-pagination-and-filtering.png'
-import ifLogo from 'utils/images/project-images/interactive-form.png'
+import rqgLogo from 'utils/images/project-images/random-quote-generator.webp'
+import lpafLogo from 'utils/images/project-images/list-pagination-and-filtering.webp'
+import ifLogo from 'utils/images/project-images/interactive-form.webp'
 
 class Projects extends Component {
   render() {
