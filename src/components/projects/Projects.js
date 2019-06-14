@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Divider } from 'semantic-ui-react';
 import { Card, Image } from 'semantic-ui-react'
-import rqgLogo from 'utils/images/project-images/random-quote-generator.webp'
-import lpafLogo from 'utils/images/project-images/list-pagination-and-filtering.webp'
-import ifLogo from 'utils/images/project-images/interactive-form.webp'
+import rqgLogoWebp from 'utils/images/project-images/random-quote-generator.webp'
+import lpafLogoWebp from 'utils/images/project-images/list-pagination-and-filtering.webp'
+import ifLogoWebp from 'utils/images/project-images/interactive-form.webp'
+import rqgLogoPng from 'utils/images/project-images/random-quote-generator.png'
+import lpafLogoPng from 'utils/images/project-images/list-pagination-and-filtering.png'
+import ifLogoPng from 'utils/images/project-images/interactive-form.png'
 
 class Projects extends Component {
   render() {
@@ -22,7 +25,8 @@ class Projects extends Component {
         <Card.Group>
           <Card>
             <Image
-              src={ifLogo}
+              src={ifLogoWebp}
+              srcSet={ifLogoPng}
               ui={false}
               href='http://serdyuchenko.com/interactive-form/'
             />
@@ -43,7 +47,8 @@ class Projects extends Component {
           </Card>
           <Card>
             <Image
-              src={lpafLogo}
+              src={lpafLogoWebp}
+              srcSet={lpafLogoPng}
               ui={false}
               href='http://serdyuchenko.com/list-pagination-and-filtering/'
             />
@@ -64,7 +69,8 @@ class Projects extends Component {
           </Card>
           <Card>
             <Image
-              src={rqgLogo}
+              src={rqgLogoWebp}
+              srcSet={rqgLogoPng}
               ui={false}
               href='http://serdyuchenko.com/random-quote-generator/'
             />

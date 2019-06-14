@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Avatar from 'utils/images/avatar.webp'
+import AvatarJpg from 'utils/images/avatar.jpg'
+import AvatarWebp from 'utils/images/avatar.webp'
 import { Card, Item, Label, Icon } from 'semantic-ui-react'
 
 class Description extends Component {
@@ -9,7 +10,7 @@ class Description extends Component {
         <Card.Content>
           <Item.Group>
             <Item>
-              <Item.Image size='tiny' src={Avatar} />
+              <Item.Image size='tiny' src={AvatarWebp} srcSet={AvatarJpg}/>
               <Item.Content>
                 <Item.Header>Hello, my name Anton Serdyuchenko.</Item.Header>
                 <Item.Description>
