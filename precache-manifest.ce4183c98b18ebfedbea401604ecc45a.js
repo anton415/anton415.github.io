@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "21d7490cff3c2955d0952225bc870e80",
-    "url": "/static/media/mai-logo.21d7490c.svg"
+    "revision": "5df1bb3fcf073cc7022278498e55ffd6",
+    "url": "/static/media/udacity-logo.5df1bb3f.svg"
   },
   {
-    "revision": "2c9384d655800257982b",
+    "revision": "6ff200687e547f1a8e71",
     "url": "/static/css/main.cba06274.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "4b68c8fa369fe6a20021",
-    "url": "/static/js/2.4b68c8fa.chunk.js"
+    "revision": "a005281faa741015e3e9",
+    "url": "/static/js/2.a005281f.chunk.js"
   },
   {
     "revision": "aefa383b782b72927d5dffd04086803a",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/static/media/cbr-logo.b70dd767.svg"
   },
   {
-    "revision": "2c9384d655800257982b",
-    "url": "/static/js/main.2c9384d6.chunk.js"
+    "revision": "21d7490cff3c2955d0952225bc870e80",
+    "url": "/static/media/mai-logo.21d7490c.svg"
   },
   {
-    "revision": "5df1bb3fcf073cc7022278498e55ffd6",
-    "url": "/static/media/udacity-logo.5df1bb3f.svg"
+    "revision": "6ff200687e547f1a8e71",
+    "url": "/static/js/main.6ff20068.chunk.js"
   },
   {
     "revision": "3f6df4ee773777ecbc1007c0f7518ec5",
@@ -68,7 +68,15 @@ self.__precacheManifest = [
     "url": "/static/media/interactive-form.69d88a78.png"
   },
   {
-    "revision": "a59ed72e3178c7d8e52e708dddb82568",
+    "revision": "38ad14e3ab85504301f4690bdb653341",
+    "url": "/static/media/oop-game-show-app.38ad14e3.webp"
+  },
+  {
+    "revision": "657f125b59f1e4de79028057a5d9e04b",
+    "url": "/static/media/oop-game-show-app.657f125b.png"
+  },
+  {
+    "revision": "d8b84761e84d7a830bf461b50598f9a7",
     "url": "/index.html"
   }
 ];
