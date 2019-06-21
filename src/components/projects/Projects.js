@@ -7,6 +7,8 @@ import ifLogoWebp from 'utils/images/project-images/interactive-form.webp'
 import rqgLogoPng from 'utils/images/project-images/random-quote-generator.png'
 import lpafLogoPng from 'utils/images/project-images/list-pagination-and-filtering.png'
 import ifLogoPng from 'utils/images/project-images/interactive-form.png'
+import ogsaWebp from 'utils/images/project-images/oop-game-show-app.webp'
+import ogsaPng from 'utils/images/project-images/oop-game-show-app.png'
 
 class Projects extends Component {
   render() {
@@ -23,6 +25,29 @@ class Projects extends Component {
         </Container>
         <Divider />
         <Card.Group>
+          <Card>
+            <Image
+              src={ogsaWebp}
+              srcSet={ogsaPng}
+              ui={false}
+              href='http://serdyuchenko.com/oop-game-show-app/'
+            />
+            <Card.Content>
+              <Card.Header>OOP Game Show App</Card.Header>
+              <Card.Meta>
+                <span className='date'>Since 20 June 2019</span>
+              </Card.Meta>
+              <Card.Description>
+                OOP Game Show App. Project 4 from Treehouse.
+                Full Stack Javascript learning path.
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra textAlign='center'>
+              <a href='https://github.com/anton415/oop-game-show-app/'>
+                Source code
+              </a>
+            </Card.Content>
+          </Card>
           <Card>
             <Image
               src={ifLogoWebp}
