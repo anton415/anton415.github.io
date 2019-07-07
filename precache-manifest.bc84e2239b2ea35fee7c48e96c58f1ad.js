@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/udacity-logo.5df1bb3f.svg"
   },
   {
-    "revision": "6ff200687e547f1a8e71",
+    "revision": "3cb8716af1d1e571f8d1",
     "url": "/static/css/main.cba06274.chunk.css"
   },
   {
@@ -40,32 +40,32 @@ self.__precacheManifest = [
     "url": "/static/media/mai-logo.21d7490c.svg"
   },
   {
-    "revision": "6ff200687e547f1a8e71",
-    "url": "/static/js/main.6ff20068.chunk.js"
+    "revision": "3cb8716af1d1e571f8d1",
+    "url": "/static/js/main.3cb8716a.chunk.js"
   },
   {
-    "revision": "3f6df4ee773777ecbc1007c0f7518ec5",
-    "url": "/static/media/random-quote-generator.3f6df4ee.webp"
+    "revision": "657c023eaaa46ba9816ed2645cdf2f46",
+    "url": "/static/media/random-quote-generator.657c023e.webp"
   },
   {
-    "revision": "66f7e16dec6fb3cdce45155d74513123",
-    "url": "/static/media/list-pagination-and-filtering.66f7e16d.webp"
+    "revision": "e3f39dece9101b63d23e6367d38620ee",
+    "url": "/static/media/list-pagination-and-filtering.e3f39dec.webp"
   },
   {
-    "revision": "a8e453bf351d707781d5d03db784be7c",
-    "url": "/static/media/interactive-form.a8e453bf.webp"
+    "revision": "16bf817c4b2b0496d803c240c8e52ac0",
+    "url": "/static/media/interactive-form.16bf817c.webp"
   },
   {
-    "revision": "7f986e65291fda6f908835b0eea057a9",
-    "url": "/static/media/random-quote-generator.7f986e65.png"
+    "revision": "40d2d40b3492c380cc1d64709dbf3b2f",
+    "url": "/static/media/random-quote-generator.40d2d40b.png"
   },
   {
-    "revision": "69bbda9f6b60b9d3706e49446bb5e20e",
-    "url": "/static/media/list-pagination-and-filtering.69bbda9f.png"
+    "revision": "0fd84f9b437f14f744228a564fcf9c23",
+    "url": "/static/media/list-pagination-and-filtering.0fd84f9b.png"
   },
   {
-    "revision": "69d88a7850bc45434071bfd8e7435553",
-    "url": "/static/media/interactive-form.69d88a78.png"
+    "revision": "af7471ff4130445b1af9df6dcbfa8b46",
+    "url": "/static/media/interactive-form.af7471ff.png"
   },
   {
     "revision": "38ad14e3ab85504301f4690bdb653341",
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/static/media/oop-game-show-app.657f125b.png"
   },
   {
-    "revision": "d8b84761e84d7a830bf461b50598f9a7",
+    "revision": "1ed8edc349a51a57efe00b9ab8d76d1c",
     "url": "/index.html"
   }
 ];
