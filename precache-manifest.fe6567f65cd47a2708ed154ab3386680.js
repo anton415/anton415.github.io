@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "5df1bb3fcf073cc7022278498e55ffd6",
-    "url": "/static/media/udacity-logo.5df1bb3f.svg"
+    "revision": "657c023eaaa46ba9816ed2645cdf2f46",
+    "url": "/static/media/random-quote-generator.657c023e.webp"
   },
   {
-    "revision": "3cb8716af1d1e571f8d1",
+    "revision": "764ca8ccdefc4d16d761",
     "url": "/static/css/main.cba06274.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "a005281faa741015e3e9",
-    "url": "/static/js/2.a005281f.chunk.js"
+    "revision": "c4b21025d13e9838b7c8",
+    "url": "/static/js/2.c4b21025.chunk.js"
   },
   {
     "revision": "aefa383b782b72927d5dffd04086803a",
@@ -40,12 +40,12 @@ self.__precacheManifest = [
     "url": "/static/media/mai-logo.21d7490c.svg"
   },
   {
-    "revision": "3cb8716af1d1e571f8d1",
-    "url": "/static/js/main.3cb8716a.chunk.js"
+    "revision": "5df1bb3fcf073cc7022278498e55ffd6",
+    "url": "/static/media/udacity-logo.5df1bb3f.svg"
   },
   {
-    "revision": "657c023eaaa46ba9816ed2645cdf2f46",
-    "url": "/static/media/random-quote-generator.657c023e.webp"
+    "revision": "764ca8ccdefc4d16d761",
+    "url": "/static/js/main.764ca8cc.chunk.js"
   },
   {
     "revision": "e3f39dece9101b63d23e6367d38620ee",
@@ -76,7 +76,15 @@ self.__precacheManifest = [
     "url": "/static/media/oop-game-show-app.657f125b.png"
   },
   {
-    "revision": "1ed8edc349a51a57efe00b9ab8d76d1c",
+    "revision": "2e8102d7c8ea50c4c73c3999bc507e39",
+    "url": "/static/media/public-api-requests.2e8102d7.webp"
+  },
+  {
+    "revision": "908d5c7400a5ebdbc60690f9f802820f",
+    "url": "/static/media/public-api-requests.908d5c74.png"
+  },
+  {
+    "revision": "d7f6079c54f847d7751d671a1a7a32eb",
     "url": "/index.html"
   }
 ];
