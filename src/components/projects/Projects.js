@@ -9,6 +9,8 @@ import lpafLogoPng from 'utils/images/project-images/list-pagination-and-filteri
 import ifLogoPng from 'utils/images/project-images/interactive-form.png'
 import ogsaWebp from 'utils/images/project-images/oop-game-show-app.webp'
 import ogsaPng from 'utils/images/project-images/oop-game-show-app.png'
+import parWebp from 'utils/images/project-images/public-api-requests.webp'
+import parPng from 'utils/images/project-images/public-api-requests.png'
 
 class Projects extends Component {
   render() {
@@ -25,6 +27,30 @@ class Projects extends Component {
         </Container>
         <Divider />
         <Card.Group>
+          <Card>
+            <Image
+              src={parWebp}
+              srcSet={parPng}
+              ui={false}
+              href='https://serdyuchenko.com/public-api-requests/'
+            />
+            <Card.Content>
+              <Card.Header>Public API Requests</Card.Header>
+              <Card.Meta>
+                <span className='date'>Since 7 July 2019</span>
+              </Card.Meta>
+              <Card.Description>
+                Public API Requests.
+                Project 5 fom TreeHouse.
+                Full Stack Javascript learning path.
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra textAlign='center'>
+              <a href='https://github.com/anton415/public-api-requests/'>
+                Source code
+              </a>
+            </Card.Content>
+          </Card>
           <Card>
             <Image
               src={ogsaWebp}
