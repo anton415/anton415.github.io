@@ -4,12 +4,13 @@ import Description from '../about/Description'
 import CVShort from 'utils/pdf/SerdyuchenkoAN_CV_short_version.pdf'
 import CVLong from 'utils/pdf/SerdyuchenkoAN_CV_long_version.pdf'
 import { NavLink } from 'react-router-dom'
-import { Container } from 'semantic-ui-react'
+import { Container, Segment } from 'semantic-ui-react'
 
 class Home extends Component {
   render() {
     return (
       <div className="Home">
+        <Segment inverted textAlign='center' color='red'>The page is under construction.</Segment>
         <main className='hello-words' role='main'>
           <Description />
           <Container textAlign='center'>
