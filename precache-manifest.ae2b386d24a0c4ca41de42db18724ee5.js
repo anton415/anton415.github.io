@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "657c023eaaa46ba9816ed2645cdf2f46",
-    "url": "/static/media/random-quote-generator.657c023e.webp"
+    "revision": "b3515dae827bf24ede6b",
+    "url": "/static/css/main.cba06274.chunk.css"
   },
   {
-    "revision": "764ca8ccdefc4d16d761",
-    "url": "/static/css/main.cba06274.chunk.css"
+    "revision": "b3515dae827bf24ede6b",
+    "url": "/static/js/main.b3515dae.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "c4b21025d13e9838b7c8",
-    "url": "/static/js/2.c4b21025.chunk.js"
+    "revision": "68d513a1738bc34a8897",
+    "url": "/static/js/2.68d513a1.chunk.js"
   },
   {
     "revision": "aefa383b782b72927d5dffd04086803a",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/static/media/udacity-logo.5df1bb3f.svg"
   },
   {
-    "revision": "764ca8ccdefc4d16d761",
-    "url": "/static/js/main.764ca8cc.chunk.js"
+    "revision": "657c023eaaa46ba9816ed2645cdf2f46",
+    "url": "/static/media/random-quote-generator.657c023e.webp"
   },
   {
     "revision": "e3f39dece9101b63d23e6367d38620ee",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/static/media/public-api-requests.908d5c74.png"
   },
   {
-    "revision": "d7f6079c54f847d7751d671a1a7a32eb",
+    "revision": "40a50a3d92132fc4b364694227f9850f",
     "url": "/index.html"
   }
 ];
