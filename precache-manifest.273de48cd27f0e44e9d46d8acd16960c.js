@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "155a4760940e576949b0",
+    "revision": "7f43ad8b6d3a29f211e0",
     "url": "/static/css/main.cba06274.chunk.css"
   },
   {
-    "revision": "155a4760940e576949b0",
-    "url": "/static/js/main.155a4760.chunk.js"
+    "revision": "7f43ad8b6d3a29f211e0",
+    "url": "/static/js/main.7f43ad8b.chunk.js"
   },
   {
-    "revision": "fdfcfda2d9b1bf31db52",
-    "url": "/static/js/runtime~main.fdfcfda2.js"
+    "revision": "42ac5946195a7306e2a5",
+    "url": "/static/js/runtime~main.42ac5946.js"
   },
   {
-    "revision": "1591464bd2e02ce4ca52",
-    "url": "/static/js/2.1591464b.chunk.js"
+    "revision": "7f262d48494603144225",
+    "url": "/static/js/2.7f262d48.chunk.js"
   },
   {
     "revision": "aefa383b782b72927d5dffd04086803a",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/static/media/russian-king.3e24f779.webp"
   },
   {
-    "revision": "0a0a77c662e92b0712ced75a44709d24",
+    "revision": "89f800f6038c61d692db092b65e658ca",
     "url": "/index.html"
   }
 ];
