@@ -45,6 +45,13 @@ class Description extends Component {
                     </Icon.Group>
                   </a>
                 </Label>
+                <Label size='medium'>
+                  <a href='https://www.behance.net/anton415984f'>
+                    <Icon.Group size='big'>
+                      <Icon name='behance' />
+                    </Icon.Group>
+                  </a>
+                </Label>
               </Item.Description>
             </Item.Content>
           </Item>
