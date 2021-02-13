@@ -1,13 +1,13 @@
 {
   "main.css": "/static/css/main.cba06274.chunk.css",
-  "main.js": "/static/js/main.9a4ae590.chunk.js",
-  "main.js.map": "/static/js/main.9a4ae590.chunk.js.map",
+  "main.js": "/static/js/main.155a4760.chunk.js",
+  "main.js.map": "/static/js/main.155a4760.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
   "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
-  "static/js/2.524870fd.chunk.js": "/static/js/2.524870fd.chunk.js",
-  "static/js/2.524870fd.chunk.js.map": "/static/js/2.524870fd.chunk.js.map",
+  "static/js/2.1591464b.chunk.js": "/static/js/2.1591464b.chunk.js",
+  "static/js/2.1591464b.chunk.js.map": "/static/js/2.1591464b.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.1a80553d554ffec710de2af6935b3743.js": "/precache-manifest.1a80553d554ffec710de2af6935b3743.js",
+  "precache-manifest.376e79ec7398c94b42ce458ac5c71c0a.js": "/precache-manifest.376e79ec7398c94b42ce458ac5c71c0a.js",
   "service-worker.js": "/service-worker.js",
   "static/css/main.cba06274.chunk.css.map": "/static/css/main.cba06274.chunk.css.map",
   "static/media/SerdyuchenkoAN_CV_long_version.pdf": "/static/media/SerdyuchenkoAN_CV_long_version.b4df4b5f.pdf",
@@ -26,5 +26,7 @@
   "static/media/public-api-requests.png": "/static/media/public-api-requests.908d5c74.png",
   "static/media/random-quote-generator.png": "/static/media/random-quote-generator.40d2d40b.png",
   "static/media/random-quote-generator.webp": "/static/media/random-quote-generator.657c023e.webp",
+  "static/media/russian-king.webp": "/static/media/russian-king.3e24f779.webp",
+  "static/media/russian-king.png": "/static/media/russian-king.a1ceac6a.png",
   "static/media/udacity-logo.svg": "/static/media/udacity-logo.5df1bb3f.svg"
 }

@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "9a4ae590346e76c46655",
+    "revision": "155a4760940e576949b0",
     "url": "/static/css/main.cba06274.chunk.css"
   },
   {
-    "revision": "9a4ae590346e76c46655",
-    "url": "/static/js/main.9a4ae590.chunk.js"
+    "revision": "155a4760940e576949b0",
+    "url": "/static/js/main.155a4760.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "524870fd6347c9aa9447",
-    "url": "/static/js/2.524870fd.chunk.js"
+    "revision": "1591464bd2e02ce4ca52",
+    "url": "/static/js/2.1591464b.chunk.js"
   },
   {
     "revision": "aefa383b782b72927d5dffd04086803a",
@@ -84,7 +84,15 @@ self.__precacheManifest = [
     "url": "/static/media/public-api-requests.908d5c74.png"
   },
   {
-    "revision": "414e2a0b8ab0ba66e67b857c29ada374",
+    "revision": "a1ceac6a832df5dcc41e6b5346311c2d",
+    "url": "/static/media/russian-king.a1ceac6a.png"
+  },
+  {
+    "revision": "3e24f77987e5656bd8c788341bc01f63",
+    "url": "/static/media/russian-king.3e24f779.webp"
+  },
+  {
+    "revision": "0a0a77c662e92b0712ced75a44709d24",
     "url": "/index.html"
   }
 ];
