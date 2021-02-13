@@ -46,6 +46,13 @@ class Description extends Component {
                   </a>
                 </Label>
                 <Label size='medium'>
+                  <a href='https://stackoverflow.com/users/7037530/anton-serdyuchenko?tab=profile'>
+                    <Icon.Group size='big'>
+                      <Icon name='stack overflow' />
+                    </Icon.Group>
+                  </a>
+                </Label>
+                <Label size='medium'>
                   <a href='https://www.behance.net/anton415984f'>
                     <Icon.Group size='big'>
                       <Icon name='behance' />
