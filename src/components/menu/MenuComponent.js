@@ -38,6 +38,13 @@ class MenuComponent extends Component {
           active={activeItem === 'projects'}
           onClick={this.handleItemClick}
         />
+          <Menu.Item
+              as={ Link }
+              name='qr-code'
+              to='/qr-code/'
+              active={activeItem === 'qr-code'}
+              onClick={this.handleItemClick}
+          />
       </Menu>
 
     )
