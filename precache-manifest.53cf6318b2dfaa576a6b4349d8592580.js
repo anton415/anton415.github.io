@@ -1,19 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "e34a0791d5fdaee6ca3d",
+    "revision": "2e540a0f572561be518c",
     "url": "/static/css/main.be9cd952.chunk.css"
   },
   {
-    "revision": "e34a0791d5fdaee6ca3d",
-    "url": "/static/js/main.e34a0791.chunk.js"
+    "revision": "2e540a0f572561be518c",
+    "url": "/static/js/main.2e540a0f.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "b5250dc090394fc6fd66",
-    "url": "/static/js/2.b5250dc0.chunk.js"
+    "revision": "208f202d332536257437",
+    "url": "/static/js/2.208f202d.chunk.js"
+  },
+  {
+    "revision": "21d7490cff3c2955d0952225bc870e80",
+    "url": "/static/media/mai-logo.21d7490c.svg"
   },
   {
     "revision": "aefa383b782b72927d5dffd04086803a",
@@ -34,10 +38,6 @@ self.__precacheManifest = [
   {
     "revision": "b70dd767e8354a856eafa4b806161422",
     "url": "/static/media/cbr-logo.b70dd767.svg"
-  },
-  {
-    "revision": "21d7490cff3c2955d0952225bc870e80",
-    "url": "/static/media/mai-logo.21d7490c.svg"
   },
   {
     "revision": "5df1bb3fcf073cc7022278498e55ffd6",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/static/media/russian-king.3e24f779.webp"
   },
   {
-    "revision": "856552245b8f78d41205fa76b5cd5ae8",
+    "revision": "e135a557f36b48af8f3efd1b5c3062dd",
     "url": "/index.html"
   }
 ];
