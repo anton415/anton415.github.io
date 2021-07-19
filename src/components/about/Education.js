@@ -13,6 +13,32 @@ class Education extends Component {
             <Item>
               <Item.Image size='tiny' src={maiLogo} />
               <Item.Content>
+                <Item.Header>Master, Economic Security Management</Item.Header>
+                <Item.Description>
+                  <p>
+                    Moscow Aviation Institute
+                    <br />
+                    2020 - 2022
+                    <br />
+                    Moscow, Russia
+                  </p>
+                  <ul>
+                    <li>
+                      The main goal of this program is to study the theoretical foundations of economic security
+                      management in an organization and to master practical tools and methods of work in this area of
+                      management.
+                    </li>
+                    <li>
+                      The program is aimed at studying the sustainability of the economic development of
+                      industrial enterprises, banks, medium and small businesses and the service sector.
+                    </li>
+                  </ul>
+                </Item.Description>
+              </Item.Content>
+            </Item>
+            <Item>
+              <Item.Image size='tiny' src={maiLogo} />
+              <Item.Content>
                 <Item.Header>Bachelor, Applied Informatics</Item.Header>
                 <Item.Description>
                   <p>
