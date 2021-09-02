@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "f21b3d6a1453b749e3a0",
+    "revision": "050826c2b1f1a20613e7",
     "url": "/static/css/main.be9cd952.chunk.css"
   },
   {
-    "revision": "f21b3d6a1453b749e3a0",
-    "url": "/static/js/main.f21b3d6a.chunk.js"
+    "revision": "050826c2b1f1a20613e7",
+    "url": "/static/js/main.050826c2.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/static/media/russian-king.3e24f779.webp"
   },
   {
-    "revision": "6ddea5b2986f622a0406b380bc1f8006",
+    "revision": "61b3cf06adf2779b39825ca280b2130b",
     "url": "/index.html"
   }
 ];
