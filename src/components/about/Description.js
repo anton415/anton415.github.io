@@ -15,11 +15,10 @@ class Description extends Component {
                 <Item.Header>Hello, my name Anton Serdyuchenko.</Item.Header>
                 <Item.Description>
                   <p>
-                    I work as a Full stack developer at the Central Bank.
-                    I use the following technologies: JSP, JS, Java, Spring, Hibernate, SQL, Git.
+                    Basically, I work with technologies: Java, CSS, Vaadin, Git, GitLab.
                   </p>
                   <p>
-                    I study the following technologies: React, Redux, Webpack, PWA.
+                    But also, sometimes I use: SQL, JS, React, Figma.
                   </p>
                 </Item.Description>
               </Item.Content>
