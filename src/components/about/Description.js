@@ -73,6 +73,13 @@ class Description extends Component {
                     </Icon.Group>
                   </a>
                 </Label>
+                <Label size='medium'>
+                  <a href='https://t.me/antonserdyuchenko'>
+                    <Icon.Group size='big'>
+                      <Icon name='telegram' />
+                    </Icon.Group>
+                  </a>
+                </Label>
               </Item.Description>
             </Item.Content>
           </Item>
