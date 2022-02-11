@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
-import { Container, Segment } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import Description from '../about/Description'
-import DownloadPdf from "../about/DownloadPdf";
+import Experience from "../about/Experience";
+import Skills from "../about/Skills";
+import Education from "../about/Education";
 
 class Home extends Component {
   render() {
     return (
-      <Container className="Home">
-        <Segment inverted textAlign='center' color='red'>The page is under construction.</Segment>
-        <Description />
-        <DownloadPdf />
+      <Container className="home" text >
+          <Description />
+          <Skills />
+          <Experience />
+          <Education />
       </Container>
     )
   }

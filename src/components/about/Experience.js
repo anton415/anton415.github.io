@@ -1,45 +1,47 @@
 import React, { Component } from 'react'
 import cbrLogo from 'utils/images/cbr-logo.svg'
-import { Card, Item } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 class Experience extends Component {
 
   render() {
     return (
-      <Card centered fluid>
-        <Card.Content header='Experience' />
-        <Card.Content>
-          <Item.Group>
-            <Item>
-              <Item.Image size='tiny' src={cbrLogo} />
-              <Item.Content>
-                <Item.Header>Full stack developer</Item.Header>
-                <Item.Description>
-                  <p>
-                    Bank of Russia
-                    <br />
-                    Oct 2017 - Present
-                    <br />
-                    Moscow, Russia
-                  </p>
-                  <p>
-                    Since October 2017, I work in set of tasks "Accounting for the
-                    application of measures of influence to shareholders (participants)
-                    of KO and other persons". As part of this complex, I perform the
-                    role of junior full stack developer. In the part of the front end
-                    of development technologies are used: JSP, JS, CSS. In the back
-                    end part: Java. Database: Oracle 10. The application runs on the
-                    IBM WebSphere portal. I actively propagated the need to use JUnit
-                    test, as a result of which I was entrusted to start covering the
-                    application with tests. Coverage tests led to improved quality of
-                    written code and increased reliability of the application.
-                  </p>
-                </Item.Description>
-              </Item.Content>
-            </Item>
-          </Item.Group>
-        </Card.Content>
-      </Card>
+        <Card centered fluid>
+          <Card.Content header='Experience'/>
+          <Card.Group centered  itemsPerRow={1}>
+            <Card>
+              <Card.Content>
+                <Image floated='left' size='tiny' src={cbrLogo}/>
+                <Card.Header>Java developer</Card.Header>
+                <Card.Meta>Bank of Russia <br/> Dec 2019 – Present</Card.Meta>
+              </Card.Content>
+              <Card.Content>
+                <Card.Description>
+                  I am working on creating the banking platform as part of the implementation of the IT
+                  Strategy of the Bank of Russia. My responsibilities include the implementation of forms according to
+                  layouts from Figma, creating new components based on Vaadin and editing component styles.
+                </Card.Description>
+              </Card.Content>
+            </Card>
+
+            <Card>
+              <Card.Content>
+                <Image floated='left' size='tiny' src={cbrLogo}/>
+                <Card.Header>Junior Java developer </Card.Header>
+                <Card.Meta>Bank of Russia <br/> Oct 2017 – Dec 2019</Card.Meta>
+              </Card.Content>
+              <Card.Content>
+                <Card.Description>
+                  I work in set of tasks "Accounting for the application of measures of influence on shareholders
+                  (participants) of KO and other persons". As part of this complex, I perform the role of a junior java
+                  developer. In the part of the front end of development technologies are used: CSS, JavaScript, JSP.
+                  I actively propagated the need to use JUnit tests, and I was entrusted to start covering the
+                  application with tests, thereby increasing the reliability of the application.
+                </Card.Description>
+              </Card.Content>
+            </Card>
+          </Card.Group>
+        </Card>
     )
   }
 }
