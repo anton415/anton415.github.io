@@ -1,19 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "050826c2b1f1a20613e7",
+    "revision": "2e4b7e110f75e14497b8",
     "url": "/static/css/main.be9cd952.chunk.css"
   },
   {
-    "revision": "050826c2b1f1a20613e7",
-    "url": "/static/js/main.050826c2.chunk.js"
+    "revision": "2e4b7e110f75e14497b8",
+    "url": "/static/js/main.2e4b7e11.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "208f202d332536257437",
-    "url": "/static/js/2.208f202d.chunk.js"
+    "revision": "ed1a664f4ca4a24ac5b5",
+    "url": "/static/js/2.ed1a664f.chunk.js"
+  },
+  {
+    "revision": "b70dd767e8354a856eafa4b806161422",
+    "url": "/static/media/cbr-logo.b70dd767.svg"
   },
   {
     "revision": "21d7490cff3c2955d0952225bc870e80",
@@ -26,22 +30,6 @@ self.__precacheManifest = [
   {
     "revision": "e6d79f22698c05360661fec505cab51f",
     "url": "/static/media/avatar.e6d79f22.webp"
-  },
-  {
-    "revision": "85e932796ce4fcdabdf0c286f2b13faa",
-    "url": "/static/media/SerdyuchenkoAN_CV_short_version.85e93279.pdf"
-  },
-  {
-    "revision": "b4df4b5fd23225c2d8c27e0d03c2bd49",
-    "url": "/static/media/SerdyuchenkoAN_CV_long_version.b4df4b5f.pdf"
-  },
-  {
-    "revision": "b70dd767e8354a856eafa4b806161422",
-    "url": "/static/media/cbr-logo.b70dd767.svg"
-  },
-  {
-    "revision": "5df1bb3fcf073cc7022278498e55ffd6",
-    "url": "/static/media/udacity-logo.5df1bb3f.svg"
   },
   {
     "revision": "657c023eaaa46ba9816ed2645cdf2f46",
@@ -92,7 +80,7 @@ self.__precacheManifest = [
     "url": "/static/media/russian-king.3e24f779.webp"
   },
   {
-    "revision": "61b3cf06adf2779b39825ca280b2130b",
+    "revision": "d6a0b31a3edf0d5258790ceea3f7265b",
     "url": "/index.html"
   }
 ];
