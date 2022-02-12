@@ -14,8 +14,8 @@ class Description extends Component {
             <Item>
               <Item.Image size='tiny' src={AvatarWebp} srcSet={AvatarJpg}/>
               <Item.Content verticalAlign='middle'>
-                <Item.Header>Anton Serdyuchenko</Item.Header>
-                <Item.Meta>Java developer</Item.Meta>
+                <Item.Header>Anton Serdyuchenko / Java developer</Item.Header>
+                <Item.Meta>Remote or Moscow</Item.Meta>
                 <Label color='red'>Not open to work</Label>
                 <NavLink
                     to={PDF}

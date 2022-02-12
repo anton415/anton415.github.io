@@ -4,6 +4,7 @@ import Description from '../about/Description'
 import Experience from "../about/Experience";
 import Skills from "../about/Skills";
 import Education from "../about/Education";
+import FAQ from "../about/FAQ";
 
 class Home extends Component {
   render() {
@@ -13,6 +14,7 @@ class Home extends Component {
           <Skills />
           <Experience />
           <Education />
+          <FAQ />
       </Container>
     )
   }
