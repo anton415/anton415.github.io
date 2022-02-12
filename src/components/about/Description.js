@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import AvatarJpg from 'utils/images/avatar.jpg'
 import AvatarWebp from 'utils/images/avatar.webp'
 import { Card, Item, Label, Icon } from 'semantic-ui-react'
+import {NavLink} from "react-router-dom";
+import PDF from "../../utils/pdf/Serdyuchenko.pdf";
 
 class Description extends Component {
   render() {
@@ -15,6 +17,14 @@ class Description extends Component {
                 <Item.Header>Anton Serdyuchenko</Item.Header>
                 <Item.Meta>Java developer</Item.Meta>
                 <Label color='red'>Not open to work</Label>
+                <NavLink
+                    to={PDF}
+                    target='_blank'
+                    download='Serdyuchenko'
+                    className='nav-link'
+                >
+                  <Label color='blue'>Download pdf</Label>
+                </NavLink>
               </Item.Content>
             </Item>
           </Item.Group>
