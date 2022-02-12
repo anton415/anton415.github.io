@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "2e4b7e110f75e14497b8",
+    "revision": "d732c179b332ee13ee58",
     "url": "/static/css/main.be9cd952.chunk.css"
   },
   {
-    "revision": "2e4b7e110f75e14497b8",
-    "url": "/static/js/main.2e4b7e11.chunk.js"
+    "revision": "d732c179b332ee13ee58",
+    "url": "/static/js/main.d732c179.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "ed1a664f4ca4a24ac5b5",
-    "url": "/static/js/2.ed1a664f.chunk.js"
+    "revision": "4de396581a7d74c97903",
+    "url": "/static/js/2.4de39658.chunk.js"
   },
   {
     "revision": "b70dd767e8354a856eafa4b806161422",
@@ -30,6 +30,10 @@ self.__precacheManifest = [
   {
     "revision": "e6d79f22698c05360661fec505cab51f",
     "url": "/static/media/avatar.e6d79f22.webp"
+  },
+  {
+    "revision": "a0646d4992dde8772db15ca644ff43d1",
+    "url": "/static/media/Serdyuchenko.a0646d49.pdf"
   },
   {
     "revision": "657c023eaaa46ba9816ed2645cdf2f46",
@@ -80,7 +84,7 @@ self.__precacheManifest = [
     "url": "/static/media/russian-king.3e24f779.webp"
   },
   {
-    "revision": "d6a0b31a3edf0d5258790ceea3f7265b",
+    "revision": "4a1363d29a7161b2f4197980eb1f7d1d",
     "url": "/index.html"
   }
 ];
