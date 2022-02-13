@@ -53,7 +53,7 @@ export default class FAQ extends Component {
                             What are your salary expectations?
                         </Accordion.Title>
                         <Accordion.Content active={activeIndex === 2}>
-                            3500$.
+                            4000$.
                         </Accordion.Content>
                     </Accordion>
                 </Card.Content>
