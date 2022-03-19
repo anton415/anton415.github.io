@@ -29,19 +29,7 @@ export default class FAQ extends Component {
                             Are you currently considering job offers?
                         </Accordion.Title>
                         <Accordion.Content active={activeIndex === 0}>
-                            No, I'm not considering job offers.
-                        </Accordion.Content>
-
-                        <Accordion.Title
-                            active={activeIndex === 1}
-                            index={1}
-                            onClick={this.handleClick}
-                        >
-                            <Icon name='dropdown' />
-                            When are you ready to consider job offers?
-                        </Accordion.Title>
-                        <Accordion.Content active={activeIndex === 1}>
-                            June 2022.
+                            Yes!
                         </Accordion.Content>
 
                         <Accordion.Title
@@ -53,7 +41,7 @@ export default class FAQ extends Component {
                             What are your salary expectations?
                         </Accordion.Title>
                         <Accordion.Content active={activeIndex === 2}>
-                            4000$.
+                            € 3,000 monthly net.
                         </Accordion.Content>
                     </Accordion>
                 </Card.Content>

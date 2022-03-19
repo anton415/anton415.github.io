@@ -16,7 +16,7 @@ class Description extends Component {
               <Item.Content verticalAlign='middle'>
                 <Item.Header>Anton Serdyuchenko / Java developer</Item.Header>
                 <Item.Meta>Remote or Moscow</Item.Meta>
-                <Label color='red'>Not open to work</Label>
+                <Label color='green'>Open to work</Label>
                 <NavLink
                     to={PDF}
                     target='_blank'
