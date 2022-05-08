@@ -10,7 +10,9 @@ class Education extends Component {
         <Card.Group centered  itemsPerRow={1}>
           <Card>
             <Card.Content>
-              <Image floated='left' size='tiny' src={maiLogo}/>
+              <a href='https://en.mai.ru/'>
+                <Image floated='left' size='tiny' src={maiLogo}/>
+              </a>
               <Card.Header>Master, Economic Security Management</Card.Header>
               <Card.Meta>Moscow Aviation Institute <br/> 2020 - 2022</Card.Meta>
             </Card.Content>
@@ -25,7 +27,9 @@ class Education extends Component {
 
           <Card>
             <Card.Content>
-              <Image floated='left' size='tiny' src={maiLogo}/>
+              <a href='https://en.mai.ru/'>
+                <Image floated='left' size='tiny' src={maiLogo}/>
+              </a>
               <Card.Header>Bachelor, Applied Informatics</Card.Header>
               <Card.Meta>Moscow Aviation Institute <br/> 2011 - 2017</Card.Meta>
             </Card.Content>

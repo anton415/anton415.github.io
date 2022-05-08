@@ -11,7 +11,9 @@ class Experience extends Component {
           <Card.Group centered  itemsPerRow={1}>
             <Card>
               <Card.Content>
-                <Image floated='left' size='tiny' src={cbrLogo}/>
+                <a href='https://www.cbr.ru/eng/'>
+                  <Image floated='left' size='tiny' src={cbrLogo}/>
+                </a>
                 <Card.Header>Java developer</Card.Header>
                 <Card.Meta>Bank of Russia <br/> Dec 2019 – Present</Card.Meta>
               </Card.Content>
@@ -26,7 +28,9 @@ class Experience extends Component {
 
             <Card>
               <Card.Content>
-                <Image floated='left' size='tiny' src={cbrLogo}/>
+                <a href='https://www.cbr.ru/eng/'>
+                  <Image floated='left' size='tiny' src={cbrLogo}/>
+                </a>
                 <Card.Header>Junior Java developer </Card.Header>
                 <Card.Meta>Bank of Russia <br/> Oct 2017 – Dec 2019</Card.Meta>
               </Card.Content>
