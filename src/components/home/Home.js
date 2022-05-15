@@ -14,7 +14,6 @@ class Home extends Component {
           <Skills />
           <Experience />
           <Education />
-          <FAQ />
       </Container>
     )
   }
