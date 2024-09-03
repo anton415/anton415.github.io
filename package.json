@@ -1,37 +1,26 @@
 {
-  "name": "anton415",
+  "name": "serdyuchenko.com",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://serdyuchenko.com",
-  "dependencies": {
-    "dotenv": "^7.0.0",
-    "gh-pages": "^2.0.1",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-ga": "^2.5.7",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5",
-    "semantic-ui-react": "^0.86.0"
-  },
+  "homepage": "https://serdyuchenko.com/",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite --port 8080",
+    "build": "vite build",
+    "preview": "vite preview --port 8080",
+    "deploy": "gh-pages -b gh-pages -d dist"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "gh-pages": "^5.0.0",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/lab": "^5.0.0-alpha.170",
+    "@mui/material": "next",
+    "react": "latest",
+    "react-dom": "latest"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
-    "react-qr-code": "^1.1.1"
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest"
   }
 }
