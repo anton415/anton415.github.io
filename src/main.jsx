@@ -14,7 +14,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-        <Navigation />
+{/*       <Navigation /> */}
       <App />
     </ThemeProvider>
   </React.StrictMode>,

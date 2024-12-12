@@ -10,17 +10,17 @@
     "deploy": "gh-pages -b gh-pages -d dist"
   },
   "dependencies": {
-    "gh-pages": "^5.0.0",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.15.15",
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "next",
+    "gh-pages": "^5.0.0",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest"
+    "vite": "^6.0.2"
   }
 }

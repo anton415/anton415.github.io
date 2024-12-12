@@ -16,6 +16,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
+/* App bar react component https://mui.com/material-ui/react-app-bar/ */
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
