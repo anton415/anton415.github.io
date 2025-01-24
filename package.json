@@ -12,6 +12,8 @@
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@mantine/core": "^7.16.1",
+    "@mantine/hooks": "^7.16.1",
     "@mui/icons-material": "^5.15.15",
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "next",
