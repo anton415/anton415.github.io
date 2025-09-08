@@ -1,29 +1,53 @@
 import * as React from 'react';
+import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Container from '@mui/material/Container';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
 import AntonSerdyuchenkoAvatar from '.././static/images/avatar/AntonSerdyuchenko.png';
 
 export default function BasicInfo() {
+  const theme = useTheme();
+
   return (
-    <Box display="flex" flexDirection="column">
-      <Typography sx={{ width: '100%', bgcolor: 'background.paper' }} variant="h6">Basic information</Typography>
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', alignSelf: 'center' }}>
-        <ListItem disablePadding>
-          <ListItemAvatar>
-            <Avatar alt="Anton Serdyuchenko" src={AntonSerdyuchenkoAvatar} />
-          </ListItemAvatar>
-          <ListItemText primary="Anton Serdyuchenko" secondary="Born in 1993 in Moscow, Russia." />
-        </ListItem>
-      </List>
-    </Box>
+    <Card sx={{ display: 'flex' }}>
+      <CardMedia
+        component="img"
+        sx={{ width: 151 }}
+        image={AntonSerdyuchenkoAvatar}
+        alt="Anton Serdyuchenko"
+      />
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <CardContent sx={{ flex: '1 0 auto' }}>
+          <Typography component="div" variant="h5">
+            Anton Serdyuchenko
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            component="div"
+            sx={{ color: 'text.secondary' }}
+          >
+            Software developer
+          </Typography>
+        </CardContent>
+        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+          <IconButton aria-label="previous">
+            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+          </IconButton>
+          <IconButton aria-label="play/pause">
+            <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+          </IconButton>
+          <IconButton aria-label="next">
+            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+          </IconButton>
+        </Box>
+      </Box>
+
+    </Card>
   );
 }

@@ -1,5 +1,5 @@
 # serdyuchenko.com
-Personal website for hobby.
+CV website.
 
 
 This website uses [Vite.js](https://github.com/vitejs/vite).

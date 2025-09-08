@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { spacing } from '@mui/system';
 import Container from '@mui/material/Container';
-import LabTabs from './LabTabs';
+import About from './About';
 
 export default function App() {
   return (
-    <Container maxWidth="md">
-      <LabTabs />
+    <Container maxWidth="md" sx={{mt: 5}}>
+      <About />
     </Container>
   );
 }
