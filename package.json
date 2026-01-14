@@ -7,6 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "deploy": "gh-pages -b gh-pages -d dist"
   },
   "dependencies": {
@@ -14,6 +17,12 @@
     "gh-pages": "^5.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "astro-eslint-parser": "^1.2.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-astro": "^1.5.0",
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1",
     "typescript": "latest"
   }
 }

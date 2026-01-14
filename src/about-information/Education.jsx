@@ -6,7 +6,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import TimelineOppositeContent, {timelineOppositeContentClasses} from '@mui/lab/TimelineOppositeContent';
+import TimelineOppositeContent, { timelineOppositeContentClasses } from '@mui/lab/TimelineOppositeContent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
@@ -33,7 +33,7 @@ const theme = createTheme();
 theme.typography.h3 = {
   fontSize: '1.0rem',
   [theme.breakpoints.up('sm')]: {
-      fontSize: '1.3rem',
+    fontSize: '1.3rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '1.5rem',
@@ -42,33 +42,31 @@ theme.typography.h3 = {
 
 export default function Education() {
   return (
-    <Box >
-      <Typography pt={3} variant="h6">Education</Typography>
+    <Box>
+      <Typography pt={3} variant="h6">
+        Education
+      </Typography>
       <Timeline
         sx={{
           [`& .${timelineOppositeContentClasses.root}`]: {
             flex: 0.2,
-          }
+          },
         }}
       >
         <TimelineItem>
-          <TimelineOppositeContent color="textSecondary">
-            2024
-          </TimelineOppositeContent>
+          <TimelineOppositeContent color="textSecondary">2024</TimelineOppositeContent>
           <TimelineSeparator>
-              <Avatar alt="Mike Mattesi" src={MikeMattesiAvatar} />
+            <Avatar alt="Mike Mattesi" src={MikeMattesiAvatar} />
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
             <Card sx={{ minWidth: 125 }}>
-              <Link
-                 href="https://www.drawingforce.com" underline="none"
-              >
+              <Link href="https://www.drawingforce.com" underline="none">
                 <CardMedia
                   sx={{
                     display: { xs: 'block', sm: 'none' },
                     '& .MuiDrawer-paper': { boxSizing: 'border-box' },
-                    height: 92
+                    height: 92,
                   }}
                   image={SmallForceBanner}
                   title="FORCE Art Mentorship"
@@ -77,16 +75,16 @@ export default function Education() {
                   sx={{
                     display: { xs: 'none', sm: 'block', md: 'none' },
                     '& .MuiDrawer-paper': { boxSizing: 'border-box' },
-                    height: 150
+                    height: 150,
                   }}
                   image={MediumForceBanner}
                   title="FORCE Art Mentorship"
                 />
                 <CardMedia
                   sx={{
-                    display: {  xs: 'none', sm: 'none', md: 'block' },
+                    display: { xs: 'none', sm: 'none', md: 'block' },
                     '& .MuiDrawer-paper': { boxSizing: 'border-box' },
-                    height: 150
+                    height: 150,
                   }}
                   image={LargeForceBanner}
                   title="FORCE Art Mentorship"
@@ -97,8 +95,8 @@ export default function Education() {
                   <Typography variant="h3">Drawing FORCE Art Mentorship with Mike Mattesi.</Typography>
                 </ThemeProvider>
                 <Typography variant="body2" color="text.secondary">
-                  FORCE drawing has helped me develop a deeper and more intuitive understanding of drama and form,
-                  and has given me the tools to create incredible works of art.
+                  FORCE drawing has helped me develop a deeper and more intuitive understanding of drama and form, and has given me the
+                  tools to create incredible works of art.
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   <IconButton aria-label="instagram" href="https://www.instagram.com/michaelmattesi/">
@@ -126,9 +124,7 @@ export default function Education() {
         </TimelineItem>
 
         <TimelineItem>
-          <TimelineOppositeContent color="textSecondary">
-            2023
-          </TimelineOppositeContent>
+          <TimelineOppositeContent color="textSecondary">2023</TimelineOppositeContent>
           <TimelineSeparator>
             <Avatar alt="Anton Serdyuchenko" src={AntonSerdyuchenkoAvatar} />
           </TimelineSeparator>

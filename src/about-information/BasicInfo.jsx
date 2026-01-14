@@ -15,7 +15,9 @@ import AntonSerdyuchenkoAvatar from '.././static/images/avatar/AntonSerdyuchenko
 export default function BasicInfo() {
   return (
     <Box display="flex" flexDirection="column">
-      <Typography sx={{ width: '100%', bgcolor: 'background.paper' }} variant="h6">Basic information</Typography>
+      <Typography sx={{ width: '100%', bgcolor: 'background.paper' }} variant="h6">
+        Basic information
+      </Typography>
       <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', alignSelf: 'center' }}>
         <ListItem disablePadding>
           <ListItemAvatar>

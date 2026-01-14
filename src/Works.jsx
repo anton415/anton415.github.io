@@ -24,15 +24,15 @@ import EighthImg from './static/drawings/8.webp';
 import NinthImg from './static/drawings/9.webp';
 
 const items = [
-  {image: FirstImg, mobileImage: MobileFirstImg, width: 240, height: 252},
-  {image: SecondImg, mobileImage: MobileSecondImg, width: 240, height: 303},
-  {image: ThirdImg, mobileImage: MobileThirdImg, width: 240, height: 303},
-  {image: FourthImg, mobileImage: MobileFourthImg, width: 240, height: 318},
-  {image: FifthImg, mobileImage: MobileFifthImg, width: 240, height: 332},
-  {image: SixthImg, mobileImage: MobileSixthImg, width: 240, height: 342},
-  {image: SeventhImg, mobileImage: MobileSeventhImg, width: 240, height: 318},
-  {image: EighthImg, mobileImage: MobileEighthImg, width: 240, height: 170},
-  {image: NinthImg, mobileImage: MobileNinthImg, width: 240, height: 289}
+  { image: FirstImg, mobileImage: MobileFirstImg, width: 240, height: 252 },
+  { image: SecondImg, mobileImage: MobileSecondImg, width: 240, height: 303 },
+  { image: ThirdImg, mobileImage: MobileThirdImg, width: 240, height: 303 },
+  { image: FourthImg, mobileImage: MobileFourthImg, width: 240, height: 318 },
+  { image: FifthImg, mobileImage: MobileFifthImg, width: 240, height: 332 },
+  { image: SixthImg, mobileImage: MobileSixthImg, width: 240, height: 342 },
+  { image: SeventhImg, mobileImage: MobileSeventhImg, width: 240, height: 318 },
+  { image: EighthImg, mobileImage: MobileEighthImg, width: 240, height: 170 },
+  { image: NinthImg, mobileImage: MobileNinthImg, width: 240, height: 289 },
 ];
 
 export default function Works(props) {
@@ -45,14 +45,14 @@ export default function Works(props) {
           <Paper elevation={10}>
             <Card
               sx={{
-                display: { xs: 'block', sm: 'none', md: 'none' }
+                display: { xs: 'block', sm: 'none', md: 'none' },
               }}
             >
               {item ? (
                 <CardMedia
                   component="img"
                   image={item.mobileImage}
-                  sx={{  width: item.width, height: item.height }}
+                  sx={{ width: item.width, height: item.height }}
                   title="gesture drawing"
                 />
               ) : (
@@ -61,30 +61,22 @@ export default function Works(props) {
             </Card>
             <Card
               sx={{
-                display: { xs: 'none', sm: 'block', md: 'none' }
+                display: { xs: 'none', sm: 'block', md: 'none' },
               }}
             >
               {item ? (
-                <CardMedia
-                  component="img"
-                  image={item.image}
-                  title="gesture drawing"
-                />
+                <CardMedia component="img" image={item.image} title="gesture drawing" />
               ) : (
                 <Skeleton variant="rectangular" width={295} height={300} />
               )}
             </Card>
             <Card
               sx={{
-                display: { xs: 'none', sm: 'none', md: 'block' }
+                display: { xs: 'none', sm: 'none', md: 'block' },
               }}
             >
               {item ? (
-                <CardMedia
-                  component="img"
-                  image={item.image}
-                  title="gesture drawing"
-                />
+                <CardMedia component="img" image={item.image} title="gesture drawing" />
               ) : (
                 <Skeleton variant="rectangular" width={295} height={300} />
               )}

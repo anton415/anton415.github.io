@@ -1,0 +1,13 @@
+node_modules
+.astro
+dist
+static
+public
+docs
+coverage
+build
+asset-manifest.json
+precache-manifest*.js
+service-worker.js
+index.html
+404.html
