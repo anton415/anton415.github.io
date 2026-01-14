@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const highlights = [
+  'Astro + TypeScript ready',
+  'File-based routing',
+  'Static-first build output',
+];
+---
+
+<BaseLayout title="Home">
+  <section class="card">
+    <p class="pill">Now running on Astro</p>
+    <h1>Welcome to the refreshed site</h1>
+    <p>
+      This is the new Astro foundation. The layout, routing, and build pipeline
+      are wired up so you can start moving content over immediately.
+    </p>
+    <ul>
+      {highlights.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

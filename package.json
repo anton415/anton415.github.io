@@ -4,23 +4,16 @@
   "private": true,
   "homepage": "https://serdyuchenko.com/",
   "scripts": {
-    "dev": "vite --port 8080",
-    "build": "vite build",
-    "preview": "vite preview --port 8080",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "deploy": "gh-pages -b gh-pages -d dist"
   },
   "dependencies": {
-    "gh-pages": "^5.0.0",
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "^5.15.15",
-    "@mui/lab": "^5.0.0-alpha.170",
-    "@mui/material": "next",
-    "react": "latest",
-    "react-dom": "latest"
+    "astro": "latest",
+    "gh-pages": "^5.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest"
+    "typescript": "latest"
   }
 }

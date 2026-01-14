@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const notes = [
+  {
+    title: 'Layouts live in src/layouts',
+    detail: 'Use them to keep shared structure and metadata consistent.',
+  },
+  {
+    title: 'Pages live in src/pages',
+    detail: 'Each .astro file becomes a route automatically.',
+  },
+  {
+    title: 'TypeScript is enabled',
+    detail: 'Update tsconfig.json when you add more tooling.',
+  },
+];
+---
+
+<BaseLayout title="Sample">
+  <section class="card">
+    <h1>Sample page</h1>
+    <p>
+      Use this route as a playground for the next pieces of content you plan to
+      migrate.
+    </p>
+    <div>
+      {notes.map((note) => (
+        <article style="margin-bottom: 1.5rem;">
+          <strong>{note.title}</strong>
+          <p>{note.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
