@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import astroParser from 'astro-eslint-parser';
 import astro from 'eslint-plugin-astro';
 
 const ignores = [
@@ -21,6 +22,16 @@ export default [
   { ignores },
   js.configs.recommended,
   ...astro.configs['flat/recommended'],
+  {
+    files: ['**/*.astro'],
+    languageOptions: {
+      parser: astroParser,
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
+      },
+    },
+  },
   {
     files: ['**/*.{js,jsx,astro}'],
     rules: {
