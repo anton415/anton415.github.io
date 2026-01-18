@@ -1,11 +1,9 @@
 ---
+import { profile } from '../data/profile';
+import { navLinks, socialLinks } from '../data/links';
+
 const { title = 'Astro Site' } = Astro.props;
-const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/sample', label: 'Sample' },
-  { href: '/posts', label: 'Posts' },
-  { href: '/projects', label: 'Projects' },
-];
+const activeSocialLinks = socialLinks.filter((link) => link.href);
 ---
 <!doctype html>
 <html lang="en">
@@ -48,8 +46,17 @@ const navItems = [
       }
 
       .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
         font-weight: 600;
         letter-spacing: 0.02em;
+      }
+
+      .brand-meta {
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
       }
 
       nav {
@@ -81,6 +88,42 @@ const navItems = [
         font-size: 0.85rem;
       }
 
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 2rem;
+        justify-content: space-between;
+      }
+
+      .footer-profile {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        min-width: 220px;
+      }
+
+      .footer-name {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1rem;
+      }
+
+      .footer-links a {
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease, color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
       .card {
         background: rgba(255, 255, 255, 0.6);
         border: 1px solid rgba(195, 91, 45, 0.15);
@@ -110,14 +153,22 @@ const navItems = [
         nav {
           flex-wrap: wrap;
         }
+
+        .footer-grid {
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
     </style>
   </head>
   <body>
     <header>
-      <div class="brand">Serdyuchenko Studio</div>
+      <div class="brand">
+        <span>{profile.name}</span>
+        <span class="brand-meta">{profile.headline} · {profile.location}</span>
+      </div>
       <nav>
-        {navItems.map((item) => (
+        {navLinks.map((item) => (
           <a href={item.href}>{item.label}</a>
         ))}
       </nav>
@@ -126,7 +177,24 @@ const navItems = [
       <slot />
     </main>
     <footer>
-      <span>Built with Astro · {new Date().getFullYear()}</span>
+      <div class="footer-grid">
+        <div class="footer-profile">
+          <span class="footer-name">{profile.name}</span>
+          <span>{profile.headline}</span>
+          <span>{profile.location}</span>
+          {profile.email ? (
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          ) : null}
+        </div>
+        <div class="footer-links">
+          {activeSocialLinks.map((link) => (
+            <a href={link.href} target="_blank" rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
+        </div>
+        <span>Built with Astro · {new Date().getFullYear()}</span>
+      </div>
     </footer>
   </body>
 </html>
