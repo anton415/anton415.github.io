@@ -10,9 +10,10 @@ export type SocialLink = {
 
 export const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
-  { href: '/sample', label: 'Sample' },
-  { href: '/posts', label: 'Posts' },
+  { href: '/cv', label: 'CV' },
   { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/links', label: 'Links' },
 ];
 
 export const socialLinks: SocialLink[] = [
