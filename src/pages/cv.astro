@@ -20,11 +20,16 @@ const formatDate = (value: string) => {
 };
 ---
 
-<BaseLayout title="CV">
+<BaseLayout title="CV" bodyClass="cv-page">
   <section class="card hero">
     <p class="pill">Curriculum Vitae</p>
     <h1>{profile.name}</h1>
     <p class="lede">{profile.headline} - {profile.location}</p>
+    <div class="cv-actions screen-only">
+      <button type="button" class="cv-action cv-action-primary" onclick="window.print()">
+        Print / Save PDF
+      </button>
+    </div>
     <ul class="summary-list">
       {summary.map((item) => (
         <li>{item}</li>
@@ -156,6 +161,39 @@ const formatDate = (value: string) => {
       gap: 0.4rem;
     }
 
+    .cv-actions {
+      margin: 0 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .cv-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .cv-action-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .cv-action:hover {
+      transform: translateY(-1px);
+    }
+
     .cv-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -233,9 +271,78 @@ const formatDate = (value: string) => {
       background: rgba(255, 255, 255, 0.6);
     }
 
+    @page {
+      margin: 1.4cm;
+      size: auto;
+    }
+
     @media (max-width: 760px) {
       .cv-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      :global(body.cv-page) {
+        background: #ffffff;
+        color: #1d1b16;
+        font-size: 11pt;
+        line-height: 1.45;
+      }
+
+      :global(body.cv-page header),
+      :global(body.cv-page footer) {
+        display: none;
+      }
+
+      :global(body.cv-page main) {
+        max-width: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .screen-only {
+        display: none;
+      }
+
+      .card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .hero {
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid rgba(61, 40, 20, 0.2);
+      }
+
+      .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+        margin-top: 1rem;
+      }
+
+      .cv-span {
+        grid-column: auto;
+      }
+
+      .cv-item,
+      .cv-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .cv-chip {
+        background: transparent;
+        color: #2e2a24;
+        border-color: rgba(61, 40, 20, 0.25);
+        font-size: 0.8rem;
+      }
+
+      .summary-list,
+      .cv-item ul {
+        gap: 0.3rem;
       }
     }
   </style>

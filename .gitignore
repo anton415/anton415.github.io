@@ -1,5 +1,6 @@
 # Idea
 .idea
+.astro/
 
 # Logs
 logs
@@ -159,6 +160,7 @@ test/traces
 **/.idea
 **/.#*
 .nvmrc
+.vscode/
 
 # examples
 examples/**/out

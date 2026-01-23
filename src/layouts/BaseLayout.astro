@@ -2,7 +2,7 @@
 import { profile } from '../data/profile';
 import { navLinks, socialLinks } from '../data/links';
 
-const { title = 'Astro Site' } = Astro.props;
+const { title = 'Astro Site', bodyClass = '' } = Astro.props;
 const activeSocialLinks = socialLinks.filter((link) => link.href);
 ---
 <!doctype html>
@@ -259,7 +259,7 @@ const activeSocialLinks = socialLinks.filter((link) => link.href);
       }
     </style>
   </head>
-  <body>
+  <body class={bodyClass}>
     <header>
       <div class="brand">
         <span>{profile.name}</span>
