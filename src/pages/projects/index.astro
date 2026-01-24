@@ -13,24 +13,33 @@ const featuredProjects = projects.sort((a, b) =>
     <h1>Projects</h1>
     <p>Selected collaborations and in-house experiments.</p>
     <div class="list">
-      {featuredProjects.map((project) => (
-        <article class="item">
-          <div class="meta">{project.data.role}</div>
-          <h2>
-            <a href={`/projects/${project.slug}`}>{project.data.title}</a>
-          </h2>
-          <ul class="stack">
-            {project.data.stack.map((tool) => (
-              <li>{tool}</li>
-            ))}
-          </ul>
-          <ul class="highlights">
-            {project.data.highlights.map((highlight) => (
-              <li>{highlight}</li>
-            ))}
-          </ul>
-        </article>
-      ))}
+      {featuredProjects.map((project) => {
+        const stack = project.data.stack ?? [];
+        const outcomes = project.data.outcomes ?? [];
+
+        return (
+          <article class="item">
+            <div class="meta">{project.data.role}</div>
+            <h2>
+              <a href={`/projects/${project.slug}`}>{project.data.title}</a>
+            </h2>
+            {stack.length ? (
+              <ul class="stack">
+                {stack.map((tool) => (
+                  <li>{tool}</li>
+                ))}
+              </ul>
+            ) : null}
+            {outcomes.length ? (
+              <ul class="outcomes">
+                {outcomes.map((outcome) => (
+                  <li>{outcome}</li>
+                ))}
+              </ul>
+            ) : null}
+          </article>
+        );
+      })}
     </div>
   </section>
 </BaseLayout>
@@ -75,7 +84,7 @@ const featuredProjects = projects.sort((a, b) =>
     border: 1px solid rgba(61, 40, 20, 0.2);
   }
 
-  .highlights {
+  .outcomes {
     margin: 0;
     padding-left: 1.2rem;
     color: #4d4235;

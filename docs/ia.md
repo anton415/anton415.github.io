@@ -40,7 +40,7 @@ Footer:
 
 2) **Projects**
 - Stored as Markdown/MDX
-- Fields: `title`, `role`, `stack`, `links` (repo/demo), `highlights`, optional `images`
+- Fields: `title`, `role`, `stack` (optional), `links` (repo/demo, optional), `outcomes`, optional `screenshots`
 
 3) **Static pages**
 - Implemented as Astro pages (and optionally content-driven later)

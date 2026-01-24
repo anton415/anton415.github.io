@@ -12,42 +12,75 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await project.render();
+const {
+  stack = [],
+  links = [],
+  outcomes = [],
+  screenshots = [],
+} = project.data;
 ---
 
 <BaseLayout title={project.data.title}>
   <article class="card project">
     <p class="pill">{project.data.role}</p>
     <h1>{project.data.title}</h1>
-    <div class="meta">
-      <div>
-        <h2>Stack</h2>
-        <ul class="stack">
-          {project.data.stack.map((tool) => (
-            <li>{tool}</li>
+    {(stack.length || links.length) && (
+      <div class="meta">
+        {stack.length ? (
+          <div>
+            <h2>Stack</h2>
+            <ul class="stack">
+              {stack.map((tool) => (
+                <li>{tool}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {links.length ? (
+          <div>
+            <h2>Links</h2>
+            <ul class="links">
+              {links.map((link) => (
+                <li>
+                  <a href={link.url} rel="noreferrer">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
+    )}
+    {outcomes.length ? (
+      <div class="outcomes">
+        <h2>Outcomes</h2>
+        <ul>
+          {outcomes.map((outcome) => (
+            <li>{outcome}</li>
           ))}
         </ul>
       </div>
-      <div>
-        <h2>Links</h2>
-        <ul class="links">
-          {project.data.links.map((link) => (
-            <li>
-              <a href={link.url} rel="noreferrer">
-                {link.label}
-              </a>
-            </li>
+    ) : null}
+    {screenshots.length ? (
+      <section class="screens">
+        <h2>Screenshots</h2>
+        <div class="screen-grid">
+          {screenshots.map((shot) => (
+            <figure class="shot">
+              <img
+                src={shot.src}
+                alt={shot.alt ?? `${project.data.title} screenshot`}
+                loading="lazy"
+              />
+              {shot.caption ? (
+                <figcaption>{shot.caption}</figcaption>
+              ) : null}
+            </figure>
           ))}
-        </ul>
-      </div>
-    </div>
-    <div class="highlights">
-      <h2>Highlights</h2>
-      <ul>
-        {project.data.highlights.map((highlight) => (
-          <li>{highlight}</li>
-        ))}
-      </ul>
-    </div>
+        </div>
+      </section>
+    ) : null}
     <Content />
   </article>
 </BaseLayout>
@@ -80,9 +113,36 @@ const { Content } = await project.render();
     color: #c35b2d;
   }
 
-  .highlights ul {
+  .outcomes ul {
     margin: 0.75rem 0 1.5rem;
     padding-left: 1.2rem;
+  }
+
+  .screens {
+    margin: 2rem 0;
+  }
+
+  .screen-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .shot {
+    margin: 0;
+  }
+
+  .shot img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(61, 40, 20, 0.16);
+    display: block;
+  }
+
+  .shot figcaption {
+    margin-top: 0.6rem;
+    color: #5a5041;
+    font-size: 0.9rem;
   }
 
   .project :global(p) {

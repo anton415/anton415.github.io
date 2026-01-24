@@ -88,24 +88,33 @@ const formatHost = (href: string) => {
       </div>
       <div class="feature-list">
         {featuredProjects.length ? (
-          featuredProjects.map((project) => (
-            <article class="feature-item">
-              <p class="feature-meta">{project.data.role}</p>
-              <h3>
-                <a href={`/projects/${project.slug}`}>{project.data.title}</a>
-              </h3>
-              <ul class="stack">
-                {project.data.stack.slice(0, 4).map((tool) => (
-                  <li>{tool}</li>
-                ))}
-              </ul>
-              <ul class="highlight-list">
-                {project.data.highlights.slice(0, 2).map((highlight) => (
-                  <li>{highlight}</li>
-                ))}
-              </ul>
-            </article>
-          ))
+          featuredProjects.map((project) => {
+            const stack = project.data.stack ?? [];
+            const outcomes = project.data.outcomes ?? [];
+
+            return (
+              <article class="feature-item">
+                <p class="feature-meta">{project.data.role}</p>
+                <h3>
+                  <a href={`/projects/${project.slug}`}>{project.data.title}</a>
+                </h3>
+                {stack.length ? (
+                  <ul class="stack">
+                    {stack.slice(0, 4).map((tool) => (
+                      <li>{tool}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {outcomes.length ? (
+                  <ul class="highlight-list">
+                    {outcomes.slice(0, 2).map((outcome) => (
+                      <li>{outcome}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </article>
+            );
+          })
         ) : (
           <p class="empty">New projects are on the way.</p>
         )}

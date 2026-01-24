@@ -10,7 +10,7 @@ links:
     url: "https://serdyuchenko.com"
   - label: "Project brief"
     url: "https://serdyuchenko.com/projects/studio-site-refresh"
-highlights:
+outcomes:
   - "Rebuilt the base site on Astro for faster iterations."
   - "Introduced content collections for posts and projects."
   - "Set a modular layout foundation for future case studies."

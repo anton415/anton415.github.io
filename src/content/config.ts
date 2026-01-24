@@ -16,14 +16,25 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     role: z.string(),
-    stack: z.array(z.string()),
-    links: z.array(
-      z.object({
-        label: z.string(),
-        url: z.string().url(),
-      })
-    ),
-    highlights: z.array(z.string()),
+    stack: z.array(z.string()).optional(),
+    links: z
+      .array(
+        z.object({
+          label: z.string(),
+          url: z.string().url(),
+        })
+      )
+      .optional(),
+    outcomes: z.array(z.string()),
+    screenshots: z
+      .array(
+        z.object({
+          src: z.string(),
+          alt: z.string().optional(),
+          caption: z.string().optional(),
+        })
+      )
+      .optional(),
   }),
 });
 
