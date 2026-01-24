@@ -6,6 +6,7 @@ tags:
   - Studio
   - Notes
 description: "A short kickoff note to anchor the new content pipeline."
+readingTime: "3 min read"
 draft: false
 ---
 

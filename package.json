@@ -13,6 +13,7 @@
     "deploy": "gh-pages -b gh-pages -d dist"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.13",
     "astro": "latest",
     "gh-pages": "^5.0.0"
   },
