@@ -25,8 +25,13 @@ const formatHost = (href: string) => {
           target="_blank"
           rel="noreferrer"
         >
-          <span class="link-label">{link.label}</span>
-          <span class="link-meta">{formatHost(link.href)}</span>
+          <div class="link-title">
+            {link.icon ? <span class="link-icon">{link.icon}</span> : null}
+            <span class="link-label">{link.label}</span>
+          </div>
+          <span class="link-meta">
+            {link.description ?? formatHost(link.href)}
+          </span>
         </a>
       ))}
     </div>
@@ -59,6 +64,23 @@ const formatHost = (href: string) => {
     .link-card:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
+    }
+
+    .link-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .link-icon {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      padding: 0.15rem 0.5rem;
     }
 
     .link-label {
