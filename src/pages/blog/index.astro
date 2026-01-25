@@ -17,8 +17,13 @@ const formatDate = (date) =>
 
 <BaseLayout title="Blog">
   <section class="card">
-    <h1>Blog</h1>
-    <p>Field notes, process write-ups, and studio updates.</p>
+    <div class="head">
+      <div>
+        <h1>Blog</h1>
+        <p>Field notes, process write-ups, and studio updates.</p>
+      </div>
+      <a class="pill" href="/blog/tags">Browse tags</a>
+    </div>
     <div class="list">
       {visiblePosts.map((post) => (
         <article class="item">
@@ -38,6 +43,18 @@ const formatDate = (date) =>
 </BaseLayout>
 
 <style>
+  .head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .head .pill {
+    margin-top: 0.2rem;
+    white-space: nowrap;
+  }
+
   .list {
     margin-top: 2rem;
     display: grid;
@@ -75,5 +92,12 @@ const formatDate = (date) =>
 
   a {
     color: inherit;
+  }
+
+  @media (max-width: 720px) {
+    .head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 </style>

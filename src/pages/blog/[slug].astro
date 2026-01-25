@@ -19,17 +19,40 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   day: 'numeric',
 });
 
-const metaParts = [post.data.tags.join(', ')];
-if (post.data.readingTime) {
-  metaParts.push(post.data.readingTime);
+const slugifyTag = (tag: string) =>
+  tag
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+
+const tagLinks = [];
+const seenTags = new Set();
+for (const tag of post.data.tags ?? []) {
+  const slug = slugifyTag(tag);
+  if (!slug || seenTags.has(slug)) continue;
+  seenTags.add(slug);
+  tagLinks.push({ label: tag, slug });
 }
-const metaLine = metaParts.join(' · ');
 ---
 
 <BaseLayout title={post.data.title}>
   <article class="card post">
     <p class="pill">{formattedDate}</p>
-    <p class="meta">{metaLine}</p>
+    <div class="meta-row">
+      {tagLinks.length ? (
+        <div class="tag-list" aria-label="Tags">
+          {tagLinks.map((tag) => (
+            <a class="tag-chip" href={`/blog/tags/${tag.slug}`}>
+              {tag.label}
+            </a>
+          ))}
+        </div>
+      ) : null}
+      {post.data.readingTime ? (
+        <span class="meta">{post.data.readingTime}</span>
+      ) : null}
+    </div>
     <h1>{post.data.title}</h1>
     <p class="lede">{post.data.description}</p>
     <Content />
@@ -46,12 +69,42 @@ const metaLine = metaParts.join(' · ');
     color: #4d4235;
   }
 
-  .meta {
+  .meta-row {
     margin: 0.75rem 0 0;
-    font-size: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .meta {
+    font-size: 0.8rem;
     color: #5a5041;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(61, 40, 20, 0.2);
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    color: #4d4235;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .tag-chip:hover {
+    border-color: #c35b2d;
+    color: #c35b2d;
   }
 
   .post :global(p) {
