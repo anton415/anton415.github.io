@@ -18,9 +18,15 @@ const {
   outcomes = [],
   screenshots = [],
 } = project.data;
+const metaDescription = project.data.description ?? outcomes[0];
+const metaImage = project.data.socialImage ?? screenshots[0]?.src;
 ---
 
-<BaseLayout title={project.data.title}>
+<BaseLayout
+  title={project.data.title}
+  description={metaDescription}
+  image={metaImage}
+>
   <article class="card project">
     <p class="pill">{project.data.role}</p>
     <h1>{project.data.title}</h1>

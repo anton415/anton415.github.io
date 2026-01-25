@@ -1,6 +1,7 @@
 ---
 title: "Studio site refresh"
 role: "Design + Engineering"
+description: "A lightweight rebuild focused on speed, clarity, and a content system that can scale with new writing and case studies."
 stack:
   - Astro
   - TypeScript

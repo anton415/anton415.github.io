@@ -1,16 +1,49 @@
 ---
 import { profile } from '../data/profile';
 import { navLinks, socialLinks } from '../data/links';
+import { site } from '../data/site';
 
-const { title = 'Astro Site', bodyClass = '' } = Astro.props;
+const {
+  title,
+  description,
+  image,
+  canonicalUrl,
+  ogType = 'website',
+  bodyClass = '',
+} = Astro.props;
 const activeSocialLinks = socialLinks.filter((link) => link.href);
+const siteUrl = Astro.site ?? new URL(site.url);
+
+const metaTitle = title ?? site.title;
+const metaDescription = description ?? site.description;
+const metaImage = image ?? site.socialImage;
+const resolvedCanonical =
+  canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).toString();
+const resolvedImage = metaImage ? new URL(metaImage, siteUrl).toString() : null;
+const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title>{metaTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={resolvedCanonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={resolvedCanonical} />
+    {resolvedImage ? (
+      <meta property="og:image" content={resolvedImage} />
+    ) : null}
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    {resolvedImage ? (
+      <meta name="twitter:image" content={resolvedImage} />
+    ) : null}
     <style>
       :root {
         color-scheme: light;

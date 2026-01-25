@@ -9,6 +9,7 @@ const posts = defineCollection({
     description: z.string(),
     readingTime: z.string().optional(),
     draft: z.boolean().default(false),
+    socialImage: z.string().optional(),
   }),
 });
 
@@ -17,6 +18,7 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     role: z.string(),
+    description: z.string().optional(),
     stack: z.array(z.string()).optional(),
     links: z
       .array(
@@ -36,6 +38,7 @@ const projects = defineCollection({
         })
       )
       .optional(),
+    socialImage: z.string().optional(),
   }),
 });
 

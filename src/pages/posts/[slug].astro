@@ -26,7 +26,12 @@ if (post.data.readingTime) {
 const metaLine = metaParts.join(' · ');
 ---
 
-<BaseLayout title={post.data.title}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.socialImage}
+  ogType="article"
+>
   <article class="card post">
     <p class="pill">{formattedDate}</p>
     <p class="meta">{metaLine}</p>
