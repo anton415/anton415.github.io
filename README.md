@@ -18,9 +18,22 @@ Rebuild node_modules.
 Runs the app in the development mode.<br>
 Open [http://localhost:8080](http://localhost:3000) to view it in the browser.
 
-### `sudo npm run deploy`
+### `npm run deploy`
 
-Deploy to GitHub Pages.
+Deploy to GitHub Pages (legacy, local).
+
+## GitHub Pages (Actions)
+
+This repo deploys to GitHub Pages via Actions on every push to `main`.
+
+Repo settings:
+- Settings → Pages → Source: GitHub Actions
+- Custom domain: `serdyuchenko.com`
+- Enforce HTTPS: enabled (after DNS is verified)
+
+DNS (if needed):
+- A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- CNAME for `www` → `serdyuchenko.com`
 
 ## Learn More
 
