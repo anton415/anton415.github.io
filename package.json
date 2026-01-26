@@ -4,23 +4,29 @@
   "private": true,
   "homepage": "https://serdyuchenko.com/",
   "scripts": {
-    "dev": "vite --port 8080",
-    "build": "vite build",
-    "preview": "vite preview --port 8080",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "deploy": "gh-pages -b gh-pages -d dist"
   },
   "dependencies": {
-    "gh-pages": "^5.0.0",
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "^5.15.15",
-    "@mui/lab": "^5.0.0-alpha.170",
-    "@mui/material": "next",
-    "react": "latest",
-    "react-dom": "latest"
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "latest",
+    "gh-pages": "^5.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest"
+    "@eslint/js": "^9.39.2",
+    "@typescript-eslint/parser": "^8.46.1",
+    "astro-eslint-parser": "^1.2.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-astro": "^1.5.0",
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "latest"
   }
 }

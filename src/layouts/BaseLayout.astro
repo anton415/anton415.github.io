@@ -1,0 +1,385 @@
+---
+import { profile } from '../data/profile';
+import { navLinks, socialLinks } from '../data/links';
+import { site } from '../data/site';
+
+const {
+  title,
+  description,
+  image,
+  canonicalUrl,
+  ogType = 'website',
+  bodyClass = '',
+} = Astro.props;
+const activeSocialLinks = socialLinks.filter((link) => link.href);
+const siteUrl = Astro.site ?? new URL(site.url);
+
+const metaTitle = title ?? site.title;
+const metaDescription = description ?? site.description;
+const metaImage = image ?? site.socialImage;
+const resolvedCanonical =
+  canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).toString();
+const resolvedImage = metaImage ? new URL(metaImage, siteUrl).toString() : null;
+const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{metaTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={resolvedCanonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={resolvedCanonical} />
+    {resolvedImage ? (
+      <meta property="og:image" content={resolvedImage} />
+    ) : null}
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    {resolvedImage ? (
+      <meta name="twitter:image" content={resolvedImage} />
+    ) : null}
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1d1b16;
+        --ink-soft: #3f3a31;
+        --accent: #c35b2d;
+        --accent-strong: #a94921;
+        --bg: #f6f1e7;
+        --bg-2: #efe6d6;
+        --page-width: 1040px;
+        --type-body: 1rem;
+        --type-h1: clamp(2.2rem, 4vw, 3rem);
+        --type-h2: clamp(1.6rem, 3vw, 2.2rem);
+        --type-h3: 1.2rem;
+        --type-h4: 1.05rem;
+        --line-body: 1.65;
+        --card-bg: rgba(255, 255, 255, 0.6);
+        --card-border: rgba(195, 91, 45, 0.15);
+        --shadow: 0 18px 40px rgba(61, 40, 20, 0.08);
+        --code-bg: #fbf7ee;
+        --code-border: rgba(61, 40, 20, 0.18);
+        --code-inline-bg: rgba(195, 91, 45, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+        font-size: var(--type-body);
+        line-height: var(--line-body);
+        color: var(--ink);
+        background: radial-gradient(circle at top, var(--bg), var(--bg-2));
+        min-height: 100vh;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header,
+      main,
+      footer {
+        width: 100%;
+        max-width: var(--page-width);
+        margin: 0 auto;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem clamp(1.5rem, 4vw, 4rem);
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-meta {
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+
+      nav {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.95rem;
+      }
+
+      nav a {
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        transition: border-color 0.2s ease, color 0.2s ease;
+      }
+
+      nav a:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      main {
+        padding: 0 clamp(1.5rem, 4vw, 4rem) 4rem;
+      }
+
+      main :where(h1, h2, h3, h4) {
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        margin: 0 0 0.6rem;
+      }
+
+      main :where(h1) {
+        font-size: var(--type-h1);
+      }
+
+      main :where(h2) {
+        font-size: var(--type-h2);
+      }
+
+      main :where(h3) {
+        font-size: var(--type-h3);
+      }
+
+      main :where(h4) {
+        font-size: var(--type-h4);
+      }
+
+      main :where(p) {
+        margin: 0 0 1rem;
+      }
+
+      main :where(ul, ol) {
+        margin: 0 0 1rem;
+        padding-left: 1.2rem;
+      }
+
+      main :where(li) {
+        margin-bottom: 0.35rem;
+      }
+
+      main :where(p, li) a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2em;
+      }
+
+      main :where(p, li) a:hover {
+        color: var(--accent-strong);
+      }
+
+      main :where(img) {
+        max-width: 100%;
+        border-radius: 18px;
+        display: block;
+      }
+
+      main :where(pre) {
+        margin: 1.5rem 0;
+        padding: 1.25rem 1.5rem;
+        border-radius: 18px;
+        border: 1px solid var(--code-border);
+        background: var(--code-bg);
+        box-shadow: 0 12px 30px rgba(61, 40, 20, 0.08);
+        overflow-x: auto;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        tab-size: 2;
+      }
+
+      main :where(pre.astro-code) {
+        background: var(--code-bg) !important;
+      }
+
+      main :where(pre code) {
+        font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Menlo,
+          Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        background: transparent;
+        padding: 0;
+        border: 0;
+        display: block;
+      }
+
+      main :where(p code, li code, h1 code, h2 code, h3 code, h4 code) {
+        font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Menlo,
+          Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.9em;
+        background: var(--code-inline-bg);
+        border: 1px solid var(--code-border);
+        border-radius: 0.4rem;
+        padding: 0.1rem 0.35rem;
+      }
+
+      footer {
+        padding: 1rem clamp(1.5rem, 4vw, 4rem) 2rem;
+        color: var(--ink-soft);
+        font-size: 0.85rem;
+      }
+
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 2rem;
+        justify-content: space-between;
+      }
+
+      .footer-profile {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        min-width: 220px;
+      }
+
+      .footer-name {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.5rem;
+        min-width: min(320px, 100%);
+      }
+
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .footer-heading {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .footer-link-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .footer-link-list a {
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease, color 0.2s ease;
+      }
+
+      .footer-link-list a:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .footer-note {
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 24px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border-radius: 999px;
+        border: 1px solid rgba(61, 40, 20, 0.2);
+        padding: 0.35rem 0.9rem;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+
+      @media (max-width: 640px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+
+        .footer-grid {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body class={bodyClass}>
+    <header>
+      <div class="brand">
+        <span>{profile.name}</span>
+        <span class="brand-meta">{profile.headline} · {profile.location}</span>
+      </div>
+      <nav aria-label="Primary">
+        {navLinks.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-profile">
+          <span class="footer-name">{profile.name}</span>
+          <span>{profile.headline}</span>
+          <span>{profile.location}</span>
+          {profile.email ? (
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          ) : null}
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <span class="footer-heading">Explore</span>
+            <div class="footer-link-list">
+              {navLinks.map((item) => (
+                <a href={item.href}>{item.label}</a>
+              ))}
+            </div>
+          </div>
+          <div class="footer-column">
+            <span class="footer-heading">Elsewhere</span>
+            <div class="footer-link-list">
+              {activeSocialLinks.map((link) => (
+                <a href={link.href} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        <span class="footer-note">
+          Built with Astro · {new Date().getFullYear()}
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

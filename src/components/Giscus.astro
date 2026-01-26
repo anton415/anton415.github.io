@@ -1,0 +1,73 @@
+---
+import { giscus } from '../data/giscus';
+
+const {
+  repo = giscus.repo,
+  repoId = giscus.repoId,
+  category = giscus.category,
+  categoryId = giscus.categoryId,
+  mapping = giscus.mapping,
+  strict = giscus.strict,
+  reactionsEnabled = giscus.reactionsEnabled,
+  emitMetadata = giscus.emitMetadata,
+  inputPosition = giscus.inputPosition,
+  theme = giscus.theme,
+  lang = giscus.lang,
+  loading = giscus.loading,
+} = Astro.props;
+
+const isConfigured = Boolean(repo && repoId && category && categoryId);
+---
+
+<section class="comments" aria-label="Comments">
+  <h2>Comments</h2>
+  {isConfigured ? (
+    <script
+      src="https://giscus.app/client.js"
+      data-repo={repo}
+      data-repo-id={repoId}
+      data-category={category}
+      data-category-id={categoryId}
+      data-mapping={mapping}
+      data-strict={strict}
+      data-reactions-enabled={reactionsEnabled}
+      data-emit-metadata={emitMetadata}
+      data-input-position={inputPosition}
+      data-theme={theme}
+      data-lang={lang}
+      data-loading={loading}
+      crossorigin="anonymous"
+      async
+    ></script>
+  ) : (
+    <p class="comments-note">
+      Comments are powered by GitHub Discussions. Set
+      <code>PUBLIC_GISCUS_REPO_ID</code> and
+      <code>PUBLIC_GISCUS_CATEGORY_ID</code> to enable.
+    </p>
+  )}
+</section>
+
+<style>
+  .comments {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(61, 40, 20, 0.15);
+  }
+
+  .comments h2 {
+    font-size: var(--type-h3);
+    margin-bottom: 1rem;
+  }
+
+  .comments-note {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  :global(.giscus),
+  :global(.giscus-frame) {
+    width: 100%;
+  }
+</style>

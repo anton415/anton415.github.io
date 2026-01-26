@@ -22,10 +22,7 @@ export default function Contact() {
       <ListItem disablePadding>
         <ListItemButton component="a" href="https://cara.app/anton415/">
           <ListItemAvatar>
-            <Avatar
-              alt="Cara"
-              src={CaraIcon}
-            />
+            <Avatar alt="Cara" src={CaraIcon} />
           </ListItemAvatar>
           <ListItemText primary="Cara" secondary="My portfolio." />
         </ListItemButton>
@@ -34,10 +31,7 @@ export default function Contact() {
       <ListItem disablePadding>
         <ListItemButton component="a" href="https://www.instagram.com/anton415226/">
           <ListItemAvatar>
-             <Avatar
-               alt="Instagram"
-               src={InstagramIcon}
-             />
+            <Avatar alt="Instagram" src={InstagramIcon} />
           </ListItemAvatar>
           <ListItemText primary="Instagram" secondary="More of my work here." />
         </ListItemButton>
@@ -46,10 +40,7 @@ export default function Contact() {
       <ListItem disablePadding>
         <ListItemButton component="a" href="https://pin.it/62NObwbtT">
           <ListItemAvatar>
-            <Avatar
-              alt="Pinterest"
-              src={PinterestIcon}
-            />
+            <Avatar alt="Pinterest" src={PinterestIcon} />
           </ListItemAvatar>
           <ListItemText primary="Pinterest" secondary="References and inspiration map." />
         </ListItemButton>
@@ -58,10 +49,7 @@ export default function Contact() {
       <ListItem disablePadding>
         <ListItemButton component="a" href="mailto:anton415@gmail.com">
           <ListItemAvatar>
-            <Avatar
-              alt="Mail"
-              src={MailIcon}
-            />
+            <Avatar alt="Mail" src={MailIcon} />
           </ListItemAvatar>
           <ListItemText primary="Email" secondary="Reach out with any questions!" />
         </ListItemButton>

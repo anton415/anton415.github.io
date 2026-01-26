@@ -6,7 +6,7 @@ import Education from './about-information/Education';
 
 export default function About() {
   return (
-    <Box >
+    <Box>
       <BasicInfo />
       <Divider />
       <Education />

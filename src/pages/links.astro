@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+import { socialLinks } from '../data/links';
+
+const activeLinks = socialLinks.filter((link) => link.href);
+const formatHost = (href: string) => {
+  try {
+    return new URL(href).hostname.replace('www.', '');
+  } catch {
+    return href;
+  }
+};
+---
+
+<BaseLayout title="Links">
+  <section class="card">
+    <h1>Links</h1>
+    <p>Find me around the web and keep up with new work.</p>
+    <div class="link-grid">
+      {activeLinks.map((link) => (
+        <a
+          class="link-card"
+          href={link.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div class="link-title">
+            {link.icon ? <span class="link-icon">{link.icon}</span> : null}
+            <span class="link-label">{link.label}</span>
+          </div>
+          <span class="link-meta">
+            {link.description ?? formatHost(link.href)}
+          </span>
+        </a>
+      ))}
+    </div>
+    {profile.email ? (
+      <p class="email">
+        Email: <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </p>
+    ) : null}
+  </section>
+
+  <style>
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .link-card {
+      border: 1px solid rgba(61, 40, 20, 0.2);
+      border-radius: 18px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.6);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .link-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .link-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .link-icon {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      padding: 0.15rem 0.5rem;
+    }
+
+    .link-label {
+      font-weight: 600;
+    }
+
+    .link-meta {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    .email {
+      margin-top: 1.5rem;
+      color: var(--ink-soft);
+    }
+  </style>
+</BaseLayout>

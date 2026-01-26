@@ -1,0 +1,349 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { cv } from '../data/cv';
+import { profile } from '../data/profile';
+
+const { summary, experience, education, skills, projects } = cv;
+
+const formatDate = (value: string) => {
+  if (value === 'present') {
+    return 'Present';
+  }
+
+  const [year, month] = value.split('-');
+  if (!month) {
+    return year;
+  }
+
+  const date = new Date(Number(year), Number(month) - 1, 1);
+  return date.toLocaleString('en-US', { month: 'short', year: 'numeric' });
+};
+---
+
+<BaseLayout title="CV" bodyClass="cv-page">
+  <section class="card hero">
+    <p class="pill">Curriculum Vitae</p>
+    <h1>{profile.name}</h1>
+    <p class="lede">{profile.headline} - {profile.location}</p>
+    <div class="cv-actions screen-only">
+      <button type="button" class="cv-action cv-action-primary" onclick="window.print()">
+        Print / Save PDF
+      </button>
+    </div>
+    <ul class="summary-list">
+      {summary.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="cv-grid">
+    <article class="card cv-span">
+      <h2>Experience</h2>
+      <div class="cv-stack">
+        {experience.map((item) => (
+          <div class="cv-item">
+            <div class="cv-item-head">
+              <div>
+                <h3>{item.role}</h3>
+                <p class="cv-meta">
+                  {item.companyUrl ? (
+                    <a href={item.companyUrl} target="_blank" rel="noreferrer">
+                      {item.company}
+                    </a>
+                  ) : (
+                    item.company
+                  )}
+                  {item.location ? ` - ${item.location}` : ''}
+                </p>
+              </div>
+              <span class="cv-dates">
+                {formatDate(item.start)} - {formatDate(item.end)}
+              </span>
+            </div>
+            <ul>
+              {item.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Education</h2>
+      <div class="cv-stack">
+        {education.map((item) => (
+          <div class="cv-item">
+            <div class="cv-item-head">
+              <div>
+                <h3>{item.degree}</h3>
+                <p class="cv-meta">{item.field}</p>
+                <p class="cv-meta">{item.school}</p>
+              </div>
+              <span class="cv-dates">{item.year}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Skills</h2>
+      <div class="cv-section">
+        <h3>Core</h3>
+        <div class="cv-chips">
+          {skills.core.map((item) => (
+            <span class="cv-chip">{item}</span>
+          ))}
+        </div>
+      </div>
+      <div class="cv-section">
+        <h3>Tools</h3>
+        <div class="cv-chips">
+          {skills.tools.map((item) => (
+            <span class="cv-chip">{item}</span>
+          ))}
+        </div>
+      </div>
+      <div class="cv-section">
+        <h3>Languages</h3>
+        <div class="cv-chips">
+          {skills.languages.map((item) => (
+            <span class="cv-chip">{item}</span>
+          ))}
+        </div>
+      </div>
+    </article>
+
+    <article class="card cv-span">
+      <h2>Projects</h2>
+      <div class="cv-stack">
+        {projects.map((project) => (
+          <div class="cv-item">
+            <div class="cv-item-head">
+              <div>
+                <h3>{project.name}</h3>
+                {project.role ? <p class="cv-meta">{project.role}</p> : null}
+              </div>
+            </div>
+            <p class="cv-body">{project.description}</p>
+            {project.tech ? (
+              <div class="cv-chips">
+                {project.tech.map((item) => (
+                  <span class="cv-chip">{item}</span>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </article>
+  </section>
+
+  <style>
+    .hero h1 {
+      margin: 0.6rem 0 0.4rem;
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+    }
+
+    .lede {
+      margin: 0 0 1.2rem;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    .summary-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .cv-actions {
+      margin: 0 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .cv-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .cv-action-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .cv-action:hover {
+      transform: translateY(-1px);
+    }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .cv-span {
+      grid-column: 1 / -1;
+    }
+
+    .cv-stack {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .cv-item ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.2rem;
+    }
+
+    .cv-item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cv-item h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .cv-meta {
+      margin: 0.2rem 0 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .cv-dates {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .cv-body {
+      margin: 0.6rem 0 0;
+      color: var(--ink-soft);
+    }
+
+    .cv-section {
+      margin-top: 1rem;
+    }
+
+    .cv-section h3 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .cv-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .cv-chip {
+      border: 1px solid rgba(61, 40, 20, 0.2);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    @page {
+      margin: 1.4cm;
+      size: auto;
+    }
+
+    @media (max-width: 760px) {
+      .cv-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      :global(body.cv-page) {
+        background: #ffffff;
+        color: #1d1b16;
+        font-size: 11pt;
+        line-height: 1.45;
+      }
+
+      :global(body.cv-page header),
+      :global(body.cv-page footer) {
+        display: none;
+      }
+
+      :global(body.cv-page main) {
+        max-width: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .screen-only {
+        display: none;
+      }
+
+      .card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .hero {
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid rgba(61, 40, 20, 0.2);
+      }
+
+      .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+        margin-top: 1rem;
+      }
+
+      .cv-span {
+        grid-column: auto;
+      }
+
+      .cv-item,
+      .cv-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .cv-chip {
+        background: transparent;
+        color: #2e2a24;
+        border-color: rgba(61, 40, 20, 0.25);
+        font-size: 0.8rem;
+      }
+
+      .summary-list,
+      .cv-item ul {
+        gap: 0.3rem;
+      }
+    }
+  </style>
+</BaseLayout>

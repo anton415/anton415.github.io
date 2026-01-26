@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+const visiblePosts = posts.filter((post) => !post.data.draft);
+
+const slugifyTag = (tag: string) =>
+  tag
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+
+const tagMap = new Map();
+
+for (const post of visiblePosts) {
+  for (const rawTag of post.data.tags ?? []) {
+    const tag = rawTag.trim();
+    if (!tag) continue;
+    const slug = slugifyTag(tag);
+    if (!slug) continue;
+
+    const entry = tagMap.get(slug) ?? { tag, slug, count: 0 };
+    entry.count += 1;
+    tagMap.set(slug, entry);
+  }
+}
+
+const tags = Array.from(tagMap.values()).sort((a, b) =>
+  a.tag.localeCompare(b.tag)
+);
+---
+
+<BaseLayout title="Blog Tags">
+  <section class="card">
+    <h1>Tags</h1>
+    <p>Browse posts by topic.</p>
+    {tags.length ? (
+      <div class="tag-grid" aria-label="Tag list">
+        {tags.map((tag) => (
+          <a class="tag-chip" href={`/blog/tags/${tag.slug}`}>
+            <span>{tag.tag}</span>
+            <span class="count">{tag.count}</span>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p>No tags yet.</p>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .tag-grid {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(61, 40, 20, 0.2);
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    color: #3f3a31;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .tag-chip:hover {
+    border-color: #c35b2d;
+    color: #c35b2d;
+  }
+
+  .count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(195, 91, 45, 0.15);
+    font-size: 0.75rem;
+    color: #5a5041;
+  }
+</style>
