@@ -17,7 +17,7 @@
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "astro": "latest",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^6.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
