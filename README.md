@@ -2,8 +2,7 @@
 
 Personal website for hobby.
 
-This website uses [Vite.js](https://github.com/vitejs/vite).
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5.
+This website is built with [Astro](https://astro.build/) and MDX.
 
 ## Available Scripts
 
@@ -15,8 +14,16 @@ Rebuild node_modules.
 
 ### `npm run dev`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:8080](http://localhost:3000) to view it in the browser.
+Starts the Astro dev server.<br>
+Open [http://localhost:4321](http://localhost:4321) to view it in the browser.
+
+### `npm run build`
+
+Builds the production site to `dist/`.
+
+### `npm run preview`
+
+Preview the production build locally.
 
 ### `npm run deploy`
 
@@ -37,6 +44,5 @@ DNS (if needed):
 
 ## Learn More
 
-- [React documentation](https://reactjs.org/).
-- [Material UI React](https://mui.com/).
+- [Astro documentation](https://docs.astro.build/).
 - [GitHub Pages](https://pages.github.com/).
