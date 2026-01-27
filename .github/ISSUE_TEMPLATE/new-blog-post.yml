@@ -1,0 +1,62 @@
+name: "New blog post"
+description: "Propose a new blog post for serdyuchenko.com"
+title: "[Blog] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share the idea and scope for a new blog post. Provide enough detail to plan the draft.
+  - type: input
+    id: proposed-title
+    attributes:
+      label: Proposed title
+      placeholder: "e.g., Shipping a minimal portfolio with Astro"
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Idea
+        - Draft in progress
+        - Ready to publish
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: "What is the post about and why does it matter?"
+      placeholder: "One paragraph overview."
+    validations:
+      required: true
+  - type: textarea
+    id: outline
+    attributes:
+      label: Outline / key points
+      placeholder: "- Point 1\n- Point 2\n- Point 3"
+    validations:
+      required: true
+  - type: input
+    id: target-date
+    attributes:
+      label: Target publish date
+      placeholder: "YYYY-MM-DD (optional)"
+    validations:
+      required: false
+  - type: textarea
+    id: references
+    attributes:
+      label: References / links
+      placeholder: "Sources, prior art, or examples."
+    validations:
+      required: false
+  - type: textarea
+    id: assets
+    attributes:
+      label: Assets
+      description: "Images, diagrams, code samples, or data to include."
+      placeholder: "Attach or link any assets here."
+    validations:
+      required: false
