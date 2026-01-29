@@ -1,0 +1,44 @@
+name: "Site improvement"
+description: "Suggest a feature, UX, or performance improvement for the site"
+title: "[Improve] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Capture ideas for improving the site. Be specific about the problem and the desired outcome.
+  - type: input
+    id: area
+    attributes:
+      label: Area of the site
+      placeholder: "e.g., blog index, navigation, performance, SEO"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / opportunity
+      description: "What is not working well today?"
+      placeholder: "Describe the issue or improvement opportunity."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      placeholder: "Explain what you want to change and why."
+    validations:
+      required: true
+  - type: textarea
+    id: success
+    attributes:
+      label: Acceptance criteria
+      placeholder: "- Criterion 1\n- Criterion 2"
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References / links
+      placeholder: "Screenshots, examples, or related issues."
+    validations:
+      required: false

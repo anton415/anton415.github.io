@@ -1,11 +1,15 @@
 # serdyuchenko.com
 
-Personal website for hobby.
+Personal site built with [Astro](https://astro.build/) and Markdown content
+collections.
 
-This website uses [Vite.js](https://github.com/vitejs/vite).
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5.
+## Content workflow
 
-## Available Scripts
+New posts and projects live in `src/content/`. See
+[`docs/content-workflow.md`](docs/content-workflow.md) for frontmatter examples,
+tag conventions, and image guidance.
+
+## Available scripts
 
 In the project directory, you can run:
 
@@ -15,12 +19,30 @@ Rebuild node_modules.
 
 ### `npm run dev`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:8080](http://localhost:3000) to view it in the browser.
+Starts the Astro dev server.<br>
+Open [http://localhost:4321](http://localhost:4321) to view it in the browser.
+
+### `npm run build`
+
+Builds the production site to `dist/`.
+
+### `npm run preview`
+
+Preview the production build locally.
 
 ### `npm run deploy`
 
 Deploy to GitHub Pages (legacy, local).
+
+## Publish checklist
+
+- New content lives in `src/content/posts/` or `src/content/projects/`.
+- Post frontmatter includes `title`, `date`, `tags`, `description`, and
+  `draft: false` when ready to publish.
+- Project frontmatter includes `title`, `role`, and at least one `outcomes`
+  entry.
+- Images are stored in `public/` and referenced with `/images/...` paths.
+- Optional: run `npm run build` before pushing.
 
 ## GitHub Pages (Actions)
 
@@ -37,6 +59,5 @@ DNS (if needed):
 
 ## Learn More
 
-- [React documentation](https://reactjs.org/).
-- [Material UI React](https://mui.com/).
+- [Astro documentation](https://docs.astro.build/).
 - [GitHub Pages](https://pages.github.com/).
