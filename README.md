@@ -1,10 +1,15 @@
 # serdyuchenko.com
 
-Personal website for hobby.
+Personal site built with [Astro](https://astro.build/) and Markdown content
+collections.
 
-This website is built with [Astro](https://astro.build/) and MDX.
+## Content workflow
 
-## Available Scripts
+New posts and projects live in `src/content/`. See
+[`docs/content-workflow.md`](docs/content-workflow.md) for frontmatter examples,
+tag conventions, and image guidance.
+
+## Available scripts
 
 In the project directory, you can run:
 
@@ -28,6 +33,16 @@ Preview the production build locally.
 ### `npm run deploy`
 
 Deploy to GitHub Pages (legacy, local).
+
+## Publish checklist
+
+- New content lives in `src/content/posts/` or `src/content/projects/`.
+- Post frontmatter includes `title`, `date`, `tags`, `description`, and
+  `draft: false` when ready to publish.
+- Project frontmatter includes `title`, `role`, and at least one `outcomes`
+  entry.
+- Images are stored in `public/` and referenced with `/images/...` paths.
+- Optional: run `npm run build` before pushing.
 
 ## GitHub Pages (Actions)
 
