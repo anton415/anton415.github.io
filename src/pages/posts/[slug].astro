@@ -1,16 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { buildSlugMapById } from '../../i18n/alternatePaths';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
+  const postsRu = await getCollection('postsRu');
+  const postSlugMap = buildSlugMapById(posts, postsRu);
+
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: {
+      post,
+      switchToRuPath: `/ru/posts/${postSlugMap.get(post.slug) ?? post.slug}`,
+    },
   }));
 }
 
-const { post } = Astro.props;
+const { post, switchToRuPath } = Astro.props;
 const { Content } = await post.render();
 
 const formattedDate = post.data.date.toLocaleDateString('en-US', {
@@ -31,6 +38,7 @@ const metaLine = metaParts.join(' · ');
   description={post.data.description}
   image={post.data.socialImage}
   ogType="article"
+  switchToRuPath={switchToRuPath}
 >
   <article class="card post">
     <p class="pill">{formattedDate}</p>

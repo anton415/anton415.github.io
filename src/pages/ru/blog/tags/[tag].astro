@@ -1,17 +1,14 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { buildTagSlugMap, slugifyTag } from '../../../../i18n/alternatePaths';
 
 export async function getStaticPaths() {
-  const slugifyTag = (tag: string) =>
-    tag
-      .toLowerCase()
-      .trim()
-      .replace(/[^\p{Letter}\p{Number}]+/gu, '-')
-      .replace(/(^-|-$)+/g, '');
-
   const posts = await getCollection('postsRu');
+  const postsEn = await getCollection('posts');
   const visiblePosts = posts.filter((post) => !post.data.draft);
+  const visiblePostsEn = postsEn.filter((post) => !post.data.draft);
+  const tagSlugMap = buildTagSlugMap(visiblePosts, visiblePostsEn);
   const tagMap = new Map();
 
   for (const post of visiblePosts) {
@@ -35,6 +32,7 @@ export async function getStaticPaths() {
     props: {
       tag: entry.tag,
       slug: entry.slug,
+      switchToEnPath: `/blog/tags/${tagSlugMap.get(entry.slug) ?? entry.slug}`,
       posts: entry.posts.sort(
         (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
       ),
@@ -42,7 +40,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const { tag, posts } = Astro.props;
+const { tag, posts, switchToEnPath } = Astro.props;
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('ru-RU', {
@@ -63,7 +61,7 @@ const getPostLabel = (count: number) => {
 };
 ---
 
-<BaseLayout title={`Тег: ${tag}`} locale="ru">
+<BaseLayout title={`Тег: ${tag}`} locale="ru" switchToEnPath={switchToEnPath}>
   <section class="card">
     <div class="head">
       <div>

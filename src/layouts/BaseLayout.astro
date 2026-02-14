@@ -17,6 +17,8 @@ const {
   ogType = 'website',
   bodyClass = '',
   locale,
+  switchToEnPath,
+  switchToRuPath,
 } = Astro.props;
 const pageLocale =
   locale && isLocale(locale) ? locale : getLocaleFromPath(Astro.url.pathname);
@@ -30,8 +32,16 @@ const socialLinks = getSocialLinks(pageLocale);
 const activeSocialLinks = socialLinks.filter((link) => link.href);
 const siteUrl = Astro.site ?? new URL(site.url);
 const currentPath = normalizePath(Astro.url.pathname);
-const switchToEnPath = localizePath(currentPath, 'en');
-const switchToRuPath = localizePath(currentPath, 'ru');
+const defaultSwitchToEnPath = localizePath(currentPath, 'en');
+const defaultSwitchToRuPath = localizePath(currentPath, 'ru');
+const resolvedSwitchToEnPath =
+  typeof switchToEnPath === 'string'
+    ? normalizePath(switchToEnPath)
+    : defaultSwitchToEnPath;
+const resolvedSwitchToRuPath =
+  typeof switchToRuPath === 'string'
+    ? normalizePath(switchToRuPath)
+    : defaultSwitchToRuPath;
 const localeSwitcherLabel = pageLocale === 'ru' ? 'Язык' : 'Language';
 const primaryNavLabel = pageLocale === 'ru' ? 'Основная навигация' : 'Primary';
 const footerExplore = pageLocale === 'ru' ? 'Разделы' : 'Explore';
@@ -72,8 +82,8 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
       is:inline
       define:vars={{
         currentLocale: pageLocale,
-        switchToEnPath,
-        switchToRuPath,
+        switchToEnPath: resolvedSwitchToEnPath,
+        switchToRuPath: resolvedSwitchToRuPath,
       }}
     >
       (() => {
@@ -550,14 +560,14 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
         </nav>
         <div class="language-switch" aria-label={localeSwitcherLabel}>
           <a
-            href={switchToEnPath}
+            href={resolvedSwitchToEnPath}
             data-locale-target="en"
             class:list={{ active: pageLocale === 'en' }}
           >
             EN
           </a>
           <a
-            href={switchToRuPath}
+            href={resolvedSwitchToRuPath}
             data-locale-target="ru"
             class:list={{ active: pageLocale === 'ru' }}
           >

@@ -2,16 +2,23 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Giscus from '../../components/Giscus.astro';
 import { getCollection } from 'astro:content';
+import { buildSlugMapById, slugifyTag } from '../../i18n/alternatePaths';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
+  const postsRu = await getCollection('postsRu');
+  const postSlugMap = buildSlugMapById(posts, postsRu);
+
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: {
+      post,
+      switchToRuPath: `/ru/blog/${postSlugMap.get(post.slug) ?? post.slug}`,
+    },
   }));
 }
 
-const { post } = Astro.props;
+const { post, switchToRuPath } = Astro.props;
 const { Content } = await post.render();
 
 const formattedDate = post.data.date.toLocaleDateString('en-US', {
@@ -19,13 +26,6 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
-
-const slugifyTag = (tag: string) =>
-  tag
-    .toLowerCase()
-    .trim()
-    .replace(/[^\p{Letter}\p{Number}]+/gu, '-')
-    .replace(/(^-|-$)+/g, '');
 
 const tagLinks = [];
 const seenTags = new Set();
@@ -42,6 +42,7 @@ for (const tag of post.data.tags ?? []) {
   description={post.data.description}
   image={post.data.socialImage}
   ogType="article"
+  switchToRuPath={switchToRuPath}
 >
   <article class="card post">
     <p class="pill">{formattedDate}</p>

@@ -1,16 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { buildSlugMapById } from '../../i18n/alternatePaths';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
+  const projectsRu = await getCollection('projectsRu');
+  const projectSlugMap = buildSlugMapById(projects, projectsRu);
+
   return projects.map((project) => ({
     params: { slug: project.slug },
-    props: { project },
+    props: {
+      project,
+      switchToRuPath: `/ru/projects/${projectSlugMap.get(project.slug) ?? project.slug}`,
+    },
   }));
 }
 
-const { project } = Astro.props;
+const { project, switchToRuPath } = Astro.props;
 const { Content } = await project.render();
 const {
   stack = [],
@@ -26,6 +33,7 @@ const metaImage = project.data.socialImage ?? screenshots[0]?.src;
   title={project.data.title}
   description={metaDescription}
   image={metaImage}
+  switchToRuPath={switchToRuPath}
 >
   <article class="card project">
     <p class="pill">{project.data.role}</p>
