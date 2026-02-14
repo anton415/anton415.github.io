@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const notes = [
+  {
+    title: 'Макеты лежат в src/layouts',
+    detail: 'Используйте их для единой структуры и метаданных.',
+  },
+  {
+    title: 'Страницы лежат в src/pages',
+    detail: 'Каждый файл .astro автоматически становится роутом.',
+  },
+  {
+    title: 'TypeScript уже включен',
+    detail: 'Обновляйте tsconfig.json при добавлении нового инструментария.',
+  },
+];
+---
+
+<BaseLayout title="Пример" locale="ru">
+  <section class="card">
+    <h1>Тестовая страница</h1>
+    <p>
+      Используйте этот роут как песочницу для следующего контента, который
+      планируете перенести.
+    </p>
+    <div>
+      {notes.map((note) => (
+        <article style="margin-bottom: 1.5rem;">
+          <strong>{note.title}</strong>
+          <p>{note.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

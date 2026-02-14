@@ -14,13 +14,17 @@ const {
   theme = giscus.theme,
   lang = giscus.lang,
   loading = giscus.loading,
+  title = 'Comments',
+  ariaLabel = 'Comments',
+  fallbackText = 'Comments are powered by GitHub Discussions. Set',
+  fallbackEnableText = 'to enable.',
 } = Astro.props;
 
 const isConfigured = Boolean(repo && repoId && category && categoryId);
 ---
 
-<section class="comments" aria-label="Comments">
-  <h2>Comments</h2>
+<section class="comments" aria-label={ariaLabel}>
+  <h2>{title}</h2>
   {isConfigured ? (
     <script
       src="https://giscus.app/client.js"
@@ -41,9 +45,9 @@ const isConfigured = Boolean(repo && repoId && category && categoryId);
     ></script>
   ) : (
     <p class="comments-note">
-      Comments are powered by GitHub Discussions. Set
+      {fallbackText}
       <code>PUBLIC_GISCUS_REPO_ID</code> and
-      <code>PUBLIC_GISCUS_CATEGORY_ID</code> to enable.
+      <code>PUBLIC_GISCUS_CATEGORY_ID</code> {fallbackEnableText}
     </p>
   )}
 </section>

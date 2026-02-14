@@ -1,7 +1,13 @@
 ---
-import { profile } from '../data/profile';
-import { navLinks, socialLinks } from '../data/links';
-import { site } from '../data/site';
+import { getProfile } from '../data/profile';
+import { getNavLinks, getSocialLinks } from '../data/links';
+import { getSite } from '../data/site';
+import {
+  getLocaleFromPath,
+  isLocale,
+  localizePath,
+  normalizePath,
+} from '../i18n/locales';
 
 const {
   title,
@@ -10,9 +16,37 @@ const {
   canonicalUrl,
   ogType = 'website',
   bodyClass = '',
+  locale,
+  switchToEnPath,
+  switchToRuPath,
 } = Astro.props;
+const pageLocale =
+  locale && isLocale(locale) ? locale : getLocaleFromPath(Astro.url.pathname);
+const profile = getProfile(pageLocale);
+const site = getSite(pageLocale);
+const navLinks = getNavLinks(pageLocale).map((item) => ({
+  ...item,
+  href: localizePath(item.href, pageLocale),
+}));
+const socialLinks = getSocialLinks(pageLocale);
 const activeSocialLinks = socialLinks.filter((link) => link.href);
 const siteUrl = Astro.site ?? new URL(site.url);
+const currentPath = normalizePath(Astro.url.pathname);
+const defaultSwitchToEnPath = localizePath(currentPath, 'en');
+const defaultSwitchToRuPath = localizePath(currentPath, 'ru');
+const resolvedSwitchToEnPath =
+  typeof switchToEnPath === 'string'
+    ? normalizePath(switchToEnPath)
+    : defaultSwitchToEnPath;
+const resolvedSwitchToRuPath =
+  typeof switchToRuPath === 'string'
+    ? normalizePath(switchToRuPath)
+    : defaultSwitchToRuPath;
+const localeSwitcherLabel = pageLocale === 'ru' ? 'Язык' : 'Language';
+const primaryNavLabel = pageLocale === 'ru' ? 'Основная навигация' : 'Primary';
+const footerExplore = pageLocale === 'ru' ? 'Разделы' : 'Explore';
+const footerElsewhere = pageLocale === 'ru' ? 'В сети' : 'Elsewhere';
+const builtWithLabel = pageLocale === 'ru' ? 'Сделано на Astro' : 'Built with Astro';
 
 const metaTitle = title ?? site.title;
 const metaDescription = description ?? site.description;
@@ -23,7 +57,7 @@ const resolvedImage = metaImage ? new URL(metaImage, siteUrl).toString() : null;
 const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
 ---
 <!doctype html>
-<html lang="en">
+<html lang={pageLocale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,6 +78,144 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
     {resolvedImage ? (
       <meta name="twitter:image" content={resolvedImage} />
     ) : null}
+    <script
+      is:inline
+      define:vars={{
+        currentLocale: pageLocale,
+        switchToEnPath: resolvedSwitchToEnPath,
+        switchToRuPath: resolvedSwitchToRuPath,
+      }}
+    >
+      (() => {
+        const STORAGE_KEY = 'preferred-locale';
+        const GEO_ENDPOINT = 'https://ipapi.co/json/';
+        const SUPPORTED_LOCALES = new Set(['en', 'ru']);
+        const localeToPath = {
+          en: switchToEnPath,
+          ru: switchToRuPath,
+        };
+
+        const normalizePath = (pathname) => {
+          if (!pathname) return '/';
+          if (pathname === '/') return pathname;
+          return pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+        };
+
+        const redirectToLocale = (locale) => {
+          const targetPath = localeToPath[locale];
+          if (!targetPath) return;
+
+          const currentPath = normalizePath(window.location.pathname);
+          const normalizedTarget = normalizePath(targetPath);
+          if (currentPath === normalizedTarget) return;
+
+          const nextUrl = `${targetPath}${window.location.search}${window.location.hash}`;
+          window.location.replace(nextUrl);
+        };
+
+        const inferFromBrowser = () => {
+          const languageCodes = navigator.languages?.length
+            ? navigator.languages
+            : [navigator.language];
+          if (languageCodes.some((code) => code?.toLowerCase().startsWith('ru'))) {
+            return 'ru';
+          }
+
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone ?? '';
+          if (tz.startsWith('Europe/Moscow') || tz.startsWith('Europe/Kirov')) {
+            return 'ru';
+          }
+
+          return 'en';
+        };
+
+        const detectByGeo = async () => {
+          const controller = new AbortController();
+          const timeout = window.setTimeout(() => controller.abort(), 1200);
+
+          try {
+            const response = await fetch(GEO_ENDPOINT, {
+              signal: controller.signal,
+              headers: { Accept: 'application/json' },
+            });
+
+            if (response.ok) {
+              const payload = await response.json();
+              const countryCode = String(payload?.country_code ?? '').toUpperCase();
+              if (countryCode === 'RU') {
+                return 'ru';
+              }
+
+              if (countryCode) {
+                return 'en';
+              }
+            }
+          } catch {
+            return inferFromBrowser();
+          } finally {
+            window.clearTimeout(timeout);
+          }
+
+          return inferFromBrowser();
+        };
+
+        const rememberLocaleLinks = () => {
+          const switcherLinks = document.querySelectorAll('[data-locale-target]');
+          switcherLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+              const nextLocale = link.getAttribute('data-locale-target');
+              if (nextLocale && SUPPORTED_LOCALES.has(nextLocale)) {
+                try {
+                  localStorage.setItem(STORAGE_KEY, nextLocale);
+                } catch {
+                  // Ignore storage write failures.
+                }
+              }
+            });
+          });
+        };
+
+        const getRememberedLocale = () => {
+          try {
+            return localStorage.getItem(STORAGE_KEY);
+          } catch {
+            return null;
+          }
+        };
+
+        const setRememberedLocale = (locale) => {
+          try {
+            localStorage.setItem(STORAGE_KEY, locale);
+          } catch {
+            // Ignore storage write failures.
+          }
+        };
+
+        const rememberedLocale = getRememberedLocale();
+        if (rememberedLocale && SUPPORTED_LOCALES.has(rememberedLocale)) {
+          redirectToLocale(rememberedLocale);
+        } else {
+          detectByGeo().then((detectedLocale) => {
+            if (!SUPPORTED_LOCALES.has(detectedLocale)) {
+              return;
+            }
+
+            setRememberedLocale(detectedLocale);
+            redirectToLocale(detectedLocale);
+          });
+        }
+
+        document.documentElement.lang = currentLocale;
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', rememberLocaleLinks, {
+            once: true,
+          });
+        } else {
+          rememberLocaleLinks();
+        }
+      })();
+    </script>
     <style>
       :root {
         color-scheme: light;
@@ -117,6 +289,12 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
         color: var(--ink-soft);
       }
 
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
       nav {
         display: flex;
         gap: 1rem;
@@ -133,6 +311,36 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
       nav a:hover {
         border-color: var(--accent);
         color: var(--accent);
+      }
+
+      .language-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        border: 1px solid rgba(61, 40, 20, 0.2);
+        border-radius: 999px;
+        padding: 0.25rem;
+      }
+
+      .language-switch a {
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.45rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        transition: background-color 0.2s ease, border-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .language-switch a:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .language-switch a.active {
+        background: var(--accent);
+        color: #fff;
       }
 
       main {
@@ -320,6 +528,13 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
           gap: 1rem;
         }
 
+        .header-actions {
+          width: 100%;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
         nav {
           flex-wrap: wrap;
         }
@@ -337,11 +552,29 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
         <span>{profile.name}</span>
         <span class="brand-meta">{profile.headline} · {profile.location}</span>
       </div>
-      <nav aria-label="Primary">
-        {navLinks.map((item) => (
-          <a href={item.href}>{item.label}</a>
-        ))}
-      </nav>
+      <div class="header-actions">
+        <nav aria-label={primaryNavLabel}>
+          {navLinks.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))}
+        </nav>
+        <div class="language-switch" aria-label={localeSwitcherLabel}>
+          <a
+            href={resolvedSwitchToEnPath}
+            data-locale-target="en"
+            class:list={{ active: pageLocale === 'en' }}
+          >
+            EN
+          </a>
+          <a
+            href={resolvedSwitchToRuPath}
+            data-locale-target="ru"
+            class:list={{ active: pageLocale === 'ru' }}
+          >
+            RU
+          </a>
+        </div>
+      </div>
     </header>
     <main>
       <slot />
@@ -358,7 +591,7 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
         </div>
         <div class="footer-links">
           <div class="footer-column">
-            <span class="footer-heading">Explore</span>
+            <span class="footer-heading">{footerExplore}</span>
             <div class="footer-link-list">
               {navLinks.map((item) => (
                 <a href={item.href}>{item.label}</a>
@@ -366,7 +599,7 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
             </div>
           </div>
           <div class="footer-column">
-            <span class="footer-heading">Elsewhere</span>
+            <span class="footer-heading">{footerElsewhere}</span>
             <div class="footer-link-list">
               {activeSocialLinks.map((link) => (
                 <a href={link.href} target="_blank" rel="noreferrer">
@@ -376,9 +609,7 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
             </div>
           </div>
         </div>
-        <span class="footer-note">
-          Built with Astro · {new Date().getFullYear()}
-        </span>
+        <span class="footer-note">{builtWithLabel} · {new Date().getFullYear()}</span>
       </div>
     </footer>
   </body>

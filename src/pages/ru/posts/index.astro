@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('postsRu');
+const visiblePosts = posts
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (date) =>
+  date.toLocaleDateString('ru-RU', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+---
+
+<BaseLayout title="Посты" locale="ru">
+  <section class="card">
+    <h1>Посты</h1>
+    <p>Полевые заметки, разборы процессов и обновления студии.</p>
+    <div class="list">
+      {visiblePosts.map((post) => (
+        <article class="item">
+          <div class="meta">
+            <span class="date">{formatDate(post.data.date)}</span>
+            <span class="dot">·</span>
+            <span>{post.data.tags.join(', ')}</span>
+          </div>
+          <h2>
+            <a href={`/ru/posts/${post.slug}`}>{post.data.title}</a>
+          </h2>
+          <p>{post.data.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .list {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(195, 91, 45, 0.18);
+  }
+
+  .item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #5a5041;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .dot {
+    opacity: 0.5;
+  }
+
+  h2 {
+    margin: 0.5rem 0 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  a {
+    color: inherit;
+  }
+</style>

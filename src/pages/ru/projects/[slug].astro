@@ -1,23 +1,23 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { buildSlugMapById } from '../../i18n/alternatePaths';
+import { buildSlugMapById } from '../../../i18n/alternatePaths';
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects');
-  const projectsRu = await getCollection('projectsRu');
-  const projectSlugMap = buildSlugMapById(projects, projectsRu);
+  const projects = await getCollection('projectsRu');
+  const projectsEn = await getCollection('projects');
+  const projectSlugMap = buildSlugMapById(projects, projectsEn);
 
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: {
       project,
-      switchToRuPath: `/ru/projects/${projectSlugMap.get(project.slug) ?? project.slug}`,
+      switchToEnPath: `/projects/${projectSlugMap.get(project.slug) ?? project.slug}`,
     },
   }));
 }
 
-const { project, switchToRuPath } = Astro.props;
+const { project, switchToEnPath } = Astro.props;
 const { Content } = await project.render();
 const {
   stack = [],
@@ -33,7 +33,8 @@ const metaImage = project.data.socialImage ?? screenshots[0]?.src;
   title={project.data.title}
   description={metaDescription}
   image={metaImage}
-  switchToRuPath={switchToRuPath}
+  locale="ru"
+  switchToEnPath={switchToEnPath}
 >
   <article class="card project">
     <p class="pill">{project.data.role}</p>
@@ -42,7 +43,7 @@ const metaImage = project.data.socialImage ?? screenshots[0]?.src;
       <div class="meta">
         {stack.length ? (
           <div>
-            <h2>Stack</h2>
+            <h2>Стек</h2>
             <ul class="stack">
               {stack.map((tool) => (
                 <li>{tool}</li>
@@ -52,7 +53,7 @@ const metaImage = project.data.socialImage ?? screenshots[0]?.src;
         ) : null}
         {links.length ? (
           <div>
-            <h2>Links</h2>
+            <h2>Ссылки</h2>
             <ul class="links">
               {links.map((link) => (
                 <li>
@@ -68,7 +69,7 @@ const metaImage = project.data.socialImage ?? screenshots[0]?.src;
     )}
     {outcomes.length ? (
       <div class="outcomes">
-        <h2>Outcomes</h2>
+        <h2>Результаты</h2>
         <ul>
           {outcomes.map((outcome) => (
             <li>{outcome}</li>
@@ -78,13 +79,13 @@ const metaImage = project.data.socialImage ?? screenshots[0]?.src;
     ) : null}
     {screenshots.length ? (
       <section class="screens">
-        <h2>Screenshots</h2>
+        <h2>Скриншоты</h2>
         <div class="screen-grid">
           {screenshots.map((shot) => (
             <figure class="shot">
               <img
                 src={shot.src}
-                alt={shot.alt ?? `${project.data.title} screenshot`}
+                alt={shot.alt ?? `Скриншот проекта ${project.data.title}`}
                 loading="lazy"
               />
               {shot.caption ? (

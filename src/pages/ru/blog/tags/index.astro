@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('posts');
+const posts = await getCollection('postsRu');
 const visiblePosts = posts.filter((post) => !post.data.draft);
 
 const slugifyTag = (tag: string) =>
@@ -27,26 +27,24 @@ for (const post of visiblePosts) {
   }
 }
 
-const tags = Array.from(tagMap.values()).sort((a, b) =>
-  a.tag.localeCompare(b.tag)
-);
+const tags = Array.from(tagMap.values()).sort((a, b) => a.tag.localeCompare(b.tag, 'ru'));
 ---
 
-<BaseLayout title="Blog Tags">
+<BaseLayout title="Теги блога" locale="ru">
   <section class="card">
-    <h1>Tags</h1>
-    <p>Browse posts by topic.</p>
+    <h1>Теги</h1>
+    <p>Выбирайте посты по темам.</p>
     {tags.length ? (
-      <div class="tag-grid" aria-label="Tag list">
+      <div class="tag-grid" aria-label="Список тегов">
         {tags.map((tag) => (
-          <a class="tag-chip" href={`/blog/tags/${tag.slug}`}>
+          <a class="tag-chip" href={`/ru/blog/tags/${tag.slug}`}>
             <span>{tag.tag}</span>
             <span class="count">{tag.count}</span>
           </a>
         ))}
       </div>
     ) : (
-      <p>No tags yet.</p>
+      <p>Тегов пока нет.</p>
     )}
   </section>
 </BaseLayout>

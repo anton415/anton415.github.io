@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projectsRu');
+const featuredProjects = projects.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title, 'ru')
+);
+---
+
+<BaseLayout title="Проекты" locale="ru">
+  <section class="card">
+    <h1>Проекты</h1>
+    <p>Выбранные коллаборации и внутренние эксперименты.</p>
+    <div class="list">
+      {featuredProjects.map((project) => {
+        const stack = project.data.stack ?? [];
+        const outcomes = project.data.outcomes ?? [];
+
+        return (
+          <article class="item">
+            <div class="meta">{project.data.role}</div>
+            <h2>
+              <a href={`/ru/projects/${project.slug}`}>{project.data.title}</a>
+            </h2>
+            {stack.length ? (
+              <ul class="stack">
+                {stack.map((tool) => (
+                  <li>{tool}</li>
+                ))}
+              </ul>
+            ) : null}
+            {outcomes.length ? (
+              <ul class="outcomes">
+                {outcomes.map((outcome) => (
+                  <li>{outcome}</li>
+                ))}
+              </ul>
+            ) : null}
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .list {
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .item {
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(195, 91, 45, 0.18);
+  }
+
+  .item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5a5041;
+  }
+
+  .stack {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0.75rem 0;
+    font-size: 0.9rem;
+  }
+
+  .stack li {
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(61, 40, 20, 0.2);
+  }
+
+  .outcomes {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #4d4235;
+  }
+</style>

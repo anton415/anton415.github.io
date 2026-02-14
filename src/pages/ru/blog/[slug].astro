@@ -1,27 +1,27 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Giscus from '../../components/Giscus.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Giscus from '../../../components/Giscus.astro';
 import { getCollection } from 'astro:content';
-import { buildSlugMapById, slugifyTag } from '../../i18n/alternatePaths';
+import { buildSlugMapById, slugifyTag } from '../../../i18n/alternatePaths';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  const postsRu = await getCollection('postsRu');
-  const postSlugMap = buildSlugMapById(posts, postsRu);
+  const posts = await getCollection('postsRu');
+  const postsEn = await getCollection('posts');
+  const postSlugMap = buildSlugMapById(posts, postsEn);
 
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: {
       post,
-      switchToRuPath: `/ru/blog/${postSlugMap.get(post.slug) ?? post.slug}`,
+      switchToEnPath: `/blog/${postSlugMap.get(post.slug) ?? post.slug}`,
     },
   }));
 }
 
-const { post, switchToRuPath } = Astro.props;
+const { post, switchToEnPath } = Astro.props;
 const { Content } = await post.render();
 
-const formattedDate = post.data.date.toLocaleDateString('en-US', {
+const formattedDate = post.data.date.toLocaleDateString('ru-RU', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -42,15 +42,16 @@ for (const tag of post.data.tags ?? []) {
   description={post.data.description}
   image={post.data.socialImage}
   ogType="article"
-  switchToRuPath={switchToRuPath}
+  locale="ru"
+  switchToEnPath={switchToEnPath}
 >
   <article class="card post">
     <p class="pill">{formattedDate}</p>
     <div class="meta-row">
       {tagLinks.length ? (
-        <div class="tag-list" aria-label="Tags">
+        <div class="tag-list" aria-label="Теги">
           {tagLinks.map((tag) => (
-            <a class="tag-chip" href={`/blog/tags/${tag.slug}`}>
+            <a class="tag-chip" href={`/ru/blog/tags/${tag.slug}`}>
               {tag.label}
             </a>
           ))}
@@ -63,7 +64,13 @@ for (const tag of post.data.tags ?? []) {
     <h1>{post.data.title}</h1>
     <p class="lede">{post.data.description}</p>
     <Content />
-    <Giscus />
+    <Giscus
+      lang="ru"
+      title="Комментарии"
+      ariaLabel="Комментарии"
+      fallbackText="Комментарии работают через GitHub Discussions. Укажите"
+      fallbackEnableText="чтобы включить комментарии."
+    />
   </article>
 </BaseLayout>
 
