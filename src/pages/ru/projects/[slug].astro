@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projectsRu');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const {
+  stack = [],
+  links = [],
+  outcomes = [],
+  screenshots = [],
+} = project.data;
+const metaDescription = project.data.description ?? outcomes[0];
+const metaImage = project.data.socialImage ?? screenshots[0]?.src;
+---
+
+<BaseLayout
+  title={project.data.title}
+  description={metaDescription}
+  image={metaImage}
+  locale="ru"
+>
+  <article class="card project">
+    <p class="pill">{project.data.role}</p>
+    <h1>{project.data.title}</h1>
+    {(stack.length || links.length) && (
+      <div class="meta">
+        {stack.length ? (
+          <div>
+            <h2>Стек</h2>
+            <ul class="stack">
+              {stack.map((tool) => (
+                <li>{tool}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {links.length ? (
+          <div>
+            <h2>Ссылки</h2>
+            <ul class="links">
+              {links.map((link) => (
+                <li>
+                  <a href={link.url} rel="noreferrer">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
+    )}
+    {outcomes.length ? (
+      <div class="outcomes">
+        <h2>Результаты</h2>
+        <ul>
+          {outcomes.map((outcome) => (
+            <li>{outcome}</li>
+          ))}
+        </ul>
+      </div>
+    ) : null}
+    {screenshots.length ? (
+      <section class="screens">
+        <h2>Скриншоты</h2>
+        <div class="screen-grid">
+          {screenshots.map((shot) => (
+            <figure class="shot">
+              <img
+                src={shot.src}
+                alt={shot.alt ?? `Скриншот проекта ${project.data.title}`}
+                loading="lazy"
+              />
+              {shot.caption ? (
+                <figcaption>{shot.caption}</figcaption>
+              ) : null}
+            </figure>
+          ))}
+        </div>
+      </section>
+    ) : null}
+    <Content />
+  </article>
+</BaseLayout>
+
+<style>
+  .project h1 {
+    margin-top: 1rem;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .stack,
+  .links {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+  }
+
+  .stack li,
+  .links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .links a {
+    color: #c35b2d;
+  }
+
+  .outcomes ul {
+    margin: 0.75rem 0 1.5rem;
+    padding-left: 1.2rem;
+  }
+
+  .screens {
+    margin: 2rem 0;
+  }
+
+  .screen-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .shot {
+    margin: 0;
+  }
+
+  .shot img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(61, 40, 20, 0.16);
+    display: block;
+  }
+
+  .shot figcaption {
+    margin-top: 0.6rem;
+    color: #5a5041;
+    font-size: 0.9rem;
+  }
+
+  .project :global(p) {
+    line-height: 1.7;
+  }
+</style>

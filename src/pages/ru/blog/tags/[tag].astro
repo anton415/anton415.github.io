@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
       .replace(/[^\p{Letter}\p{Number}]+/gu, '-')
       .replace(/(^-|-$)+/g, '');
 
-  const posts = await getCollection('posts');
+  const posts = await getCollection('postsRu');
   const visiblePosts = posts.filter((post) => !post.data.draft);
   const tagMap = new Map();
 
@@ -45,24 +45,35 @@ export async function getStaticPaths() {
 const { tag, posts } = Astro.props;
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', {
+  date.toLocaleDateString('ru-RU', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
   });
+
+const getPostLabel = (count: number) => {
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (mod10 === 1 && mod100 !== 11) return 'пост';
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+    return 'поста';
+  }
+
+  return 'постов';
+};
 ---
 
-<BaseLayout title={`Tag: ${tag}`}>
+<BaseLayout title={`Тег: ${tag}`} locale="ru">
   <section class="card">
     <div class="head">
       <div>
-        <p class="pill">Tag</p>
+        <p class="pill">Тег</p>
         <h1>{tag}</h1>
         <p class="meta-summary">
-          {posts.length} {posts.length === 1 ? 'post' : 'posts'}
+          {posts.length} {getPostLabel(posts.length)}
         </p>
       </div>
-      <a class="pill" href="/blog/tags">All tags</a>
+      <a class="pill" href="/ru/blog/tags">Все теги</a>
     </div>
 
     <div class="list">
@@ -74,7 +85,7 @@ const formatDate = (date: Date) =>
             <span>{post.data.tags.join(', ')}</span>
           </div>
           <h2>
-            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            <a href={`/ru/blog/${post.slug}`}>{post.data.title}</a>
           </h2>
           <p>{post.data.description}</p>
         </article>
