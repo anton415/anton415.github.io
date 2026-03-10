@@ -1,16 +1,17 @@
 ---
-title: "First field notes"
+title: 'Первые полевые заметки'
 date: 2024-10-12
 tags:
   - Astro
-  - Studio
-  - Notes
-description: "A short kickoff note to anchor the new content pipeline."
-readingTime: "3 min read"
+  - Студия
+  - Заметки
+description: 'Короткая стартовая заметка, чтобы зафиксировать новую контентную структуру.'
+readingTime: '3 мин чтения'
 draft: false
 ---
 
-The new content collections are live, so this entry is the first real check that
-frontmatter, dates, and body content render cleanly in Astro.
+Новые коллекции контента уже подключены, поэтому этот пост стал первой реальной
+проверкой того, что frontmatter, даты и основной markdown корректно рендерятся
+в Astro.
 
-Next up: migrating the older essays and project logs into this format.
+Следующий шаг: перенести старые тексты и заметки по проектам в этот формат.

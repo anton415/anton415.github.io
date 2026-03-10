@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Anton Serdyuchenko',
-  headline: 'Software developer',
-  location: 'Remote or Moscow',
+  headline: 'Разработчик программного обеспечения',
+  location: 'Удалённо или Москва',
   email: 'anton415@gmail.com',
 };

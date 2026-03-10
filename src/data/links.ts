@@ -11,54 +11,54 @@ export type SocialLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { href: '/', label: 'Home' },
-  { href: '/cv', label: 'CV' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/links', label: 'Links' },
+  { href: '/', label: 'Главная' },
+  { href: '/cv', label: 'Резюме' },
+  { href: '/projects', label: 'Проекты' },
+  { href: '/blog', label: 'Блог' },
+  { href: '/links', label: 'Ссылки' },
 ];
 
 export const socialLinks: SocialLink[] = [
   {
     label: 'GitHub',
     href: 'https://github.com/anton415',
-    description: 'Code, repos, and experiments.',
+    description: 'Код, репозитории и эксперименты.',
     icon: 'GH',
   },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/antonserdyuchenko/',
-    description: 'Experience and professional updates.',
+    description: 'Опыт работы и профессиональные обновления.',
     icon: 'in',
   },
   {
     label: 'X',
     href: 'https://x.com/anton415226',
-    description: 'Short thoughts and links.',
+    description: 'Короткие мысли и ссылки.',
     icon: 'X',
   },
   {
     label: 'Stack Overflow',
     href: 'https://stackoverflow.com/users/7037530/anton-serdyuchenko?tab=profile',
-    description: 'Answers and developer Q&A.',
+    description: 'Ответы и обсуждения для разработчиков.',
     icon: 'SO',
   },
   {
     label: 'Behance',
     href: 'https://www.behance.net/anton415984f',
-    description: 'Visual design work and case studies.',
+    description: 'Визуальные проекты и кейсы.',
     icon: 'Be',
   },
   {
     label: 'Instagram',
     href: 'https://www.instagram.com/antonserdyuchenko/',
-    description: 'Behind-the-scenes and snapshots.',
+    description: 'Бэкстейдж и визуальные заметки.',
     icon: 'IG',
   },
   {
     label: 'Telegram',
     href: 'https://t.me/antonserdyuchenko',
-    description: 'Direct contact and quick chats.',
+    description: 'Быстрая связь и короткие разговоры.',
     icon: 'TG',
   },
 ];

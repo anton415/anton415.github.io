@@ -7,7 +7,7 @@ const { summary, experience, education, skills, projects } = cv;
 
 const formatDate = (value: string) => {
   if (value === 'present') {
-    return 'Present';
+    return 'н.в.';
   }
 
   const [year, month] = value.split('-');
@@ -16,128 +16,124 @@ const formatDate = (value: string) => {
   }
 
   const date = new Date(Number(year), Number(month) - 1, 1);
-  return date.toLocaleString('en-US', { month: 'short', year: 'numeric' });
+  return date.toLocaleString('ru-RU', { month: 'short', year: 'numeric' });
 };
 ---
 
-<BaseLayout title="CV" bodyClass="cv-page">
+<BaseLayout title="Резюме" bodyClass="cv-page">
   <section class="card hero">
-    <p class="pill">Curriculum Vitae</p>
+    <p class="pill">Резюме</p>
     <h1>{profile.name}</h1>
-    <p class="lede">{profile.headline} - {profile.location}</p>
+    <p class="lede">{profile.headline} — {profile.location}</p>
     <div class="cv-actions screen-only">
-      <button type="button" class="cv-action cv-action-primary" onclick="window.print()">
-        Print / Save PDF
-      </button>
+      <button type="button" class="cv-action cv-action-primary" onclick="window.print()"> Печать / PDF </button>
     </div>
     <ul class="summary-list">
-      {summary.map((item) => (
-        <li>{item}</li>
-      ))}
+      {summary.map((item) => <li>{item}</li>)}
     </ul>
   </section>
 
   <section class="cv-grid">
     <article class="card cv-span">
-      <h2>Experience</h2>
+      <h2>Опыт</h2>
       <div class="cv-stack">
-        {experience.map((item) => (
-          <div class="cv-item">
-            <div class="cv-item-head">
-              <div>
-                <h3>{item.role}</h3>
-                <p class="cv-meta">
-                  {item.companyUrl ? (
-                    <a href={item.companyUrl} target="_blank" rel="noreferrer">
-                      {item.company}
-                    </a>
-                  ) : (
-                    item.company
-                  )}
-                  {item.location ? ` - ${item.location}` : ''}
-                </p>
+        {
+          experience.map((item) => (
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <div>
+                  <h3>{item.role}</h3>
+                  <p class="cv-meta">
+                    {item.companyUrl ? (
+                      <a href={item.companyUrl} target="_blank" rel="noreferrer">
+                        {item.company}
+                      </a>
+                    ) : (
+                      item.company
+                    )}
+                    {item.location ? ` — ${item.location}` : ''}
+                  </p>
+                </div>
+                <span class="cv-dates">
+                  {formatDate(item.start)} — {formatDate(item.end)}
+                </span>
               </div>
-              <span class="cv-dates">
-                {formatDate(item.start)} - {formatDate(item.end)}
-              </span>
+              <ul>
+                {item.highlights.map((highlight) => (
+                  <li>{highlight}</li>
+                ))}
+              </ul>
             </div>
-            <ul>
-              {item.highlights.map((highlight) => (
-                <li>{highlight}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </article>
 
     <article class="card">
-      <h2>Education</h2>
+      <h2>Образование</h2>
       <div class="cv-stack">
-        {education.map((item) => (
-          <div class="cv-item">
-            <div class="cv-item-head">
-              <div>
-                <h3>{item.degree}</h3>
-                <p class="cv-meta">{item.field}</p>
-                <p class="cv-meta">{item.school}</p>
+        {
+          education.map((item) => (
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <div>
+                  <h3>{item.degree}</h3>
+                  <p class="cv-meta">{item.field}</p>
+                  <p class="cv-meta">{item.school}</p>
+                </div>
+                <span class="cv-dates">{item.year}</span>
               </div>
-              <span class="cv-dates">{item.year}</span>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </article>
 
     <article class="card">
-      <h2>Skills</h2>
+      <h2>Навыки</h2>
       <div class="cv-section">
-        <h3>Core</h3>
+        <h3>Основное</h3>
         <div class="cv-chips">
-          {skills.core.map((item) => (
-            <span class="cv-chip">{item}</span>
-          ))}
+          {skills.core.map((item) => <span class="cv-chip">{item}</span>)}
         </div>
       </div>
       <div class="cv-section">
-        <h3>Tools</h3>
+        <h3>Инструменты</h3>
         <div class="cv-chips">
-          {skills.tools.map((item) => (
-            <span class="cv-chip">{item}</span>
-          ))}
+          {skills.tools.map((item) => <span class="cv-chip">{item}</span>)}
         </div>
       </div>
       <div class="cv-section">
-        <h3>Languages</h3>
+        <h3>Языки</h3>
         <div class="cv-chips">
-          {skills.languages.map((item) => (
-            <span class="cv-chip">{item}</span>
-          ))}
+          {skills.languages.map((item) => <span class="cv-chip">{item}</span>)}
         </div>
       </div>
     </article>
 
     <article class="card cv-span">
-      <h2>Projects</h2>
+      <h2>Проекты</h2>
       <div class="cv-stack">
-        {projects.map((project) => (
-          <div class="cv-item">
-            <div class="cv-item-head">
-              <div>
-                <h3>{project.name}</h3>
-                {project.role ? <p class="cv-meta">{project.role}</p> : null}
+        {
+          projects.map((project) => (
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <div>
+                  <h3>{project.name}</h3>
+                  {project.role ? <p class="cv-meta">{project.role}</p> : null}
+                </div>
               </div>
+              <p class="cv-body">{project.description}</p>
+              {project.tech ? (
+                <div class="cv-chips">
+                  {project.tech.map((item) => (
+                    <span class="cv-chip">{item}</span>
+                  ))}
+                </div>
+              ) : null}
             </div>
-            <p class="cv-body">{project.description}</p>
-            {project.tech ? (
-              <div class="cv-chips">
-                {project.tech.map((item) => (
-                  <span class="cv-chip">{item}</span>
-                ))}
-              </div>
-            ) : null}
-          </div>
-        ))}
+          ))
+        }
       </div>
     </article>
   </section>
@@ -180,7 +176,10 @@ const formatDate = (value: string) => {
       letter-spacing: 0.02em;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
       text-decoration: none;
     }
 

@@ -1,21 +1,22 @@
 ---
-title: "Studio site refresh"
-role: "Design + Engineering"
-description: "A lightweight rebuild focused on speed, clarity, and a content system that can scale with new writing and case studies."
+title: 'Обновление студийного сайта'
+role: 'Дизайн + разработка'
+description: 'Лёгкая пересборка сайта с упором на скорость, ясную структуру и контентную систему, которая выдержит новые тексты и кейсы.'
 stack:
   - Astro
   - TypeScript
   - Vite
 links:
-  - label: "Live site"
-    url: "https://serdyuchenko.com"
-  - label: "Project brief"
-    url: "https://serdyuchenko.com/projects/studio-site-refresh"
+  - label: 'Сайт'
+    url: 'https://serdyuchenko.com'
+  - label: 'Описание проекта'
+    url: 'https://serdyuchenko.com/projects/studio-site-refresh'
 outcomes:
-  - "Rebuilt the base site on Astro for faster iterations."
-  - "Introduced content collections for posts and projects."
-  - "Set a modular layout foundation for future case studies."
+  - 'Пересобрал основной сайт на Astro, чтобы ускорить итерации.'
+  - 'Ввёл content collections для постов и проектов.'
+  - 'Подготовил модульную основу для будущих кейсов и заметок.'
 ---
 
-A lightweight rebuild focused on speed, clarity, and a content system that can
-scale with new writing and case studies.
+Это пересборка личного сайта с более чистой структурой, понятной навигацией и
+контентной моделью, которая позволяет без лишнего трения добавлять новые тексты
+и проектные страницы.

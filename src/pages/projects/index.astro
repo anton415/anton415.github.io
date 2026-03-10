@@ -3,43 +3,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
-const featuredProjects = projects.sort((a, b) =>
-  a.data.title.localeCompare(b.data.title)
-);
+const featuredProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title, 'ru'));
 ---
 
-<BaseLayout title="Projects">
+<BaseLayout title="Проекты">
   <section class="card">
-    <h1>Projects</h1>
-    <p>Selected collaborations and in-house experiments.</p>
+    <h1>Проекты</h1>
+    <p>Избранные кейсы, продуктовые идеи и собственные эксперименты.</p>
     <div class="list">
-      {featuredProjects.map((project) => {
-        const stack = project.data.stack ?? [];
-        const outcomes = project.data.outcomes ?? [];
+      {
+        featuredProjects.map((project) => {
+          const stack = project.data.stack ?? [];
+          const outcomes = project.data.outcomes ?? [];
 
-        return (
-          <article class="item">
-            <div class="meta">{project.data.role}</div>
-            <h2>
-              <a href={`/projects/${project.slug}`}>{project.data.title}</a>
-            </h2>
-            {stack.length ? (
-              <ul class="stack">
-                {stack.map((tool) => (
-                  <li>{tool}</li>
-                ))}
-              </ul>
-            ) : null}
-            {outcomes.length ? (
-              <ul class="outcomes">
-                {outcomes.map((outcome) => (
-                  <li>{outcome}</li>
-                ))}
-              </ul>
-            ) : null}
-          </article>
-        );
-      })}
+          return (
+            <article class="item">
+              <div class="meta">{project.data.role}</div>
+              <h2>
+                <a href={`/projects/${project.slug}`}>{project.data.title}</a>
+              </h2>
+              {stack.length ? (
+                <ul class="stack">
+                  {stack.map((tool) => (
+                    <li>{tool}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {outcomes.length ? (
+                <ul class="outcomes">
+                  {outcomes.map((outcome) => (
+                    <li>{outcome}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </article>
+          );
+        })
+      }
     </div>
   </section>
 </BaseLayout>

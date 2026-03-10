@@ -3,34 +3,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const notes = [
   {
-    title: 'Layouts live in src/layouts',
-    detail: 'Use them to keep shared structure and metadata consistent.',
+    title: 'Общие шаблоны лежат в src/layouts',
+    detail: 'Используйте их, чтобы структура и метаданные оставались единообразными.',
   },
   {
-    title: 'Pages live in src/pages',
-    detail: 'Each .astro file becomes a route automatically.',
+    title: 'Страницы лежат в src/pages',
+    detail: 'Каждый файл .astro автоматически становится отдельным маршрутом.',
   },
   {
-    title: 'TypeScript is enabled',
-    detail: 'Update tsconfig.json when you add more tooling.',
+    title: 'TypeScript уже включён',
+    detail: 'Если подключаете новые инструменты, синхронизируйте настройки в tsconfig.json.',
   },
 ];
 ---
 
-<BaseLayout title="Sample">
+<BaseLayout title="Пример">
   <section class="card">
-    <h1>Sample page</h1>
-    <p>
-      Use this route as a playground for the next pieces of content you plan to
-      migrate.
-    </p>
+    <h1>Тестовая страница</h1>
+    <p>Используйте этот маршрут как черновик для новых секций и контента, прежде чем переносить их в рабочие страницы.</p>
     <div>
-      {notes.map((note) => (
-        <article style="margin-bottom: 1.5rem;">
-          <strong>{note.title}</strong>
-          <p>{note.detail}</p>
-        </article>
-      ))}
+      {
+        notes.map((note) => (
+          <article style="margin-bottom: 1.5rem;">
+            <strong>{note.title}</strong>
+            <p>{note.detail}</p>
+          </article>
+        ))
+      }
     </div>
   </section>
 </BaseLayout>

@@ -12,81 +12,72 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await project.render();
-const {
-  stack = [],
-  links = [],
-  outcomes = [],
-  screenshots = [],
-} = project.data;
+const { stack = [], links = [], outcomes = [], screenshots = [] } = project.data;
 const metaDescription = project.data.description ?? outcomes[0];
 const metaImage = project.data.socialImage ?? screenshots[0]?.src;
 ---
 
-<BaseLayout
-  title={project.data.title}
-  description={metaDescription}
-  image={metaImage}
->
+<BaseLayout title={project.data.title} description={metaDescription} image={metaImage}>
   <article class="card project">
     <p class="pill">{project.data.role}</p>
     <h1>{project.data.title}</h1>
-    {(stack.length || links.length) && (
-      <div class="meta">
-        {stack.length ? (
-          <div>
-            <h2>Stack</h2>
-            <ul class="stack">
-              {stack.map((tool) => (
-                <li>{tool}</li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-        {links.length ? (
-          <div>
-            <h2>Links</h2>
-            <ul class="links">
-              {links.map((link) => (
-                <li>
-                  <a href={link.url} rel="noreferrer">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </div>
-    )}
-    {outcomes.length ? (
-      <div class="outcomes">
-        <h2>Outcomes</h2>
-        <ul>
-          {outcomes.map((outcome) => (
-            <li>{outcome}</li>
-          ))}
-        </ul>
-      </div>
-    ) : null}
-    {screenshots.length ? (
-      <section class="screens">
-        <h2>Screenshots</h2>
-        <div class="screen-grid">
-          {screenshots.map((shot) => (
-            <figure class="shot">
-              <img
-                src={shot.src}
-                alt={shot.alt ?? `${project.data.title} screenshot`}
-                loading="lazy"
-              />
-              {shot.caption ? (
-                <figcaption>{shot.caption}</figcaption>
-              ) : null}
-            </figure>
-          ))}
+    {
+      (stack.length || links.length) && (
+        <div class="meta">
+          {stack.length ? (
+            <div>
+              <h2>Стек</h2>
+              <ul class="stack">
+                {stack.map((tool) => (
+                  <li>{tool}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {links.length ? (
+            <div>
+              <h2>Ссылки</h2>
+              <ul class="links">
+                {links.map((link) => (
+                  <li>
+                    <a href={link.url} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
-      </section>
-    ) : null}
+      )
+    }
+    {
+      outcomes.length ? (
+        <div class="outcomes">
+          <h2>Результаты</h2>
+          <ul>
+            {outcomes.map((outcome) => (
+              <li>{outcome}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null
+    }
+    {
+      screenshots.length ? (
+        <section class="screens">
+          <h2>Скриншоты</h2>
+          <div class="screen-grid">
+            {screenshots.map((shot) => (
+              <figure class="shot">
+                <img src={shot.src} alt={shot.alt ?? `Скриншот проекта ${project.data.title}`} loading="lazy" />
+                {shot.caption ? <figcaption>{shot.caption}</figcaption> : null}
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null
+    }
     <Content />
   </article>
 </BaseLayout>
