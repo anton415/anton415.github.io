@@ -1,14 +1,11 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { buildTagSlugMap, slugifyTag } from '../../../i18n/alternatePaths';
+import { slugifyTag } from '../../../utils/slug';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  const postsRu = await getCollection('postsRu');
   const visiblePosts = posts.filter((post) => !post.data.draft);
-  const visiblePostsRu = postsRu.filter((post) => !post.data.draft);
-  const tagSlugMap = buildTagSlugMap(visiblePosts, visiblePostsRu);
   const tagMap = new Map();
 
   for (const post of visiblePosts) {
@@ -32,51 +29,48 @@ export async function getStaticPaths() {
     props: {
       tag: entry.tag,
       slug: entry.slug,
-      switchToRuPath: `/ru/blog/tags/${tagSlugMap.get(entry.slug) ?? entry.slug}`,
-      posts: entry.posts.sort(
-        (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-      ),
+      posts: entry.posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
     },
   }));
 }
 
-const { tag, posts, switchToRuPath } = Astro.props;
+const { tag, posts } = Astro.props;
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', {
+  date.toLocaleDateString('ru-RU', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
   });
 ---
 
-<BaseLayout title={`Tag: ${tag}`} switchToRuPath={switchToRuPath}>
+<BaseLayout title={`Тег: ${tag}`}>
   <section class="card">
     <div class="head">
       <div>
-        <p class="pill">Tag</p>
+        <p class="pill">Тег</p>
         <h1>{tag}</h1>
-        <p class="meta-summary">
-          {posts.length} {posts.length === 1 ? 'post' : 'posts'}
-        </p>
+        <p class="meta-summary">Постов: {posts.length}</p>
       </div>
-      <a class="pill" href="/blog/tags">All tags</a>
+      <a class="pill" href="/blog/tags">Все теги</a>
     </div>
 
     <div class="list">
-      {posts.map((post) => (
-        <article class="item">
-          <div class="meta-row">
-            <span class="date">{formatDate(post.data.date)}</span>
-            <span class="dot">-</span>
-            <span>{post.data.tags.join(', ')}</span>
-          </div>
-          <h2>
-            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-          </h2>
-          <p>{post.data.description}</p>
-        </article>
-      ))}
+      {
+        posts.map((post) => (
+          <article class="item">
+            <div class="meta-row">
+              <span class="date">{formatDate(post.data.date)}</span>
+              <span class="dot">-</span>
+              <span>{post.data.tags.join(', ')}</span>
+            </div>
+            <h2>
+              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            </h2>
+            <p>{post.data.description}</p>
+          </article>
+        ))
+      }
     </div>
   </section>
 </BaseLayout>

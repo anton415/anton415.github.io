@@ -1,21 +1,21 @@
 ---
-title: "Hello world, code blocks"
+title: 'Привет, мир и блоки кода'
 date: 2026-01-25
 tags:
-  - Code
+  - Код
   - Markdown
-  - Styling
-description: "Test post for syntax highlighting and code block styling."
-readingTime: "2 min read"
+  - Стили
+description: 'Тестовый пост для проверки подсветки синтаксиса и оформления блоков кода.'
+readingTime: '2 мин чтения'
 draft: false
 ---
 
-This is a quick post to validate inline `code` styles and block rendering.
+Это короткий пост, чтобы проверить inline-стили `code` и рендеринг блоков кода.
 
 ## JavaScript
 
 ```js
-function hello(name = "world") {
+function hello(name = 'world') {
   return `Hello, ${name}!`;
 }
 
@@ -30,7 +30,7 @@ type User = {
   name: string;
 };
 
-const user: User = { id: "u_1", name: "Anton" };
+const user: User = { id: 'u_1', name: 'Anton' };
 console.log(user);
 ```
 
@@ -57,4 +57,4 @@ echo "hello world"
 </section>
 ```
 
-That should be enough to verify highlighting across languages.
+Этого достаточно, чтобы проверить подсветку и оформление для разных языков.

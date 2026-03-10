@@ -3,43 +3,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile } from '../data/profile';
 import { socialLinks } from '../data/links';
 
-const activeLinks = socialLinks.filter((link) => link.href);
-const formatHost = (href: string) => {
-  try {
-    return new URL(href).hostname.replace('www.', '');
-  } catch {
-    return href;
-  }
-};
+const activeLinks = [
+  ...(profile.email
+    ? [
+        {
+          label: 'Почта',
+          href: `mailto:${profile.email}`,
+          description: profile.email,
+          icon: '@',
+        },
+      ]
+    : []),
+  ...socialLinks.filter((link) => link.href),
+];
 ---
 
-<BaseLayout title="Links">
+<BaseLayout title="Ссылки">
   <section class="card">
-    <h1>Links</h1>
-    <p>Find me around the web and keep up with new work.</p>
+    <h1>Ссылки</h1>
+    <p>Площадки, где я публикую обновления, работы и короткие заметки.</p>
     <div class="link-grid">
-      {activeLinks.map((link) => (
-        <a
-          class="link-card"
-          href={link.href}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div class="link-title">
-            {link.icon ? <span class="link-icon">{link.icon}</span> : null}
-            <span class="link-label">{link.label}</span>
-          </div>
-          <span class="link-meta">
-            {link.description ?? formatHost(link.href)}
-          </span>
-        </a>
-      ))}
+      {
+        activeLinks.map((link) => (
+          <a
+            class="link-card"
+            href={link.href}
+            target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+            rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+          >
+            <div class="link-title">
+              {link.icon ? <span class="link-icon">{link.icon}</span> : null}
+              <span class="link-label">{link.label}</span>
+            </div>
+            <span class="link-meta">{link.description}</span>
+          </a>
+        ))
+      }
     </div>
-    {profile.email ? (
-      <p class="email">
-        Email: <a href={`mailto:${profile.email}`}>{profile.email}</a>
-      </p>
-    ) : null}
   </section>
 
   <style>
@@ -58,7 +58,9 @@ const formatHost = (href: string) => {
       flex-direction: column;
       gap: 0.35rem;
       background: rgba(255, 255, 255, 0.6);
-      transition: border-color 0.2s ease, transform 0.2s ease;
+      transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
     }
 
     .link-card:hover {
@@ -89,11 +91,6 @@ const formatHost = (href: string) => {
 
     .link-meta {
       font-size: 0.85rem;
-      color: var(--ink-soft);
-    }
-
-    .email {
-      margin-top: 1.5rem;
       color: var(--ink-soft);
     }
   </style>

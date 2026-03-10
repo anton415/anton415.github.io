@@ -1,16 +1,10 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { slugifyTag } from '../../../utils/slug';
 
 const posts = await getCollection('posts');
 const visiblePosts = posts.filter((post) => !post.data.draft);
-
-const slugifyTag = (tag: string) =>
-  tag
-    .toLowerCase()
-    .trim()
-    .replace(/[^\p{Letter}\p{Number}]+/gu, '-')
-    .replace(/(^-|-$)+/g, '');
 
 const tagMap = new Map();
 
@@ -27,27 +21,27 @@ for (const post of visiblePosts) {
   }
 }
 
-const tags = Array.from(tagMap.values()).sort((a, b) =>
-  a.tag.localeCompare(b.tag)
-);
+const tags = Array.from(tagMap.values()).sort((a, b) => a.tag.localeCompare(b.tag, 'ru'));
 ---
 
-<BaseLayout title="Blog Tags">
+<BaseLayout title="Теги блога">
   <section class="card">
-    <h1>Tags</h1>
-    <p>Browse posts by topic.</p>
-    {tags.length ? (
-      <div class="tag-grid" aria-label="Tag list">
-        {tags.map((tag) => (
-          <a class="tag-chip" href={`/blog/tags/${tag.slug}`}>
-            <span>{tag.tag}</span>
-            <span class="count">{tag.count}</span>
-          </a>
-        ))}
-      </div>
-    ) : (
-      <p>No tags yet.</p>
-    )}
+    <h1>Теги</h1>
+    <p>Навигация по постам и темам.</p>
+    {
+      tags.length ? (
+        <div class="tag-grid" aria-label="Список тегов">
+          {tags.map((tag) => (
+            <a class="tag-chip" href={`/blog/tags/${tag.slug}`}>
+              <span>{tag.tag}</span>
+              <span class="count">{tag.count}</span>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p>Тегов пока нет.</p>
+      )
+    }
   </section>
 </BaseLayout>
 
@@ -69,7 +63,9 @@ const tags = Array.from(tagMap.values()).sort((a, b) =>
     background: rgba(255, 255, 255, 0.7);
     font-size: 0.95rem;
     color: #3f3a31;
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
   }
 
   .tag-chip:hover {

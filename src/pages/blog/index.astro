@@ -3,41 +3,41 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('posts');
-const visiblePosts = posts
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const visiblePosts = posts.filter((post) => !post.data.draft).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const formatDate = (date) =>
-  date.toLocaleDateString('en-US', {
+  date.toLocaleDateString('ru-RU', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
   });
 ---
 
-<BaseLayout title="Blog">
+<BaseLayout title="Блог">
   <section class="card">
     <div class="head">
       <div>
-        <h1>Blog</h1>
-        <p>Field notes, process write-ups, and studio updates.</p>
+        <h1>Блог</h1>
+        <p>Заметки о разработке, процессах и текущих проектах.</p>
       </div>
-      <a class="pill" href="/blog/tags">Browse tags</a>
+      <a class="pill" href="/blog/tags">Смотреть теги</a>
     </div>
     <div class="list">
-      {visiblePosts.map((post) => (
-        <article class="item">
-          <div class="meta">
-            <span class="date">{formatDate(post.data.date)}</span>
-            <span class="dot">-</span>
-            <span>{post.data.tags.join(', ')}</span>
-          </div>
-          <h2>
-            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-          </h2>
-          <p>{post.data.description}</p>
-        </article>
-      ))}
+      {
+        visiblePosts.map((post) => (
+          <article class="item">
+            <div class="meta">
+              <span class="date">{formatDate(post.data.date)}</span>
+              <span class="dot">-</span>
+              <span>{post.data.tags.join(', ')}</span>
+            </div>
+            <h2>
+              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            </h2>
+            <p>{post.data.description}</p>
+          </article>
+        ))
+      }
     </div>
   </section>
 </BaseLayout>
