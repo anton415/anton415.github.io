@@ -20,7 +20,7 @@ const featuredProjects = projects.sort((a, b) => a.data.title.localeCompare(b.da
             <article class="item">
               <div class="meta">{project.data.role}</div>
               <h2>
-                <a href={`/projects/${project.slug}`}>{project.data.title}</a>
+                <a href={`/projects/${project.id}`}>{project.data.title}</a>
               </h2>
               {stack.length ? (
                 <ul class="stack">
