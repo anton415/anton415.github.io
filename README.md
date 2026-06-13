@@ -1,6 +1,6 @@
 # anton415.github.io
 
-Персональный сайт Антона Сердюченко на [Astro](https://astro.build/): проекты, блог, резюме и основные ссылки в одном репозитории. Здесь хранятся исходники интерфейса, Markdown-контент и GitHub Actions для проверки и публикации сайта на GitHub Pages.
+Персональный сайт Антона Сердюченко на [Astro](https://astro.build/): одностраничное резюме и основные ссылки в одном репозитории. Здесь хранятся исходники интерфейса, данные резюме и GitHub Actions для проверки и публикации сайта на GitHub Pages.
 
 [![PR CI](https://github.com/anton415/anton415.github.io/actions/workflows/pr-ci.yml/badge.svg)](https://github.com/anton415/anton415.github.io/actions/workflows/pr-ci.yml)
 [![Deploy to GitHub Pages](https://github.com/anton415/anton415.github.io/actions/workflows/pages.yml/badge.svg)](https://github.com/anton415/anton415.github.io/actions/workflows/pages.yml)
@@ -9,25 +9,24 @@
 
 ## О проекте
 
-`anton415.github.io` это персональный сайт-портфолио, где собраны материалы о работе, проектах и заметках Антона Сердюченко.
+`anton415.github.io` это персональный сайт-резюме Антона Сердюченко: один структурированный обзор опыта на главной странице и хаб со ссылками на внешние профили.
 
-- `Главная` показывает краткое позиционирование, ключевые ссылки и избранные материалы.
-- `Проекты` собирают кейсы, продуктовые идеи и собственные эксперименты.
-- `Блог` содержит заметки о разработке, процессах и текущих задачах.
-- `Резюме` даёт структурированный обзор опыта.
-- `Ссылки` ведут на внешние профили и каналы связи.
+- `Резюме` (`/`) — главная и единственная содержательная страница: опыт, образование, навыки и проекты.
+- `Ссылки` (`/links`) — внешние профили и каналы связи.
 
-Основа проекта: `Astro`, Markdown content collections и деплой на `GitHub Pages`.
+Разделы «Проекты» и «Блог» были убраны при релонче в одностраничное резюме; архитектура оставлена модульной, чтобы вернуть их позже (см. [anton415-ru-relaunch-plan.md](anton415-ru-relaunch-plan.md)).
+
+Основа проекта: `Astro`, данные резюме в `src/data/*.ts` и деплой на `GitHub Pages`.
 
 ## Скриншоты
 
-| Главная | Проекты | Блог |
-| --- | --- | --- |
-| <img src="docs/screenshots/home.png" alt="Главная страница serdyuchenko.com" width="100%" /> | <img src="docs/screenshots/projects.png" alt="Страница проектов serdyuchenko.com" width="100%" /> | <img src="docs/screenshots/blog.png" alt="Страница блога serdyuchenko.com" width="100%" /> |
+| Резюме |
+| --- |
+| <img src="docs/screenshots/home.png" alt="Страница резюме serdyuchenko.com" width="100%" /> |
 
 ## Сборка
 
-Требования: `Node.js 20` и `npm`.
+Требования: `Node.js 22` (как в CI) и `npm`.
 
 ```bash
 npm install
@@ -47,12 +46,14 @@ npm run lint
 
 Для локальной работы установите зависимости и запустите `npm run dev`, затем откройте `http://localhost:4321`.
 
-Контент проекта хранится в:
+Контент резюме хранится не в Markdown, а в типизированных модулях `src/data/`:
 
-- `src/content/posts/` для постов блога.
-- `src/content/projects/` для проектов и кейсов.
+- `src/data/cv.ts` — опыт, образование, навыки и проекты.
+- `src/data/profile.ts` — имя, должность и контакты.
+- `src/data/links.ts` — навигация и внешние профили.
+- `src/data/site.ts` — мета-данные сайта (title, description, OG).
 
-Подробный процесс публикации, требования к frontmatter и рекомендации по изображениям описаны в [docs/content-workflow.md](docs/content-workflow.md).
+Как редактировать данные резюме описано в [docs/content-workflow.md](docs/content-workflow.md).
 
 Публикация сайта настроена через GitHub Actions и выполняется при пуше в `master` или `main`.
 
