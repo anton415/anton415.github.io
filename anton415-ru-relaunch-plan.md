@@ -71,4 +71,5 @@ src/
       только домен (`serdyuchenko.com`).
 - [ ] Запинить версии `astro` и `typescript` в `package.json` (сейчас `latest`).
 - [ ] Сжать `public/og-default.png` (~826 КБ).
-- [ ] Привести eslint к одному конфигу (есть и `.eslintrc.cjs`, и `eslint.config.mjs`).
+- [x] Привести eslint к одному конфигу: удалён legacy `.eslintrc.cjs`, flat
+      `eslint.config.mjs` покрывает `.ts` через `typescript-eslint` (#129).
