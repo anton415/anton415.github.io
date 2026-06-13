@@ -1,50 +1,44 @@
 # Information Architecture (IA)
 
 ## Primary goals
-- CV / Resume
-- Blog (learning notes, tech writing)
+- CV / Resume (the site's main content, on `/`)
 - Links hub to other platforms
-- Projects / case studies
 
 ## Routes
-Top-level pages:
-- `/` — Home (intro + featured links + featured projects/posts)
-- `/cv` — CV (print-friendly)
+Top-level pages (current single-page resume):
+- `/` — CV / Resume (intro + experience + education + skills + projects)
+- `/links` — Link hub (all platforms)
+
+Planned (returning later, see `anton415-ru-relaunch-plan.md`):
 - `/projects` — Projects index
 - `/projects/[slug]` — Project detail
 - `/blog` — Blog index
 - `/blog/[slug]` — Blog post
-- `/links` — Link hub (all platforms)
-
-Optional pages (later):
 - `/now` — What I’m focused on this month
 - `/uses` — Tools & setup
 
 ## Navigation
 Header nav:
-- Home
-- CV
-- Projects
-- Blog
-- Links
+- Резюме (`/`)
+- Ссылки (`/links`)
 
 Footer:
-- Social links (GitHub, X, etc.) from a single data source
+- Social links (GitHub, X, etc.) from a single data source (`src/data/links.ts`)
 - Email (optional)
 - Copyright
 
 ## Content types
-1) **Blog posts**
-- Stored as Markdown/MDX
-- Fields (frontmatter): `title`, `date`, `description`, `tags`, `draft`, optional `cover`
+1) **Resume**
+- Defined as typed data in `src/data/cv.ts` and rendered by `src/components/cv/*`.
+- Sections: summary, experience, education, skills, projects.
 
-2) **Projects**
-- Stored as Markdown/MDX
-- Fields: `title`, `role`, `stack` (optional), `links` (repo/demo, optional), `outcomes`, optional `screenshots`
+2) **Static pages**
+- Implemented as Astro pages.
+- Examples: Resume (`/`), Links (`/links`).
 
-3) **Static pages**
-- Implemented as Astro pages (and optionally content-driven later)
-- Examples: CV, Links, Now, Uses
+Planned content types (returning later, likely as content collections):
+- **Blog posts** — Markdown/MDX with frontmatter (`title`, `date`, `description`, `tags`, `draft`, optional `cover`).
+- **Projects** — Markdown/MDX with frontmatter (`title`, `role`, `stack`, `links`, `outcomes`, optional `screenshots`).
 
 ## Constraints
 - Static hosting only (GitHub Pages)

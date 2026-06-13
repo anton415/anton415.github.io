@@ -65,8 +65,8 @@ src/
 
 ## Бэклог / технический долг
 
-- [ ] Обновить `README.md` и `docs/` (ia.md, content-workflow.md, скриншоты) —
-      сейчас описывают удалённые разделы.
+- [x] Обновить `README.md` и `docs/` (ia.md, conventions.md, content-workflow.md,
+      скриншоты) — описывали удалённые разделы (#128).
 - [ ] `public/CNAME`: содержит `https://serdyuchenko.com` — для GitHub Pages нужен
       только домен (`serdyuchenko.com`).
 - [ ] Запинить версии `astro` и `typescript` в `package.json` (сейчас `latest`).
