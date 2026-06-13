@@ -55,7 +55,8 @@ accurate for the resume.
 - Store images in `public/` so they are served as static assets.
 - Reference them with absolute paths from the site root, e.g. `/og-default.png`.
 - The default social image lives at `public/og-default.png` and is referenced by
-  `site.socialImage`.
+  `site.socialImage`. Keep it landscape at 1200×630 (the standard Open Graph /
+  Twitter preview ratio) and compressed.
 
 ## Quick checklist
 
