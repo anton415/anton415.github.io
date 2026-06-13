@@ -1,0 +1,31 @@
+---
+import { cv } from '../../data/cv';
+
+const { projects } = cv;
+---
+
+<article class="card cv-span">
+  <h2>Проекты</h2>
+  <div class="cv-stack">
+    {
+      projects.map((project) => (
+        <div class="cv-item">
+          <div class="cv-item-head">
+            <div>
+              <h3>{project.name}</h3>
+              {project.role ? <p class="cv-meta">{project.role}</p> : null}
+            </div>
+          </div>
+          <p class="cv-body">{project.description}</p>
+          {project.tech ? (
+            <div class="cv-chips">
+              {project.tech.map((item) => (
+                <span class="cv-chip">{item}</span>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      ))
+    }
+  </div>
+</article>

@@ -1,0 +1,81 @@
+/* Shared CV section primitives — used across resume components. */
+.cv-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cv-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cv-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.cv-item ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.cv-meta {
+  margin: 0.2rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.cv-dates {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.cv-body {
+  margin: 0.6rem 0 0;
+  color: var(--ink-soft);
+}
+
+.cv-section {
+  margin-top: 1rem;
+}
+
+.cv-section h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.cv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.cv-chip {
+  border: 1px solid rgba(61, 40, 20, 0.2);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+@media print {
+  .cv-item,
+  .cv-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv-chip {
+    background: transparent;
+    color: #2e2a24;
+    border-color: rgba(61, 40, 20, 0.25);
+    font-size: 0.8rem;
+  }
+}

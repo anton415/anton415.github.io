@@ -1,0 +1,112 @@
+---
+import { profile } from '../data/profile';
+import { navLinks, socialLinks } from '../data/links';
+
+const activeSocialLinks = socialLinks.filter((link) => link.href);
+---
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-profile">
+      <span class="footer-name">{profile.name}</span>
+      <span>{profile.headline}</span>
+      <span>{profile.location}</span>
+      {profile.email ? <a href={`mailto:${profile.email}`}>{profile.email}</a> : null}
+    </div>
+    <div class="footer-links">
+      <div class="footer-column">
+        <span class="footer-heading">Навигация</span>
+        <div class="footer-link-list">
+          {navLinks.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </div>
+      <div class="footer-column">
+        <span class="footer-heading">В сети</span>
+        <div class="footer-link-list">
+          {
+            activeSocialLinks.map((link) => (
+              <a href={link.href} target="_blank" rel="noreferrer">
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 1rem clamp(1.5rem, 4vw, 4rem) 2rem;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  .footer-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 220px;
+  }
+
+  .footer-name {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    min-width: min(320px, 100%);
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-heading {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .footer-link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .footer-link-list a {
+    border-bottom: 1px solid transparent;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .footer-link-list a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

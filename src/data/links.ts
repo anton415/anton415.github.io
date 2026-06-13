@@ -11,10 +11,7 @@ export type SocialLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { href: '/', label: 'Главная' },
-  { href: '/cv', label: 'Резюме' },
-  { href: '/projects', label: 'Проекты' },
-  { href: '/blog', label: 'Блог' },
+  { href: '/', label: 'Резюме' },
   { href: '/links', label: 'Ссылки' },
 ];
 
