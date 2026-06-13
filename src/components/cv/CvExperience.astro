@@ -1,0 +1,41 @@
+---
+import { cv } from '../../data/cv';
+import { formatMonthYear } from '../../utils/date';
+
+const { experience } = cv;
+---
+
+<article class="card cv-span">
+  <h2>Опыт</h2>
+  <div class="cv-stack">
+    {
+      experience.map((item) => (
+        <div class="cv-item">
+          <div class="cv-item-head">
+            <div>
+              <h3>{item.role}</h3>
+              <p class="cv-meta">
+                {item.companyUrl ? (
+                  <a href={item.companyUrl} target="_blank" rel="noreferrer">
+                    {item.company}
+                  </a>
+                ) : (
+                  item.company
+                )}
+                {item.location ? ` — ${item.location}` : ''}
+              </p>
+            </div>
+            <span class="cv-dates">
+              {formatMonthYear(item.start)} — {formatMonthYear(item.end)}
+            </span>
+          </div>
+          <ul>
+            {item.highlights.map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</article>

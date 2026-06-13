@@ -1,0 +1,37 @@
+@page {
+  margin: 1.4cm;
+  size: auto;
+}
+
+@media print {
+  body.cv-page {
+    background: #ffffff;
+    color: #1d1b16;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  body.cv-page header,
+  body.cv-page footer {
+    display: none;
+  }
+
+  body.cv-page main {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Hidden when printing (e.g. the Print / PDF button) */
+  .screen-only {
+    display: none;
+  }
+
+  /* Flatten cards for print */
+  body.cv-page .card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}

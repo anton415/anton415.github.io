@@ -9,15 +9,11 @@
     "preview": "astro preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "deploy": "gh-pages -b gh-pages -d dist"
+    "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.6",
-    "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
-    "astro": "latest",
-    "gh-pages": "^5.0.0"
+    "astro": "latest"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

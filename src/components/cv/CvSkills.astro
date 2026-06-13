@@ -1,0 +1,27 @@
+---
+import { cv } from '../../data/cv';
+
+const { skills } = cv;
+
+const groups = [
+  { title: 'Основное', items: skills.core },
+  { title: 'Инструменты', items: skills.tools },
+  { title: 'Языки', items: skills.languages },
+];
+---
+
+<article class="card">
+  <h2>Навыки</h2>
+  {
+    groups.map((group) => (
+      <div class="cv-section">
+        <h3>{group.title}</h3>
+        <div class="cv-chips">
+          {group.items.map((item) => (
+            <span class="cv-chip">{item}</span>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</article>

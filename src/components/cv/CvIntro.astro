@@ -1,0 +1,86 @@
+---
+import { profile } from '../../data/profile';
+import { cv } from '../../data/cv';
+
+const { summary } = cv;
+---
+
+<section class="card hero">
+  <p class="pill">Резюме</p>
+  <h1>{profile.name}</h1>
+  <p class="lede">{profile.headline} — {profile.location}</p>
+  <div class="cv-actions screen-only">
+    <button type="button" class="cv-action cv-action-primary" onclick="window.print()">Печать / PDF</button>
+  </div>
+  <ul class="summary-list">
+    {summary.map((item) => <li>{item}</li>)}
+  </ul>
+</section>
+
+<style>
+  .hero h1 {
+    margin: 0.6rem 0 0.4rem;
+    font-size: clamp(2.1rem, 4vw, 2.8rem);
+  }
+
+  .lede {
+    margin: 0 0 1.2rem;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+
+  .summary-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .cv-actions {
+    margin: 0 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .cv-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.4rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+    text-decoration: none;
+  }
+
+  .cv-action-primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  .cv-action:hover {
+    transform: translateY(-1px);
+  }
+
+  @media print {
+    /* :global ancestor raises specificity above the print.css .card flatten. */
+    :global(body.cv-page) .hero {
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(61, 40, 20, 0.2);
+    }
+
+    .summary-list {
+      gap: 0.3rem;
+    }
+  }
+</style>
