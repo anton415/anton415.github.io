@@ -10,12 +10,20 @@ const { summary } = cv;
   <h1>{profile.name}</h1>
   <p class="lede">{profile.headline} — {profile.location}</p>
   <div class="cv-actions screen-only">
-    <button type="button" class="cv-action cv-action-primary" onclick="window.print()">Печать / PDF</button>
+    <button type="button" class="cv-action cv-action-primary" data-print-button>Печать / PDF</button>
   </div>
   <ul class="summary-list">
     {summary.map((item) => <li>{item}</li>)}
   </ul>
 </section>
+
+<script>
+  // Bundled by Astro into a same-origin module, so it stays within a
+  // `script-src 'self'` CSP (no inline handler / 'unsafe-inline' needed).
+  document
+    .querySelector('[data-print-button]')
+    ?.addEventListener('click', () => window.print());
+</script>
 
 <style>
   .hero h1 {
