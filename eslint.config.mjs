@@ -22,7 +22,7 @@ const ignores = [
 export default tseslint.config(
   { ignores },
   js.configs.recommended,
-  ...astro.configs['flat/recommended'],
+  ...astro.configs.recommended,
   {
     files: ['**/*.ts'],
     extends: [tseslint.configs.recommended],
