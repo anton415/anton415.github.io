@@ -8,7 +8,7 @@ import { navLinks } from '../data/links';
     <span>{profile.name}</span>
     <span class="brand-meta">{profile.headline} · {profile.location}</span>
   </div>
-  <nav aria-label="Основная навигация">
+  <nav aria-label="Primary navigation">
     {navLinks.map((item) => <a href={item.href}>{item.label}</a>)}
   </nav>
 </header>

@@ -1,12 +1,12 @@
 /**
  * Formats a CV date string for display.
- * - 'present' → 'н.в.'
- * - '2019-12' → 'дек. 2019 г.'
+ * - 'present' → 'Present'
+ * - '2019-12' → 'Dec 2019'
  * - '2023'    → '2023'
  */
 export const formatMonthYear = (value: string): string => {
   if (value === 'present') {
-    return 'н.в.';
+    return 'Present';
   }
 
   const [year, month] = value.split('-');
@@ -15,5 +15,5 @@ export const formatMonthYear = (value: string): string => {
   }
 
   const date = new Date(Number(year), Number(month) - 1, 1);
-  return date.toLocaleString('ru-RU', { month: 'short', year: 'numeric' });
+  return date.toLocaleString('en-US', { month: 'short', year: 'numeric' });
 };

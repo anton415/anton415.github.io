@@ -18,14 +18,16 @@ const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
 ---
 
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    {/* Security hardening deliverable via static HTML on GitHub Pages (no custom
+    {
+      /* Security hardening deliverable via static HTML on GitHub Pages (no custom
         response headers). Keep these first so the CSP governs all later content.
         Header-only directives (frame-ancestors), X-Content-Type-Options,
         Permissions-Policy and HSTS are documented in docs/decisions.md for a
-        future headers-capable host. */}
+        future headers-capable host. */
+    }
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'"

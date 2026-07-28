@@ -7,7 +7,7 @@ const activeLinks = [
   ...(profile.email
     ? [
         {
-          label: 'Почта',
+          label: 'Email',
           href: `mailto:${profile.email}`,
           description: profile.email,
           icon: '@',
@@ -18,10 +18,10 @@ const activeLinks = [
 ];
 ---
 
-<BaseLayout title="Ссылки">
+<BaseLayout title="Professional links">
   <section class="card">
-    <h1>Ссылки</h1>
-    <p>Площадки, где я публикую обновления, работы и короткие заметки.</p>
+    <h1>Professional links</h1>
+    <p>My primary contact channels and professional profiles.</p>
     <div class="link-grid">
       {
         activeLinks.map((link) => (

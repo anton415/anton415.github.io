@@ -5,24 +5,24 @@ import { cv } from '../../data/cv';
 const { summary } = cv;
 ---
 
-<section class="card hero">
-  <p class="pill">Резюме</p>
-  <h1>{profile.name}</h1>
-  <p class="lede">{profile.headline} — {profile.location}</p>
+<section class="card hero" id="about">
+  <p class="pill">{profile.name}</p>
+  <h1>{profile.headline}</h1>
+  <p class="lede">{profile.tagline}</p>
+  <p class="location">{profile.location}</p>
   <div class="cv-actions screen-only">
-    <button type="button" class="cv-action cv-action-primary" data-print-button>Печать / PDF</button>
+    <a class="cv-action cv-action-primary" href="/Anton_Serdyuchenko_Software_Engineer_RU.pdf" download> Download CV (RU) </a>
+    <button type="button" class="cv-action" data-print-button>Print / PDF</button>
   </div>
-  <ul class="summary-list">
-    {summary.map((item) => <li>{item}</li>)}
-  </ul>
+  <div class="summary-list">
+    {summary.map((item) => <p>{item}</p>)}
+  </div>
 </section>
 
 <script>
   // Bundled by Astro into a same-origin module, so it stays within a
   // `script-src 'self'` CSP (no inline handler / 'unsafe-inline' needed).
-  document
-    .querySelector('[data-print-button]')
-    ?.addEventListener('click', () => window.print());
+  document.querySelector('[data-print-button]')?.addEventListener('click', () => window.print());
 </script>
 
 <style>
@@ -32,16 +32,25 @@ const { summary } = cv;
   }
 
   .lede {
-    margin: 0 0 1.2rem;
+    margin: 0 0 0.4rem;
     color: var(--ink-soft);
-    font-size: 1.05rem;
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    max-width: 44rem;
+  }
+
+  .location {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
   }
 
   .summary-list {
     margin: 0;
-    padding-left: 1.2rem;
     display: grid;
-    gap: 0.4rem;
+    gap: 0.75rem;
+  }
+
+  .summary-list p {
+    margin: 0;
   }
 
   .cv-actions {
@@ -74,6 +83,12 @@ const { summary } = cv;
     background: var(--accent);
     color: #fff;
     border-color: var(--accent);
+  }
+
+  .cv-action:not(.cv-action-primary) {
+    border-color: rgba(61, 40, 20, 0.2);
+    background: rgba(255, 255, 255, 0.45);
+    color: var(--ink);
   }
 
   .cv-action:hover {

@@ -4,14 +4,14 @@ import { cv } from '../../data/cv';
 const { skills } = cv;
 
 const groups = [
-  { title: 'Основное', items: skills.core },
-  { title: 'Инструменты', items: skills.tools },
-  { title: 'Языки', items: skills.languages },
+  { title: 'Core', items: skills.core },
+  { title: 'Additional tools', items: skills.tools },
+  { title: 'Languages', items: skills.languages },
 ];
 ---
 
 <article class="card">
-  <h2>Навыки</h2>
+  <h2>Skills</h2>
   {
     groups.map((group) => (
       <div class="cv-section">
