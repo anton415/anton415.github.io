@@ -39,8 +39,9 @@ export type Cv = {
 
 export const cv: Cv = {
   summary: [
-    'My strongest production experience is in Java, Spring, Hibernate, SQL, REST APIs, ActiveMQ, testing, code review, and long-lived system maintenance.',
-    'I am expanding my capabilities beyond implementation into system design, data integrity, automated delivery, observability, reliability, and production ownership. AI-assisted development is one supporting tool within this broader engineering practice.',
+    'Software Engineer with 8+ years of professional software-development experience.',
+    'I am building independently verifiable portfolio evidence through personal projects. Employer-project implementation details, technologies, processes, and outcomes are confidential.',
+    'I use AI-assisted development as a supporting tool and verify the results.',
   ],
   experience: [
     {
@@ -51,11 +52,7 @@ export const cv: Cv = {
       start: '2017-10',
       end: 'present',
       highlights: [
-        'Develop and maintain backend logic with Java, Spring, and Hibernate for business-critical internal systems.',
-        'Implement business processes, REST APIs, SQL-backed workflows, and integrations through ActiveMQ.',
-        'Support and gradually improve long-lived legacy systems, including production troubleshooting and deployments.',
-        'Write and maintain unit tests, review code, and contribute to predictable, maintainable delivery.',
-        'Develop Vaadin UI components for internal users where required by the product.',
+        'Develop and maintain software. Project details, technologies, processes, and outcomes are confidential.',
       ],
     },
   ],
@@ -91,26 +88,22 @@ export const cv: Cv = {
   ],
   skills: {
     core: [
-      'Java',
       'Software Development',
-      'Spring Framework',
-      'SQL',
-      'REST APIs',
-      'Unit Testing',
-      'Code Review',
-      'Git',
-      'Linux',
-      'Hibernate',
+      'Backend Development',
+      'System Design',
+      'Data Management',
+      'Software Quality',
+      'Technical Documentation',
     ],
-    tools: ['ActiveMQ', 'JUnit', 'PostgreSQL', 'Docker', 'Vaadin', 'React', 'Go', 'Python'],
-    languages: ['Russian (native)', 'English (C1)'],
+    tools: ['AI-assisted Development'],
+    languages: ['Russian (native)', 'English (level being assessed)'],
   },
   projects: [
     {
       name: 'Personal Finance Tracker',
       description:
-        'My primary engineering learning project for practising architecture, testing, data integrity, delivery, and production ownership.',
-      role: 'Active learning project',
+        'A private personal learning project. Public evidence will be claimed only after confidentiality, history, licensing, data, and reproducibility review.',
+      role: 'Private learning project',
     },
     {
       name: 'Share Trip',
